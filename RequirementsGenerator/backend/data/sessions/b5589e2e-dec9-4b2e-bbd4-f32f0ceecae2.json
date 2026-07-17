@@ -1,0 +1,389 @@
+{
+  "id": "b5589e2e-dec9-4b2e-bbd4-f32f0ceecae2",
+  "title": "Battery-powered handheld vacuum cleaner. Runtime >= 20 min, ",
+  "stakeholder_needs": "Battery-powered handheld vacuum cleaner. Runtime >= 20 min, weight < 1.5 kg, EU safety.",
+  "analysis": "Key stakeholders and needs: (1) End users need adequate cleaning performance with at least 20 minutes usable runtime per charge, comfortable ergonomics under 1.5 kg total mass, acceptable noise/heat during indoor operation (10–40°C), safe and intuitive charging, and easy maintenance (emptying/filter cleaning). (2) Buyer/brand/product management needs a clear value proposition and compliance readiness for EU sale (CE marking), including defined performance metrics (runtime measured under specified mode/load) and manufacturable cost/quality targets. (3) Regulatory/compliance stakeholders need conformity with applicable EU directives/regulations (e.g., Low Voltage Directive if applicable, EMC Directive, RoHS, REACH, and battery-related rules), plus harmonized standards selection and technical documentation for CE marking; safe battery/charger design, labeling, and instructions. (4) Manufacturing/supply chain needs component availability (battery cells, motor, charger), repeatable assembly meeting weight and reliability targets, and test procedures for end-of-line verification (runtime, charging safety, leakage current/insulation as applicable, EMC). (5) Service/support needs replaceable consumables (filters), diagnostic guidance, warranty assumptions, and safe handling guidance for batteries. Nonfunctional requirements to refine: runtime definition (mode, suction level, duty cycle), weight definition (including battery, accessories), charging requirements (time, connector/type, charger inclusion), and operating/environmental constraints (humidity, storage, drop/ingress protection).",
+  "clarification_questions": [
+    "How should the >=20 min runtime be measured (which power mode/suction setting, with or without brush head, and what test method/soil load)?",
+    "Does the <1.5 kg weight limit include the battery and standard attachments (e.g., floor brush/crevice tool), and is there a maximum allowable center-of-mass/ergonomic constraint?",
+    "What charging requirements apply: target charge time, whether charger is in-box, and preferred interface (e.g., USB-C PD vs dedicated dock) and mains input range (EU 230V only or 100–240V)?"
+  ],
+  "files": [],
+  "versions": [
+    {
+      "version": "v1",
+      "timestamp": "2026-07-14T11:21:16.275746+00:00",
+      "source": "generated",
+      "table": {
+        "title": "DFMEA - Battery-powered handheld vacuum cleaner (EU safety, runtime>=20 min, weight<1.5 kg)",
+        "columns": [
+          {
+            "name": "Item / Component",
+            "data_type": "string",
+            "editable": true
+          },
+          {
+            "name": "Function / Requirement",
+            "data_type": "string",
+            "editable": true
+          },
+          {
+            "name": "Potential Failure Mode",
+            "data_type": "string",
+            "editable": true
+          },
+          {
+            "name": "Potential Effects of Failure",
+            "data_type": "string",
+            "editable": true
+          },
+          {
+            "name": "Severity (S)",
+            "data_type": "string",
+            "editable": true
+          },
+          {
+            "name": "Classification / Special Characteristic",
+            "data_type": "string",
+            "editable": true
+          },
+          {
+            "name": "Potential Causes / Mechanisms",
+            "data_type": "string",
+            "editable": true
+          },
+          {
+            "name": "Occurrence (O)",
+            "data_type": "string",
+            "editable": true
+          },
+          {
+            "name": "Prevention Controls",
+            "data_type": "string",
+            "editable": true
+          },
+          {
+            "name": "Detection Controls",
+            "data_type": "string",
+            "editable": true
+          },
+          {
+            "name": "Detection (D)",
+            "data_type": "string",
+            "editable": true
+          },
+          {
+            "name": "RPN",
+            "data_type": "string",
+            "editable": true
+          },
+          {
+            "name": "Recommended Action",
+            "data_type": "string",
+            "editable": true
+          },
+          {
+            "name": "Owner",
+            "data_type": "string",
+            "editable": true
+          },
+          {
+            "name": "Target Date",
+            "data_type": "string",
+            "editable": true
+          },
+          {
+            "name": "Action Result",
+            "data_type": "string",
+            "editable": true
+          }
+        ],
+        "rows": [
+          [
+            "Battery pack (Li-ion cells + pack assembly)",
+            "Provide energy for >=20 min usable runtime per charge within 10–40°C",
+            "Insufficient runtime / rapid capacity fade",
+            "User cannot complete cleaning task; increased returns; brand dissatisfaction; potential warranty cost",
+            7,
+            "CC",
+            "Cell capacity variation; high internal resistance; poor thermal management; high load profile; inaccurate runtime definition/use case mismatch",
+            5,
+            "Cell supplier qualification; incoming cell IR/capacity screening; thermal design review; load profiling; BMS configuration limits",
+            "EOL runtime test under defined mode/load; pack capacity test sampling; field data monitoring",
+            4,
+            140,
+            "Tighten runtime spec (mode/load); improve airflow/motor efficiency; increase cell grade or capacity; add thermal path; implement pack-level capacity binning",
+            "Battery Systems Engineer",
+            "2026-10-15",
+            "Planned"
+          ],
+          [
+            "Battery pack (BMS/PCM protection)",
+            "Prevent overcharge/overdischarge/overcurrent; ensure safe operation and transport",
+            "BMS fails to cut off on overcharge",
+            "Cell venting/thermal runaway risk; fire hazard; regulatory noncompliance; injury/property damage",
+            10,
+            "SC",
+            "Protection IC failure; wrong component values; charger fault; MOSFET short; PCB contamination; firmware/threshold error",
+            2,
+            "Redundant OVP (secondary protector/thermal fuse); component derating; conformal coat; design FMEA/FTA; supplier PPAP",
+            "Pack OVP functional test; charge abuse test per standards; ICT; firmware parameter verification",
+            3,
+            60,
+            "Add secondary OVP device and thermal cutoff; strengthen DVP abuse testing; add automated calibration/parameter lock; enhance cleanliness controls",
+            "Safety Compliance Engineer",
+            "2026-09-30",
+            "In progress"
+          ],
+          [
+            "Battery pack (BMS/PCM protection)",
+            "Protect cells and maintain performance under high load",
+            "BMS nuisance trip / overcurrent threshold too low",
+            "Vacuum stops intermittently; perceived poor quality; user frustration; potential returns",
+            6,
+            "CC",
+            "Threshold tolerance stack-up; inrush current; MOSFET heating; wiring resistance; motor stall events",
+            4,
+            "Current profiling; soft-start control; wiring gauge spec; thermal simulation; tolerance analysis",
+            "EOL high-load start/stop test; stall simulation test; BMS log review (if available)",
+            4,
+            96,
+            "Implement motor soft-start; adjust OCP threshold with margin; improve conductors/connector; add stall detection to reduce peak current",
+            "Power Electronics Engineer",
+            "2026-09-15",
+            "Planned"
+          ],
+          [
+            "Motor (BLDC + driver)",
+            "Generate airflow at required suction with acceptable noise and efficiency",
+            "Motor overheating / coil insulation degradation",
+            "Loss of suction; reduced runtime; potential burn odor/smoke; safety risk; shortened life",
+            9,
+            "SC",
+            "Blocked airflow; high duty cycle; poor heat sinking; incorrect commutation; bearing friction; overvoltage",
+            3,
+            "Thermal design and airflow margin; temp sensor/derating; material class verification; motor supplier validation",
+            "Thermal chamber test at 40°C; stall/blocked inlet test; EOL current draw check",
+            4,
+            108,
+            "Add temperature-based power derating; improve motor cooling path; specify higher temp insulation class; add blockage detection and user alert",
+            "Motor Design Engineer",
+            "2026-10-01",
+            "Planned"
+          ],
+          [
+            "Motor bearings/rotor assembly",
+            "Maintain low friction and noise over life",
+            "Bearing wear / rotor imbalance leading to vibration",
+            "Excess noise; reduced suction efficiency; user discomfort; potential housing cracks over time",
+            6,
+            "CC",
+            "Bearing contamination; inadequate lubrication; imbalance from manufacturing; drop damage",
+            4,
+            "Supplier process control; balancing specification; clean assembly; drop robustness design",
+            "EOL vibration/noise test; incoming bearing audits; life test sampling",
+            5,
+            120,
+            "Tighten balancing tolerances; add vibration isolators; improve dust sealing to motor; increase life test duration and sample size",
+            "Supplier Quality Engineer",
+            "2026-11-01",
+            "Planned"
+          ],
+          [
+            "Suction path / nozzle / airflow channels",
+            "Deliver adequate debris pickup and airflow without clogging",
+            "Clogging at nozzle or internal duct",
+            "Sudden suction loss; overheating; reduced runtime; user dissatisfaction; maintenance burden",
+            7,
+            "CC",
+            "Geometry pinch points; large debris ingestion; hair accumulation; insufficient cyclonic separation; rough internal surfaces",
+            6,
+            "Airpath design rules; CFD; debris ingestion criteria; smooth surface finish spec; hair management features",
+            "Debris clog tests; airflow (CFM) EOL check; user trials",
+            5,
+            210,
+            "Redesign duct transitions; add anti-hair features and grate; specify minimum bend radius; include clear clog access; update user instructions",
+            "Mechanical Design Engineer",
+            "2026-10-30",
+            "Planned"
+          ],
+          [
+            "Filter (primary/HEPA element)",
+            "Capture fine dust while maintaining airflow; easy to clean/replace",
+            "Filter loads quickly / high pressure drop",
+            "Reduced suction and runtime; increased motor heat and noise; frequent maintenance; returns",
+            7,
+            "CC",
+            "Insufficient filter area; low permeability media; poor pre-separation; user washes incorrectly; wet dust",
+            6,
+            "Filter media selection; pre-filter/cyclone design; maintenance instructions; washability validation",
+            "Dust loading tests; airflow vs. loading characterization; EOL airflow test",
+            4,
+            168,
+            "Increase filter area; improve cyclonic stage; specify media with higher dust-holding capacity; add maintenance indicator; update cleaning guidance",
+            "Airflow/Filtration Engineer",
+            "2026-10-20",
+            "Planned"
+          ],
+          [
+            "Filter sealing interface",
+            "Prevent bypass leakage around filter",
+            "Filter bypass due to poor seal or misassembly",
+            "Dust enters motor; reduced life; fine dust emission; user health concerns; noncompliance claims",
+            8,
+            "SC",
+            "Gasket compression set; tolerance stack-up; user installs incorrectly; latch weakness; warped housing",
+            4,
+            "Poka-yoke filter fit; robust latch; gasket material selection; tolerance analysis; assembly work instructions",
+            "Leak test (pressure decay) sampling; visual inspection; user misuse testing",
+            5,
+            160,
+            "Add keyed filter geometry; improve gasket design/material; add positive latch feedback; introduce EOL leak test for 100% units",
+            "Quality Engineer",
+            "2026-09-25",
+            "Planned"
+          ],
+          [
+            "Housing/structure (plastic enclosure)",
+            "Provide structural integrity and ergonomic handling under drops; weight <1.5 kg",
+            "Housing crack after drop / impact",
+            "Exposure of live parts/battery; loss of containment; poor appearance; safety risk; warranty claims",
+            9,
+            "SC",
+            "Material brittle at low temp; stress concentrators; insufficient ribs; screw boss failure; drop orientation extremes",
+            3,
+            "Material selection with impact modifiers; rib/boss design guidelines; drop simulation; torque spec control",
+            "Drop tests on multiple orientations/temps; EOL visual inspection; torque audit",
+            4,
+            108,
+            "Increase toughness material; add ribs/fillets; redesign bosses; add internal energy-absorbing features; tighten assembly torque controls",
+            "Mechanical Reliability Engineer",
+            "2026-11-15",
+            "Planned"
+          ],
+          [
+            "Housing thermal interface / user touch points",
+            "Keep external surface temperature within safe/comfortable limits",
+            "Surface temperature too high during operation",
+            "User discomfort/burn risk; reduced perceived quality; potential safety nonconformance",
+            8,
+            "SC",
+            "Poor heat spreading; motor/battery near grip; blocked vents; high ambient (40°C); prolonged high-power mode",
+            3,
+            "Thermal layout review; insulation barriers; vent placement; power derating strategy",
+            "Thermal testing at max ambient; touch temperature measurements; user trial feedback",
+            4,
+            96,
+            "Reposition heat sources away from grip; add heat shield/spreader; implement temperature-based performance limit; improve venting while meeting ingress goals",
+            "Thermal Engineer",
+            "2026-10-10",
+            "Planned"
+          ],
+          [
+            "Charger (AC adapter/dock) - electrical safety",
+            "Charge battery safely; meet EU safety/EMC requirements",
+            "Output overvoltage / incorrect charger regulation",
+            "Battery damage; overheating/fire risk; noncompliance; injury/property damage",
+            10,
+            "SC",
+            "Wrong adapter variant; component failure; poor feedback loop stability; counterfeit supply; labeling mismatch",
+            2,
+            "Use certified adapter (EN/IEC 62368-1/61558 as applicable); supplier audits; unique connector; clear labeling; incoming inspection",
+            "Incoming functional test; OVP verification; safety certification review; EMC pre-scan",
+            3,
+            60,
+            "Lock approved charger P/N; add adapter ID/keying; tighten incoming test plan; add OVP clamp on device side; strengthen supplier anti-counterfeit controls",
+            "Electrical Safety Engineer",
+            "2026-09-05",
+            "In progress"
+          ],
+          [
+            "Charging connector / dock contacts",
+            "Provide reliable charging connection over life; safe touch",
+            "Intermittent contact / high contact resistance",
+            "Charging fails or slow; localized heating at contacts; user frustration; potential minor burn",
+            7,
+            "CC",
+            "Wear/corrosion; contamination; weak spring force; misalignment; thin plating",
+            4,
+            "Gold plating spec; contact force design; alignment features; ingress management; cycle testing",
+            "Charge cycle endurance test; EOL charge current verification; contact resistance measurement sampling",
+            5,
+            140,
+            "Increase plating thickness; improve self-aligning dock; add debris shields; specify higher spring force with fatigue margin; add 100% charge current check",
+            "Connector Design Engineer",
+            "2026-10-05",
+            "Planned"
+          ],
+          [
+            "UI (buttons/LED indicators)",
+            "Provide intuitive control and accurate status (battery, charging, faults)",
+            "Battery indicator inaccurate / misleading",
+            "User experiences unexpected shutdown; dissatisfaction; mischarging behavior; support calls/returns",
+            5,
+            "CC",
+            "Poor SOC algorithm; cell aging not compensated; voltage sag under load; LED tolerance; firmware bug",
+            6,
+            "SOC algorithm validation under load/aging; firmware reviews; calibration table; requirements definition for “usable runtime”",
+            "Software unit/integration tests; runtime-to-empty validation; EOL functional UI test",
+            5,
+            150,
+            "Implement load-compensated SOC and aging model; add low-battery pre-warning with hysteresis; improve UI labeling; extend validation across temps/cell lots",
+            "Embedded Software Engineer",
+            "2026-11-10",
+            "Planned"
+          ],
+          [
+            "UI (power switch / control logic)",
+            "Prevent unintended operation; safe start/stop behavior",
+            "Unintended start (button stuck or logic fault)",
+            "Injury risk; battery drain; overheating in confined space; compliance issue",
+            9,
+            "SC",
+            "Button mechanical jam; liquid/dust ingress; debounce bug; ESD upset; transport activation",
+            2,
+            "Button design with return force; ingress barriers; firmware debounce and long-press requirement; ESD design",
+            "ESD testing; abuse/contamination tests; EOL button functional test; transport simulation",
+            4,
+            72,
+            "Require long-press to start; add travel stop and sealing membrane; implement watchdog and state validation; add shipment lock mode",
+            "Systems Engineer",
+            "2026-09-20",
+            "Planned"
+          ],
+          [
+            "Seals (dustbin gasket, airpath O-rings)",
+            "Maintain airtight suction path and contain dust",
+            "Seal leak / gasket compression set over time",
+            "Reduced suction; dust leakage to environment; noise increase; user complaints; performance spec miss",
+            7,
+            "CC",
+            "Wrong elastomer hardness; chemical exposure from cleaning; poor compression design; tolerance stack-up; repeated opening/closing",
+            5,
+            "Material compatibility testing; compression set specification; groove design guidelines; tolerance analysis; user maintenance instructions",
+            "Leak/airflow test; life cycling of dustbin latch; environmental aging tests",
+            5,
+            175,
+            "Select lower compression-set material (e.g., silicone/EPDM as appropriate); redesign gland for correct squeeze; add stop features; introduce periodic replacement recommendation",
+            "Materials Engineer",
+            "2026-11-25",
+            "Planned"
+          ]
+        ]
+      },
+      "analysis": "Key stakeholders and needs: (1) End users need adequate cleaning performance with at least 20 minutes usable runtime per charge, comfortable ergonomics under 1.5 kg total mass, acceptable noise/heat during indoor operation (10–40°C), safe and intuitive charging, and easy maintenance (emptying/filter cleaning). (2) Buyer/brand/product management needs a clear value proposition and compliance readiness for EU sale (CE marking), including defined performance metrics (runtime measured under specified mode/load) and manufacturable cost/quality targets. (3) Regulatory/compliance stakeholders need conformity with applicable EU directives/regulations (e.g., Low Voltage Directive if applicable, EMC Directive, RoHS, REACH, and battery-related rules), plus harmonized standards selection and technical documentation for CE marking; safe battery/charger design, labeling, and instructions. (4) Manufacturing/supply chain needs component availability (battery cells, motor, charger), repeatable assembly meeting weight and reliability targets, and test procedures for end-of-line verification (runtime, charging safety, leakage current/insulation as applicable, EMC). (5) Service/support needs replaceable consumables (filters), diagnostic guidance, warranty assumptions, and safe handling guidance for batteries. Nonfunctional requirements to refine: runtime definition (mode, suction level, duty cycle), weight definition (including battery, accessories), charging requirements (time, connector/type, charger inclusion), and operating/environmental constraints (humidity, storage, drop/ingress protection).",
+      "stakeholder_needs": "Battery-powered handheld vacuum cleaner. Runtime >= 20 min, weight < 1.5 kg, EU safety."
+    }
+  ],
+  "active_version": 0,
+  "messages": [
+    {
+      "role": "user",
+      "content": "Battery-powered handheld vacuum cleaner. Runtime >= 20 min, weight < 1.5 kg, EU safety."
+    },
+    {
+      "role": "assistant",
+      "content": "Key stakeholders and needs: (1) End users need adequate cleaning performance with at least 20 minutes usable runtime per charge, comfortable ergonomics under 1.5 kg total mass, acceptable noise/heat during indoor operation (10–40°C), safe and intuitive charging, and easy maintenance (emptying/filter cleaning). (2) Buyer/brand/product management needs a clear value proposition and compliance readiness for EU sale (CE marking), including defined performance metrics (runtime measured under specified mode/load) and manufacturable cost/quality targets. (3) Regulatory/compliance stakeholders need conformity with applicable EU directives/regulations (e.g., Low Voltage Directive if applicable, EMC Directive, RoHS, REACH, and battery-related rules), plus harmonized standards selection and technical documentation for CE marking; safe battery/charger design, labeling, and instructions. (4) Manufacturing/supply chain needs component availability (battery cells, motor, charger), repeatable assembly meeting weight and reliability targets, and test procedures for end-of-line verification (runtime, charging safety, leakage current/insulation as applicable, EMC). (5) Service/support needs replaceable consumables (filters), diagnostic guidance, warranty assumptions, and safe handling guidance for batteries. Nonfunctional requirements to refine: runtime definition (mode, suction level, duty cycle), weight definition (including battery, accessories), charging requirements (time, connector/type, charger inclusion), and operating/environmental constraints (humidity, storage, drop/ingress protection)."
+    }
+  ]
+}

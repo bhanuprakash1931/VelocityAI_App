@@ -1,0 +1,22 @@
+{
+  "id": "3ad75802-1454-4df4-9f67-f7ad8230aaed",
+  "title": "Battery-powered handheld vacuum cleaner for home use. Runtim",
+  "stakeholder_needs": "Battery-powered handheld vacuum cleaner for home use. Runtime >= 20 min, weight < 1.5 kg, EU safety standards.",
+  "analysis": "The requested system is analyzed from functional, performance, safety, reliability, usability, interface, manufacturing, and verification perspectives. Primary stakeholder intent: Battery-powered handheld vacuum cleaner for home use. Runtime >= 20 min, weight < 1.5 kg, EU safety standards.. Ambiguous targets should be confirmed before release; every requirement must be measurable, traceable, and independently verifiable.",
+  "clarification_questions": [
+    "What operating and environmental conditions must be supported?"
+  ],
+  "files": [],
+  "versions": [],
+  "active_version": -1,
+  "messages": [
+    {
+      "role": "user",
+      "content": "Battery-powered handheld vacuum cleaner for home use. Runtime >= 20 min, weight < 1.5 kg, EU safety standards."
+    },
+    {
+      "role": "assistant",
+      "content": "The requested system is analyzed from functional, performance, safety, reliability, usability, interface, manufacturing, and verification perspectives. Primary stakeholder intent: Battery-powered handheld vacuum cleaner for home use. Runtime >= 20 min, weight < 1.5 kg, EU safety standards.. Ambiguous targets should be confirmed before release; every requirement must be measurable, traceable, and independently verifiable."
+    }
+  ]
+}

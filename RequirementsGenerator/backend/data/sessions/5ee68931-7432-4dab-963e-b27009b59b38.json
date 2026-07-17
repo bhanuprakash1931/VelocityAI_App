@@ -1,0 +1,394 @@
+{
+  "id": "5ee68931-7432-4dab-963e-b27009b59b38",
+  "title": "Generate requirements for a battery-powered handheld vacuum\n",
+  "stakeholder_needs": "Generate requirements for a battery-powered handheld vacuum\n    cleaner for home use. It should run for at least 20 minutes,\n    weigh under 1.5 kg, and meet EU safety standards.",
+  "analysis": "Stakeholders include: primary users (homeowners/renters needing quick cleanups), secondary users (family members with varying strength/height), and purchasers (cost/value expectations). Key needs: portability (under 1.5 kg), sufficient runtime (>=20 min), effective suction and debris pickup for common home surfaces, easy emptying/cleaning, low noise, fast charging, acceptable battery life degradation over time, and ergonomic handling. Regulatory stakeholders: EU market compliance (CE marking; Low Voltage Directive likely if mains charger, EMC, RoHS, REACH; plus battery transport/UN 38.3 and IEC/EN safety standards such as EN 60335-1/-2-2). Manufacturing/support stakeholders: reliability, serviceability, replaceable filters/battery, warranty, and documentation. Requirements must balance performance vs weight and runtime (battery capacity, motor power, airflow), and include measurable verification methods and acceptance criteria.",
+  "clarification_questions": [
+    "What floor types and debris should it be optimized for (e.g., hard floors only vs also carpets/rugs; dust, pet hair, crumbs, liquids)?",
+    "What charging expectations are required (USB-C vs dock, max charge time, replaceable battery, mains voltage/plug markets within EU)?",
+    "What target price range and noise limit (dB(A)) should it meet?"
+  ],
+  "files": [
+    "C:\\Users\\korpraka\\Downloads\\velocity-requirements-web\\backend\\data\\uploads\\5ee68931-7432-4dab-963e-b27009b59b38_cf9d31c5_DFMEA_Template.xlsx"
+  ],
+  "versions": [
+    {
+      "version": "v1",
+      "timestamp": "2026-07-14T09:57:31.308710+00:00",
+      "source": "generated",
+      "table": {
+        "title": "Requirements Specification",
+        "columns": [
+          {
+            "name": "Item / Component",
+            "data_type": "string",
+            "editable": true
+          },
+          {
+            "name": "Function / Requirement",
+            "data_type": "string",
+            "editable": true
+          },
+          {
+            "name": "Potential Failure Mode",
+            "data_type": "string",
+            "editable": true
+          },
+          {
+            "name": "Potential Effects of Failure",
+            "data_type": "string",
+            "editable": true
+          },
+          {
+            "name": "Severity (S)",
+            "data_type": "string",
+            "editable": true
+          },
+          {
+            "name": "Classification / Special Characteristic",
+            "data_type": "string",
+            "editable": true
+          },
+          {
+            "name": "Potential Causes / Mechanisms",
+            "data_type": "string",
+            "editable": true
+          },
+          {
+            "name": "Prevention Controls",
+            "data_type": "string",
+            "editable": true
+          },
+          {
+            "name": "Occurrence (O)",
+            "data_type": "string",
+            "editable": true
+          },
+          {
+            "name": "Detection Controls",
+            "data_type": "string",
+            "editable": true
+          },
+          {
+            "name": "Detection (D)",
+            "data_type": "string",
+            "editable": true
+          },
+          {
+            "name": "RPN = S×O×D",
+            "data_type": "string",
+            "editable": true
+          },
+          {
+            "name": "Action Priority",
+            "data_type": "string",
+            "editable": true
+          },
+          {
+            "name": "Recommended Actions",
+            "data_type": "string",
+            "editable": true
+          },
+          {
+            "name": "Responsibility",
+            "data_type": "string",
+            "editable": true
+          },
+          {
+            "name": "Target Completion Date",
+            "data_type": "string",
+            "editable": true
+          },
+          {
+            "name": "Action Status",
+            "data_type": "string",
+            "editable": true
+          },
+          {
+            "name": "Actions Taken / Evidence",
+            "data_type": "string",
+            "editable": true
+          },
+          {
+            "name": "Completion Date",
+            "data_type": "string",
+            "editable": true
+          },
+          {
+            "name": "Revised Severity",
+            "data_type": "string",
+            "editable": true
+          },
+          {
+            "name": "Revised Occurrence",
+            "data_type": "string",
+            "editable": true
+          },
+          {
+            "name": "Revised Detection",
+            "data_type": "string",
+            "editable": true
+          },
+          {
+            "name": "Revised RPN",
+            "data_type": "string",
+            "editable": true
+          },
+          {
+            "name": "Residual Risk Decision",
+            "data_type": "string",
+            "editable": true
+          },
+          {
+            "name": "Lessons Learned / Reuse Notes",
+            "data_type": "string",
+            "editable": true
+          },
+          {
+            "name": "Linked Requirement ID",
+            "data_type": "string",
+            "editable": true
+          },
+          {
+            "name": "Drawing / CAD Ref.",
+            "data_type": "string",
+            "editable": true
+          },
+          {
+            "name": "Test / Validation Ref.",
+            "data_type": "string",
+            "editable": true
+          },
+          {
+            "name": "Change Request / ECO Ref.",
+            "data_type": "string",
+            "editable": true
+          },
+          {
+            "name": "Supplier / Interface",
+            "data_type": "string",
+            "editable": true
+          },
+          {
+            "name": "Remarks",
+            "data_type": "string",
+            "editable": true
+          }
+        ],
+        "rows": [
+          [
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            ""
+          ],
+          [
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            ""
+          ],
+          [
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            ""
+          ],
+          [
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            ""
+          ],
+          [
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            ""
+          ],
+          [
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            ""
+          ]
+        ]
+      },
+      "analysis": "Stakeholders include: primary users (homeowners/renters needing quick cleanups), secondary users (family members with varying strength/height), and purchasers (cost/value expectations). Key needs: portability (under 1.5 kg), sufficient runtime (>=20 min), effective suction and debris pickup for common home surfaces, easy emptying/cleaning, low noise, fast charging, acceptable battery life degradation over time, and ergonomic handling. Regulatory stakeholders: EU market compliance (CE marking; Low Voltage Directive likely if mains charger, EMC, RoHS, REACH; plus battery transport/UN 38.3 and IEC/EN safety standards such as EN 60335-1/-2-2). Manufacturing/support stakeholders: reliability, serviceability, replaceable filters/battery, warranty, and documentation. Requirements must balance performance vs weight and runtime (battery capacity, motor power, airflow), and include measurable verification methods and acceptance criteria.",
+      "stakeholder_needs": "Generate requirements for a battery-powered handheld vacuum\n    cleaner for home use. It should run for at least 20 minutes,\n    weigh under 1.5 kg, and meet EU safety standards."
+    }
+  ],
+  "active_version": 0,
+  "messages": [
+    {
+      "role": "user",
+      "content": "Generate requirements for a battery-powered handheld vacuum\n    cleaner for home use. It should run for at least 20 minutes,\n    weigh under 1.5 kg, and meet EU safety standards."
+    },
+    {
+      "role": "assistant",
+      "content": "Stakeholders include: primary users (homeowners/renters needing quick cleanups), secondary users (family members with varying strength/height), and purchasers (cost/value expectations). Key needs: portability (under 1.5 kg), sufficient runtime (>=20 min), effective suction and debris pickup for common home surfaces, easy emptying/cleaning, low noise, fast charging, acceptable battery life degradation over time, and ergonomic handling. Regulatory stakeholders: EU market compliance (CE marking; Low Voltage Directive likely if mains charger, EMC, RoHS, REACH; plus battery transport/UN 38.3 and IEC/EN safety standards such as EN 60335-1/-2-2). Manufacturing/support stakeholders: reliability, serviceability, replaceable filters/battery, warranty, and documentation. Requirements must balance performance vs weight and runtime (battery capacity, motor power, airflow), and include measurable verification methods and acceptance criteria."
+    }
+  ]
+}

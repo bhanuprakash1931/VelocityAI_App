@@ -1,0 +1,225 @@
+{
+  "id": "b3719cf8-ceaa-4fea-90c3-547e202ec442",
+  "title": "Battery-powered handheld vacuum cleaner for home use. Runtim",
+  "stakeholder_needs": "Battery-powered handheld vacuum cleaner for home use. Runtime >= 20 min, weight < 1.5 kg, EU safety standards.",
+  "analysis": "The requested system is analyzed from functional, performance, safety, reliability, usability, interface, manufacturing, and verification perspectives. Primary stakeholder intent: Battery-powered handheld vacuum cleaner for home use. Runtime >= 20 min, weight < 1.5 kg, EU safety standards.. Ambiguous targets should be confirmed before release; every requirement must be measurable, traceable, and independently verifiable.",
+  "clarification_questions": [
+    "What operating and environmental conditions must be supported?"
+  ],
+  "files": [],
+  "versions": [
+    {
+      "version": "v1",
+      "timestamp": "2026-07-14T10:55:53.096415+00:00",
+      "source": "generated",
+      "table": {
+        "title": "Requirements Specification",
+        "columns": [
+          {
+            "name": "Item / Component",
+            "data_type": "string",
+            "editable": true
+          },
+          {
+            "name": "Function / Requirement",
+            "data_type": "string",
+            "editable": true
+          },
+          {
+            "name": "Potential Failure Mode",
+            "data_type": "string",
+            "editable": true
+          },
+          {
+            "name": "Potential Effects of Failure",
+            "data_type": "string",
+            "editable": true
+          },
+          {
+            "name": "Severity (S)",
+            "data_type": "string",
+            "editable": true
+          },
+          {
+            "name": "Classification / Special Characteristic",
+            "data_type": "string",
+            "editable": true
+          },
+          {
+            "name": "Potential Causes / Mechanisms",
+            "data_type": "string",
+            "editable": true
+          },
+          {
+            "name": "Occurrence (O)",
+            "data_type": "string",
+            "editable": true
+          },
+          {
+            "name": "Prevention Controls",
+            "data_type": "string",
+            "editable": true
+          },
+          {
+            "name": "Detection Controls",
+            "data_type": "string",
+            "editable": true
+          },
+          {
+            "name": "Detection (D)",
+            "data_type": "string",
+            "editable": true
+          },
+          {
+            "name": "RPN",
+            "data_type": "string",
+            "editable": true
+          },
+          {
+            "name": "Recommended Action",
+            "data_type": "string",
+            "editable": true
+          },
+          {
+            "name": "Owner",
+            "data_type": "string",
+            "editable": true
+          },
+          {
+            "name": "Target Date",
+            "data_type": "string",
+            "editable": true
+          },
+          {
+            "name": "Action Result",
+            "data_type": "string",
+            "editable": true
+          }
+        ],
+        "rows": [
+          [
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "Systems",
+            "",
+            ""
+          ],
+          [
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "Software",
+            "",
+            ""
+          ],
+          [
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "Software",
+            "",
+            ""
+          ],
+          [
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "Security",
+            "",
+            ""
+          ],
+          [
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "UX",
+            "",
+            ""
+          ],
+          [
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "DevOps",
+            "",
+            ""
+          ]
+        ]
+      },
+      "analysis": "The requested system is analyzed from functional, performance, safety, reliability, usability, interface, manufacturing, and verification perspectives. Primary stakeholder intent: Battery-powered handheld vacuum cleaner for home use. Runtime >= 20 min, weight < 1.5 kg, EU safety standards.. Ambiguous targets should be confirmed before release; every requirement must be measurable, traceable, and independently verifiable.",
+      "stakeholder_needs": "Battery-powered handheld vacuum cleaner for home use. Runtime >= 20 min, weight < 1.5 kg, EU safety standards."
+    }
+  ],
+  "active_version": 0,
+  "messages": [
+    {
+      "role": "user",
+      "content": "Battery-powered handheld vacuum cleaner for home use. Runtime >= 20 min, weight < 1.5 kg, EU safety standards."
+    },
+    {
+      "role": "assistant",
+      "content": "The requested system is analyzed from functional, performance, safety, reliability, usability, interface, manufacturing, and verification perspectives. Primary stakeholder intent: Battery-powered handheld vacuum cleaner for home use. Runtime >= 20 min, weight < 1.5 kg, EU safety standards.. Ambiguous targets should be confirmed before release; every requirement must be measurable, traceable, and independently verifiable."
+    }
+  ]
+}

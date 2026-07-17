@@ -1,0 +1,192 @@
+{
+  "id": "d57ae1dc-3a79-4fd8-b6c0-e5ce45dc1ec1",
+  "title": "Generate requirements for a battery-powered handheld vacuum\n",
+  "stakeholder_needs": "Generate requirements for a battery-powered handheld vacuum\n    cleaner for home use. It should run for at least 20 minutes,\n    weigh under 1.5 kg, and meet EU safety standards.",
+  "analysis": "Stakeholders and needs:\n- End users (homeowners/renters): want quick, convenient cleaning for crumbs/pet hair/dust on floors, upholstery, stairs, and cars; need true cordless mobility, easy emptying, low maintenance, acceptable noise, and enough suction/runtime to finish typical spot-clean tasks.\n- Buyers/gift givers: want clear value (performance vs price), attractive design, and trustworthy safety/compliance.\n- Safety/regulatory bodies (EU): require conformity to applicable directives/standards (CE marking), electrical/battery safety, EMC, chemical/material restrictions, and appropriate labeling/instructions.\n- Manufacturing/operations: need requirements that are testable, achievable under mass production tolerances, and cost-conscious; prefer modular design and serviceable parts.\n- Service/support: want low return rates, robust filters/battery, straightforward troubleshooting, and spare parts availability.\n\nAssumptions based on provided constraints: handheld, battery-powered, home use; must run ≥20 min; mass <1.5 kg (as used); must meet EU safety standards.\n\nProposed requirements (structured, testable):\n\n1) Scope & Use Cases\n1.1 The product shall be a cordless handheld vacuum cleaner intended for dry household debris (dust, crumbs, hair) on hard surfaces and textiles.\n1.2 The product shall not be intended for liquids, hot ashes, or hazardous dusts; these exclusions shall be stated in the user manual and on-device where appropriate.\n\n2) Performance\n2.1 The vacuum shall provide at least one standard cleaning mode that achieves a minimum runtime of 20 minutes (see Power/Runtime verification).\n2.2 The vacuum shall maintain usable suction through at least 80% of the dust bin’s rated capacity without clogging under normal household dust conditions.\n2.3 The product shall include a crevice tool (integrated or attachable) to support corners, sofa gaps, and car interiors.\n2.4 The product shall include a brush tool or motorized mini-brush option for upholstery/hair pickup (may be optional accessory; if optional, it shall be clearly identified).\n\n3) Size, Mass, Ergonomics\n3.1 The product mass (including battery installed, empty dust bin, and standard nozzle attached) shall be <1.5 kg.\n3.2 The product shall be operable with one hand for typical spot-cleaning tasks; controls shall be reachable while holding the handle.\n3.3 The product shall include a stable parking/storage solution (wall mount or freestanding dock) to avoid tip-over during storage.\n\n4) Power, Battery, Charging\n4.1 The vacuum shall be powered by a rechargeable battery pack integrated or user-removable.\n4.2 The vacuum shall meet the minimum runtime requirement: ≥20 minutes in standard mode, measured from full charge to automatic shutoff or performance drop below defined threshold (to be defined).\n4.3 The vacuum shall provide a battery state indication (at least 3-level LED or equivalent) to communicate remaining charge.\n4.4 The product shall include protections against overcharge, over-discharge, over-current, and over-temperature.\n4.5 Charging shall be via an external AC adapter or charging dock compatible with EU mains input (230 V AC nominal, 50 Hz), or USB-C PD; the chosen method shall be specified.\n4.6 The charger and vacuum shall prevent operation hazards during charging (e.g., electrical isolation, thermal management).\n\n5) Filtration & Dust Handling\n5.1 The product shall include a primary separation stage and a washable or replaceable filter.\n5.2 The filtration system shall prevent visible dust plume at the exhaust under normal use with an intact filter.\n5.3 The dust bin shall be user-emptyable without requiring tools.\n5.4 The dust bin capacity shall be specified and marked; the product shall function without leakage when the bin is latched correctly.\n\n6) Noise & Comfort\n6.1 The A-weighted sound power or sound pressure level during standard mode shall be specified; target ≤80 dB(A) at 1 m is recommended (confirm as a requirement if desired).\n6.2 Vibration and heat at user contact surfaces shall remain within safe and comfortable limits during a 20-minute run.\n\n7) Durability & Environmental\n7.1 The product shall withstand typical home drop/impact events (e.g., accidental drop from countertop height) without exposing live parts or battery hazards; cosmetic damage allowed.\n7.2 The product shall operate within an ambient temperature range typical for indoor EU homes (e.g., 5–35°C) and be storable (e.g., 0–40°C) without permanent damage.\n\n8) Safety & Regulatory Compliance (EU)\n8.1 The product shall be CE marked and conform to applicable EU legislation, including:\n- Low Voltage Directive (2014/35/EU) where applicable (depending on voltage limits; often charger falls under LVD)\n- EMC Directive (2014/30/EU)\n- RoHS Directive (2011/65/EU + amendments)\n- REACH (EC) No 1907/2006 for SVHC communication\n- Waste Electrical and Electronic Equipment (WEEE) (2012/19/EU) marking/producer obligations\n- Battery Regulation (EU) 2023/1542 (marking, information, recyclability, and obligations as applicable)\n8.2 The product shall comply with relevant harmonized standards typically used for household vacuum cleaners and battery appliances (final list to be confirmed during compliance planning), including electrical safety, battery safety, and EMC.\n8.3 The product shall include safety labeling and instructions in required EU languages for target markets, including warnings for children, battery handling, filter maintenance, and prohibited materials.\n8.4 The design shall ensure no accessible sharp edges, pinch points, or hot surfaces that could cause injury under normal use and foreseeable misuse.\n\n9) Maintainability & Service\n9.1 Filters designated as user-serviceable shall be replaceable or washable using only household tools (or tool-free).\n9.2 Consumables (filters, brush heads if applicable) shall be available for purchase for a defined support period (e.g., 3–5 years) after end of sale.\n\n10) Packaging & Documentation\n10.1 Packaging shall protect the product from damage during standard parcel shipping.\n10.2 The box shall include: vacuum, charger/dock, standard nozzle(s), crevice tool, manual, and safety/regulatory leaflets.\n10.3 The manual shall include operating steps, cleaning/maintenance, battery care, troubleshooting, and disposal/recycling instructions.\n\n11) Verification (acceptance tests summary)\n11.1 Mass test: weigh production unit with battery, empty bin, standard nozzle; must be <1.5 kg.\n11.2 Runtime test: fully charge, run in standard mode with defined load (to be agreed) until cutoff; must be ≥20 min.\n11.3 Safety/EMC: pass conformity assessment to applicable directives/standards; maintain technical documentation.\n11.4 Dust handling: fill/empty cycle tests to confirm no leakage and user-emptying usability.\n\nNotes / gaps to refine: suction performance metrics, bin capacity, noise limit, charging time, and whether a boost mode is required. These depend on positioning and price point.\n",
+  "clarification_questions": [
+    "What is the primary cleaning target: quick spot-cleaning (crumbs/pet hair) or heavier debris, and do you want a minimum suction/power metric (e.g., air watts or kPa) specified?",
+    "Do you require a high-power/boost mode in addition to the ≥20 min standard mode, and if so what minimum boost runtime is acceptable?",
+    "What charging approach and target charge time do you want (e.g., USB-C vs dock/adapter, and 0–100% in ≤3 hours)?"
+  ],
+  "files": [
+    "C:\\Users\\korpraka\\Downloads\\velocity-requirements-web\\backend\\data\\uploads\\d57ae1dc-3a79-4fd8-b6c0-e5ce45dc1ec1_51d0d0a3_DFMEA_Template.xlsx"
+  ],
+  "versions": [
+    {
+      "version": "v1",
+      "timestamp": "2026-07-14T09:13:23.895398+00:00",
+      "source": "generated",
+      "table": {
+        "title": "Battery-Powered Handheld Vacuum Cleaner (Home Use) — Shall Requirements",
+        "columns": [
+          {
+            "name": "Confidentiality",
+            "data_type": "string",
+            "editable": true
+          },
+          {
+            "name": "Internal / Customer",
+            "data_type": "string",
+            "editable": true
+          },
+          {
+            "name": "Scope Boundary",
+            "data_type": "string",
+            "editable": true
+          },
+          {
+            "name": "Status",
+            "data_type": "string",
+            "editable": true
+          },
+          {
+            "name": "Draft",
+            "data_type": "string",
+            "editable": true
+          }
+        ],
+        "rows": [
+          [
+            "Internal",
+            "Customer",
+            "Product",
+            "Draft",
+            "The product shall be a cordless handheld vacuum cleaner intended for dry household debris (dust, crumbs, hair)."
+          ],
+          [
+            "Internal",
+            "Customer",
+            "Product",
+            "Draft",
+            "The product shall have a runtime of at least 20 minutes in Standard mode when tested from full charge to automatic shutoff at 23°C ± 2°C."
+          ],
+          [
+            "Internal",
+            "Customer",
+            "Product",
+            "Draft",
+            "The product mass shall be less than 1.5 kg when measured with the battery installed, an empty dust bin, and the standard nozzle attached."
+          ],
+          [
+            "Internal",
+            "Customer",
+            "Product",
+            "Draft",
+            "The product shall include at least two user-selectable power levels including a Standard mode."
+          ],
+          [
+            "Internal",
+            "Customer",
+            "Product",
+            "Draft",
+            "The product shall provide a battery state-of-charge indication with at least three discrete levels visible to the user during operation."
+          ],
+          [
+            "Internal",
+            "Customer",
+            "Charger",
+            "Draft",
+            "The charging system shall accept EU mains input of 230 V AC nominal, 50 Hz via the supplied charger or charging dock."
+          ],
+          [
+            "Internal",
+            "Customer",
+            "Battery/Power",
+            "Draft",
+            "The battery management system shall provide over-charge, over-discharge, over-current, and over-temperature protection."
+          ],
+          [
+            "Internal",
+            "Customer",
+            "Product",
+            "Draft",
+            "The dust bin shall be removable and user-emptyable without tools."
+          ],
+          [
+            "Internal",
+            "Customer",
+            "Product",
+            "Draft",
+            "The product shall prevent dust leakage from the dust bin when the bin is latched and the vacuum is operated in any orientation within ±90° of upright."
+          ],
+          [
+            "Internal",
+            "Customer",
+            "Product",
+            "Draft",
+            "The product shall include a washable or replaceable final filter that is accessible to the user without tools."
+          ],
+          [
+            "Internal",
+            "Customer",
+            "Product",
+            "Draft",
+            "The exhaust airflow shall show no visible dust plume during a 2-minute operation in Standard mode with a clean, correctly installed filter and empty bin."
+          ],
+          [
+            "Internal",
+            "Customer",
+            "Accessories",
+            "Draft",
+            "The product shall be supplied with a crevice tool (integrated or attachable) compatible with the vacuum without adapters."
+          ],
+          [
+            "Internal",
+            "Customer",
+            "Usability",
+            "Draft",
+            "Primary user controls (power and mode selection) shall be operable with one hand while holding the product in a normal grip."
+          ],
+          [
+            "Internal",
+            "Customer",
+            "Product",
+            "Draft",
+            "The A-weighted sound pressure level shall not exceed 80 dB(A) measured at 1.0 m distance in Standard mode in a semi-anechoic environment."
+          ],
+          [
+            "Internal",
+            "Customer",
+            "Safety/Regulatory",
+            "Draft",
+            "The product shall be CE marked and shall conform to the EMC Directive 2014/30/EU as demonstrated by passing applicable harmonized EMC tests."
+          ],
+          [
+            "Internal",
+            "Customer",
+            "Safety/Regulatory",
+            "Draft",
+            "The charger (and vacuum, where applicable) shall conform to applicable EU electrical safety requirements (e.g., LVD 2014/35/EU where in scope) as demonstrated by passing applicable harmonized safety tests."
+          ],
+          [
+            "Internal",
+            "Customer",
+            "Safety/Regulatory",
+            "Draft",
+            "All homogeneous materials in the product and supplied accessories shall comply with RoHS Directive 2011/65/EU (as amended)."
+          ],
+          [
+            "Internal",
+            "Customer",
+            "Safety/Regulatory",
+            "Draft",
+            "The product shall include WEEE marking in accordance with Directive 2012/19/EU on the product or nameplate, and disposal instructions in the user documentation."
+          ]
+        ]
+      },
+      "analysis": "Stakeholders and needs:\n- End users (homeowners/renters): want quick, convenient cleaning for crumbs/pet hair/dust on floors, upholstery, stairs, and cars; need true cordless mobility, easy emptying, low maintenance, acceptable noise, and enough suction/runtime to finish typical spot-clean tasks.\n- Buyers/gift givers: want clear value (performance vs price), attractive design, and trustworthy safety/compliance.\n- Safety/regulatory bodies (EU): require conformity to applicable directives/standards (CE marking), electrical/battery safety, EMC, chemical/material restrictions, and appropriate labeling/instructions.\n- Manufacturing/operations: need requirements that are testable, achievable under mass production tolerances, and cost-conscious; prefer modular design and serviceable parts.\n- Service/support: want low return rates, robust filters/battery, straightforward troubleshooting, and spare parts availability.\n\nAssumptions based on provided constraints: handheld, battery-powered, home use; must run ≥20 min; mass <1.5 kg (as used); must meet EU safety standards.\n\nProposed requirements (structured, testable):\n\n1) Scope & Use Cases\n1.1 The product shall be a cordless handheld vacuum cleaner intended for dry household debris (dust, crumbs, hair) on hard surfaces and textiles.\n1.2 The product shall not be intended for liquids, hot ashes, or hazardous dusts; these exclusions shall be stated in the user manual and on-device where appropriate.\n\n2) Performance\n2.1 The vacuum shall provide at least one standard cleaning mode that achieves a minimum runtime of 20 minutes (see Power/Runtime verification).\n2.2 The vacuum shall maintain usable suction through at least 80% of the dust bin’s rated capacity without clogging under normal household dust conditions.\n2.3 The product shall include a crevice tool (integrated or attachable) to support corners, sofa gaps, and car interiors.\n2.4 The product shall include a brush tool or motorized mini-brush option for upholstery/hair pickup (may be optional accessory; if optional, it shall be clearly identified).\n\n3) Size, Mass, Ergonomics\n3.1 The product mass (including battery installed, empty dust bin, and standard nozzle attached) shall be <1.5 kg.\n3.2 The product shall be operable with one hand for typical spot-cleaning tasks; controls shall be reachable while holding the handle.\n3.3 The product shall include a stable parking/storage solution (wall mount or freestanding dock) to avoid tip-over during storage.\n\n4) Power, Battery, Charging\n4.1 The vacuum shall be powered by a rechargeable battery pack integrated or user-removable.\n4.2 The vacuum shall meet the minimum runtime requirement: ≥20 minutes in standard mode, measured from full charge to automatic shutoff or performance drop below defined threshold (to be defined).\n4.3 The vacuum shall provide a battery state indication (at least 3-level LED or equivalent) to communicate remaining charge.\n4.4 The product shall include protections against overcharge, over-discharge, over-current, and over-temperature.\n4.5 Charging shall be via an external AC adapter or charging dock compatible with EU mains input (230 V AC nominal, 50 Hz), or USB-C PD; the chosen method shall be specified.\n4.6 The charger and vacuum shall prevent operation hazards during charging (e.g., electrical isolation, thermal management).\n\n5) Filtration & Dust Handling\n5.1 The product shall include a primary separation stage and a washable or replaceable filter.\n5.2 The filtration system shall prevent visible dust plume at the exhaust under normal use with an intact filter.\n5.3 The dust bin shall be user-emptyable without requiring tools.\n5.4 The dust bin capacity shall be specified and marked; the product shall function without leakage when the bin is latched correctly.\n\n6) Noise & Comfort\n6.1 The A-weighted sound power or sound pressure level during standard mode shall be specified; target ≤80 dB(A) at 1 m is recommended (confirm as a requirement if desired).\n6.2 Vibration and heat at user contact surfaces shall remain within safe and comfortable limits during a 20-minute run.\n\n7) Durability & Environmental\n7.1 The product shall withstand typical home drop/impact events (e.g., accidental drop from countertop height) without exposing live parts or battery hazards; cosmetic damage allowed.\n7.2 The product shall operate within an ambient temperature range typical for indoor EU homes (e.g., 5–35°C) and be storable (e.g., 0–40°C) without permanent damage.\n\n8) Safety & Regulatory Compliance (EU)\n8.1 The product shall be CE marked and conform to applicable EU legislation, including:\n- Low Voltage Directive (2014/35/EU) where applicable (depending on voltage limits; often charger falls under LVD)\n- EMC Directive (2014/30/EU)\n- RoHS Directive (2011/65/EU + amendments)\n- REACH (EC) No 1907/2006 for SVHC communication\n- Waste Electrical and Electronic Equipment (WEEE) (2012/19/EU) marking/producer obligations\n- Battery Regulation (EU) 2023/1542 (marking, information, recyclability, and obligations as applicable)\n8.2 The product shall comply with relevant harmonized standards typically used for household vacuum cleaners and battery appliances (final list to be confirmed during compliance planning), including electrical safety, battery safety, and EMC.\n8.3 The product shall include safety labeling and instructions in required EU languages for target markets, including warnings for children, battery handling, filter maintenance, and prohibited materials.\n8.4 The design shall ensure no accessible sharp edges, pinch points, or hot surfaces that could cause injury under normal use and foreseeable misuse.\n\n9) Maintainability & Service\n9.1 Filters designated as user-serviceable shall be replaceable or washable using only household tools (or tool-free).\n9.2 Consumables (filters, brush heads if applicable) shall be available for purchase for a defined support period (e.g., 3–5 years) after end of sale.\n\n10) Packaging & Documentation\n10.1 Packaging shall protect the product from damage during standard parcel shipping.\n10.2 The box shall include: vacuum, charger/dock, standard nozzle(s), crevice tool, manual, and safety/regulatory leaflets.\n10.3 The manual shall include operating steps, cleaning/maintenance, battery care, troubleshooting, and disposal/recycling instructions.\n\n11) Verification (acceptance tests summary)\n11.1 Mass test: weigh production unit with battery, empty bin, standard nozzle; must be <1.5 kg.\n11.2 Runtime test: fully charge, run in standard mode with defined load (to be agreed) until cutoff; must be ≥20 min.\n11.3 Safety/EMC: pass conformity assessment to applicable directives/standards; maintain technical documentation.\n11.4 Dust handling: fill/empty cycle tests to confirm no leakage and user-emptying usability.\n\nNotes / gaps to refine: suction performance metrics, bin capacity, noise limit, charging time, and whether a boost mode is required. These depend on positioning and price point.\n",
+      "stakeholder_needs": "Generate requirements for a battery-powered handheld vacuum\n    cleaner for home use. It should run for at least 20 minutes,\n    weigh under 1.5 kg, and meet EU safety standards."
+    }
+  ],
+  "active_version": 0,
+  "messages": [
+    {
+      "role": "user",
+      "content": "Generate requirements for a battery-powered handheld vacuum\n    cleaner for home use. It should run for at least 20 minutes,\n    weigh under 1.5 kg, and meet EU safety standards."
+    },
+    {
+      "role": "assistant",
+      "content": "Stakeholders and needs:\n- End users (homeowners/renters): want quick, convenient cleaning for crumbs/pet hair/dust on floors, upholstery, stairs, and cars; need true cordless mobility, easy emptying, low maintenance, acceptable noise, and enough suction/runtime to finish typical spot-clean tasks.\n- Buyers/gift givers: want clear value (performance vs price), attractive design, and trustworthy safety/compliance.\n- Safety/regulatory bodies (EU): require conformity to applicable directives/standards (CE marking), electrical/battery safety, EMC, chemical/material restrictions, and appropriate labeling/instructions.\n- Manufacturing/operations: need requirements that are testable, achievable under mass production tolerances, and cost-conscious; prefer modular design and serviceable parts.\n- Service/support: want low return rates, robust filters/battery, straightforward troubleshooting, and spare parts availability.\n\nAssumptions based on provided constraints: handheld, battery-powered, home use; must run ≥20 min; mass <1.5 kg (as used); must meet EU safety standards.\n\nProposed requirements (structured, testable):\n\n1) Scope & Use Cases\n1.1 The product shall be a cordless handheld vacuum cleaner intended for dry household debris (dust, crumbs, hair) on hard surfaces and textiles.\n1.2 The product shall not be intended for liquids, hot ashes, or hazardous dusts; these exclusions shall be stated in the user manual and on-device where appropriate.\n\n2) Performance\n2.1 The vacuum shall provide at least one standard cleaning mode that achieves a minimum runtime of 20 minutes (see Power/Runtime verification).\n2.2 The vacuum shall maintain usable suction through at least 80% of the dust bin’s rated capacity without clogging under normal household dust conditions.\n2.3 The product shall include a crevice tool (integrated or attachable) to support corners, sofa gaps, and car interiors.\n2.4 The product shall include a brush tool or motorized mini-brush option for upholstery/hair pickup (may be optional accessory; if optional, it shall be clearly identified).\n\n3) Size, Mass, Ergonomics\n3.1 The product mass (including battery installed, empty dust bin, and standard nozzle attached) shall be <1.5 kg.\n3.2 The product shall be operable with one hand for typical spot-cleaning tasks; controls shall be reachable while holding the handle.\n3.3 The product shall include a stable parking/storage solution (wall mount or freestanding dock) to avoid tip-over during storage.\n\n4) Power, Battery, Charging\n4.1 The vacuum shall be powered by a rechargeable battery pack integrated or user-removable.\n4.2 The vacuum shall meet the minimum runtime requirement: ≥20 minutes in standard mode, measured from full charge to automatic shutoff or performance drop below defined threshold (to be defined).\n4.3 The vacuum shall provide a battery state indication (at least 3-level LED or equivalent) to communicate remaining charge.\n4.4 The product shall include protections against overcharge, over-discharge, over-current, and over-temperature.\n4.5 Charging shall be via an external AC adapter or charging dock compatible with EU mains input (230 V AC nominal, 50 Hz), or USB-C PD; the chosen method shall be specified.\n4.6 The charger and vacuum shall prevent operation hazards during charging (e.g., electrical isolation, thermal management).\n\n5) Filtration & Dust Handling\n5.1 The product shall include a primary separation stage and a washable or replaceable filter.\n5.2 The filtration system shall prevent visible dust plume at the exhaust under normal use with an intact filter.\n5.3 The dust bin shall be user-emptyable without requiring tools.\n5.4 The dust bin capacity shall be specified and marked; the product shall function without leakage when the bin is latched correctly.\n\n6) Noise & Comfort\n6.1 The A-weighted sound power or sound pressure level during standard mode shall be specified; target ≤80 dB(A) at 1 m is recommended (confirm as a requirement if desired).\n6.2 Vibration and heat at user contact surfaces shall remain within safe and comfortable limits during a 20-minute run.\n\n7) Durability & Environmental\n7.1 The product shall withstand typical home drop/impact events (e.g., accidental drop from countertop height) without exposing live parts or battery hazards; cosmetic damage allowed.\n7.2 The product shall operate within an ambient temperature range typical for indoor EU homes (e.g., 5–35°C) and be storable (e.g., 0–40°C) without permanent damage.\n\n8) Safety & Regulatory Compliance (EU)\n8.1 The product shall be CE marked and conform to applicable EU legislation, including:\n- Low Voltage Directive (2014/35/EU) where applicable (depending on voltage limits; often charger falls under LVD)\n- EMC Directive (2014/30/EU)\n- RoHS Directive (2011/65/EU + amendments)\n- REACH (EC) No 1907/2006 for SVHC communication\n- Waste Electrical and Electronic Equipment (WEEE) (2012/19/EU) marking/producer obligations\n- Battery Regulation (EU) 2023/1542 (marking, information, recyclability, and obligations as applicable)\n8.2 The product shall comply with relevant harmonized standards typically used for household vacuum cleaners and battery appliances (final list to be confirmed during compliance planning), including electrical safety, battery safety, and EMC.\n8.3 The product shall include safety labeling and instructions in required EU languages for target markets, including warnings for children, battery handling, filter maintenance, and prohibited materials.\n8.4 The design shall ensure no accessible sharp edges, pinch points, or hot surfaces that could cause injury under normal use and foreseeable misuse.\n\n9) Maintainability & Service\n9.1 Filters designated as user-serviceable shall be replaceable or washable using only household tools (or tool-free).\n9.2 Consumables (filters, brush heads if applicable) shall be available for purchase for a defined support period (e.g., 3–5 years) after end of sale.\n\n10) Packaging & Documentation\n10.1 Packaging shall protect the product from damage during standard parcel shipping.\n10.2 The box shall include: vacuum, charger/dock, standard nozzle(s), crevice tool, manual, and safety/regulatory leaflets.\n10.3 The manual shall include operating steps, cleaning/maintenance, battery care, troubleshooting, and disposal/recycling instructions.\n\n11) Verification (acceptance tests summary)\n11.1 Mass test: weigh production unit with battery, empty bin, standard nozzle; must be <1.5 kg.\n11.2 Runtime test: fully charge, run in standard mode with defined load (to be agreed) until cutoff; must be ≥20 min.\n11.3 Safety/EMC: pass conformity assessment to applicable directives/standards; maintain technical documentation.\n11.4 Dust handling: fill/empty cycle tests to confirm no leakage and user-emptying usability.\n\nNotes / gaps to refine: suction performance metrics, bin capacity, noise limit, charging time, and whether a boost mode is required. These depend on positioning and price point.\n"
+    }
+  ]
+}

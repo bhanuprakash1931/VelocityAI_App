@@ -1,0 +1,227 @@
+{
+  "id": "919fc31d-4bda-439d-9756-b5c5b0e87b33",
+  "title": "Battery-powered handheld vacuum cleaner for home use. Runtim",
+  "stakeholder_needs": "Battery-powered handheld vacuum cleaner for home use. Runtime >= 20 min, weight < 1.5 kg, EU safety standards.",
+  "analysis": "Stakeholders and needs:\n- End users (home consumers): Want effective cleaning (suction/airflow, attachments for floors/sofa/car), >=20 min real-world runtime, low weight (<1.5 kg) for one-handed use, low noise, easy emptying, washable filters, clear battery status, fast convenient charging via plug-in base, good ergonomics (balance/grip), and reliability.\n- Safety/compliance stakeholders (regulators, notified bodies, retailers): Require conformity to EU safety and compliance: CE marking; Electrical safety (LVD 2014/35/EU if applicable to charger/base; often external PSU under LVD), EMC (2014/30/EU), RoHS (2011/65/EU), WEEE (2012/19/EU), REACH substances, Battery Regulation (EU) 2023/1542, and UN 38.3 for lithium transport. Harmonized standards typically include EN 60335-1 and EN 60335-2-2 (vacuum cleaners), EN 62233 (EMF), and relevant EN 55014 / EN 61000 series for EMC; plus IEC 62133-2 for Li-ion cell safety (commonly used).\n- Manufacturer/engineering: Need clear performance targets and test conditions (runtime definition, suction power, dust pickup), manufacturability, serviceability, cost/BOM targets, supply chain for battery cells/chargers, and quality controls.\n- Retailers/distributors: Need robust packaging, safe shipping of Li-ion, clear labeling/manuals in EU languages, warranty/returns handling.\n- Environment/sustainability stakeholders: Repairability (battery/filter replacement), recyclability, compliance with WEEE and battery collection, energy efficiency of charger (ErP/ecodesign for external power supplies if applicable).\nKey requirement implications from provided constraints:\n- Runtime >=20 min must be tied to a specific mode (standard vs boost) and load condition; battery capacity and motor efficiency must meet it.\n- Weight <1.5 kg likely constrains battery size, motor, and plastics; may imply stick vs handheld-only configuration and accessory set.\n- Indoor 10–40°C requires battery and plastics rated for that ambient, plus charging safety across that range.\n- Plug-in charging base introduces requirements for charger safety, docking stability, and user interaction; may use external certified PSU to simplify compliance.",
+  "clarification_questions": [
+    "How is the 20+ minute runtime defined: in which power mode (standard/eco vs boost), with which attachment, and with what test method/conditions (e.g., EN 60335-2-2 based, empty bin, new filter, ambient temperature)?",
+    "What cleaning performance targets are required beyond runtime/weight (e.g., minimum suction power in kPa or air watts, airflow, dust pickup on hard floor vs carpet, debris volume/bin capacity, and acceptable noise level)?",
+    "What battery/charging expectations should be met (Li-ion chemistry preference, target charge time, replaceable vs sealed battery, charging in 10–40°C, and whether the charger should be an external off-the-shelf CE-certified PSU or integrated)?"
+  ],
+  "files": [],
+  "versions": [
+    {
+      "version": "v1",
+      "timestamp": "2026-07-14T10:58:05.969699+00:00",
+      "source": "generated",
+      "table": {
+        "title": "Requirements Specification",
+        "columns": [
+          {
+            "name": "Item / Component",
+            "data_type": "string",
+            "editable": true
+          },
+          {
+            "name": "Function / Requirement",
+            "data_type": "string",
+            "editable": true
+          },
+          {
+            "name": "Potential Failure Mode",
+            "data_type": "string",
+            "editable": true
+          },
+          {
+            "name": "Potential Effects of Failure",
+            "data_type": "string",
+            "editable": true
+          },
+          {
+            "name": "Severity (S)",
+            "data_type": "string",
+            "editable": true
+          },
+          {
+            "name": "Classification / Special Characteristic",
+            "data_type": "string",
+            "editable": true
+          },
+          {
+            "name": "Potential Causes / Mechanisms",
+            "data_type": "string",
+            "editable": true
+          },
+          {
+            "name": "Occurrence (O)",
+            "data_type": "string",
+            "editable": true
+          },
+          {
+            "name": "Prevention Controls",
+            "data_type": "string",
+            "editable": true
+          },
+          {
+            "name": "Detection Controls",
+            "data_type": "string",
+            "editable": true
+          },
+          {
+            "name": "Detection (D)",
+            "data_type": "string",
+            "editable": true
+          },
+          {
+            "name": "RPN",
+            "data_type": "string",
+            "editable": true
+          },
+          {
+            "name": "Recommended Action",
+            "data_type": "string",
+            "editable": true
+          },
+          {
+            "name": "Owner",
+            "data_type": "string",
+            "editable": true
+          },
+          {
+            "name": "Target Date",
+            "data_type": "string",
+            "editable": true
+          },
+          {
+            "name": "Action Result",
+            "data_type": "string",
+            "editable": true
+          }
+        ],
+        "rows": [
+          [
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "Systems",
+            "",
+            ""
+          ],
+          [
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "Software",
+            "",
+            ""
+          ],
+          [
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "Software",
+            "",
+            ""
+          ],
+          [
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "Security",
+            "",
+            ""
+          ],
+          [
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "UX",
+            "",
+            ""
+          ],
+          [
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "DevOps",
+            "",
+            ""
+          ]
+        ]
+      },
+      "analysis": "Stakeholders and needs:\n- End users (home consumers): Want effective cleaning (suction/airflow, attachments for floors/sofa/car), >=20 min real-world runtime, low weight (<1.5 kg) for one-handed use, low noise, easy emptying, washable filters, clear battery status, fast convenient charging via plug-in base, good ergonomics (balance/grip), and reliability.\n- Safety/compliance stakeholders (regulators, notified bodies, retailers): Require conformity to EU safety and compliance: CE marking; Electrical safety (LVD 2014/35/EU if applicable to charger/base; often external PSU under LVD), EMC (2014/30/EU), RoHS (2011/65/EU), WEEE (2012/19/EU), REACH substances, Battery Regulation (EU) 2023/1542, and UN 38.3 for lithium transport. Harmonized standards typically include EN 60335-1 and EN 60335-2-2 (vacuum cleaners), EN 62233 (EMF), and relevant EN 55014 / EN 61000 series for EMC; plus IEC 62133-2 for Li-ion cell safety (commonly used).\n- Manufacturer/engineering: Need clear performance targets and test conditions (runtime definition, suction power, dust pickup), manufacturability, serviceability, cost/BOM targets, supply chain for battery cells/chargers, and quality controls.\n- Retailers/distributors: Need robust packaging, safe shipping of Li-ion, clear labeling/manuals in EU languages, warranty/returns handling.\n- Environment/sustainability stakeholders: Repairability (battery/filter replacement), recyclability, compliance with WEEE and battery collection, energy efficiency of charger (ErP/ecodesign for external power supplies if applicable).\nKey requirement implications from provided constraints:\n- Runtime >=20 min must be tied to a specific mode (standard vs boost) and load condition; battery capacity and motor efficiency must meet it.\n- Weight <1.5 kg likely constrains battery size, motor, and plastics; may imply stick vs handheld-only configuration and accessory set.\n- Indoor 10–40°C requires battery and plastics rated for that ambient, plus charging safety across that range.\n- Plug-in charging base introduces requirements for charger safety, docking stability, and user interaction; may use external certified PSU to simplify compliance.",
+      "stakeholder_needs": "Battery-powered handheld vacuum cleaner for home use. Runtime >= 20 min, weight < 1.5 kg, EU safety standards."
+    }
+  ],
+  "active_version": 0,
+  "messages": [
+    {
+      "role": "user",
+      "content": "Battery-powered handheld vacuum cleaner for home use. Runtime >= 20 min, weight < 1.5 kg, EU safety standards."
+    },
+    {
+      "role": "assistant",
+      "content": "Stakeholders and needs:\n- End users (home consumers): Want effective cleaning (suction/airflow, attachments for floors/sofa/car), >=20 min real-world runtime, low weight (<1.5 kg) for one-handed use, low noise, easy emptying, washable filters, clear battery status, fast convenient charging via plug-in base, good ergonomics (balance/grip), and reliability.\n- Safety/compliance stakeholders (regulators, notified bodies, retailers): Require conformity to EU safety and compliance: CE marking; Electrical safety (LVD 2014/35/EU if applicable to charger/base; often external PSU under LVD), EMC (2014/30/EU), RoHS (2011/65/EU), WEEE (2012/19/EU), REACH substances, Battery Regulation (EU) 2023/1542, and UN 38.3 for lithium transport. Harmonized standards typically include EN 60335-1 and EN 60335-2-2 (vacuum cleaners), EN 62233 (EMF), and relevant EN 55014 / EN 61000 series for EMC; plus IEC 62133-2 for Li-ion cell safety (commonly used).\n- Manufacturer/engineering: Need clear performance targets and test conditions (runtime definition, suction power, dust pickup), manufacturability, serviceability, cost/BOM targets, supply chain for battery cells/chargers, and quality controls.\n- Retailers/distributors: Need robust packaging, safe shipping of Li-ion, clear labeling/manuals in EU languages, warranty/returns handling.\n- Environment/sustainability stakeholders: Repairability (battery/filter replacement), recyclability, compliance with WEEE and battery collection, energy efficiency of charger (ErP/ecodesign for external power supplies if applicable).\nKey requirement implications from provided constraints:\n- Runtime >=20 min must be tied to a specific mode (standard vs boost) and load condition; battery capacity and motor efficiency must meet it.\n- Weight <1.5 kg likely constrains battery size, motor, and plastics; may imply stick vs handheld-only configuration and accessory set.\n- Indoor 10–40°C requires battery and plastics rated for that ambient, plus charging safety across that range.\n- Plug-in charging base introduces requirements for charger safety, docking stability, and user interaction; may use external certified PSU to simplify compliance."
+    }
+  ]
+}

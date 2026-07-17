@@ -1,0 +1,227 @@
+{
+  "id": "227ad0e8-7442-46d7-8b9b-0d9b739aeb18",
+  "title": "Battery-powered handheld vacuum cleaner for home use. Runtim",
+  "stakeholder_needs": "Battery-powered handheld vacuum cleaner for home use. Runtime >= 20 min, weight < 1.5 kg, EU safety standards.",
+  "analysis": "Stakeholders: end users (cleaning performance, ergonomics, runtime, noise, maintenance), buyers/retailers (price point, claims substantiation, packaging), regulatory/compliance (EU safety, EMC, batteries, chemicals, charger), service/support (replaceable parts, warranty, diagnostics), manufacturing/supply chain (battery cells, motor, plastics, charger, cost/availability), sustainability stakeholders (WEEE, battery take-back, recyclability). Current requirements specify runtime (>=20 min), mass (<1.5 kg), environment (indoor 10–40°C), EU markets, and charging base. Key requirement risks/ambiguities: runtime depends on mode/load and test method; weight definition (with/without accessories, empty vs full bin); which EU standards/Directives apply (LVD may or may not apply depending on voltage; Battery Regulation, EMC, RoHS, REACH, WEEE, Ecodesign/energy labeling not typical but check; charger safety). Missing product-level requirements: suction/airflow performance and pickup efficacy, dustbin capacity, filtration level (e.g., HEPA), noise limit, charging time and battery type/capacity, user interface indicators, durability (drop, cycles), maintainability (filter washing/replacement), safety features (thermal, overcharge, short-circuit), materials and flammability, IP/dust protection for indoor use, accessories/nozzles, storage/stand stability, and claim verification/testing protocols.",
+  "clarification_questions": [
+    "How should the 20+ minute runtime be defined and verified (e.g., standard/eco mode on hard floor with empty bin; new battery at 20°C; minimum end-of-life runtime after X charge cycles)?",
+    "What cleaning performance targets are required (e.g., minimum suction power/airflow or pickup efficiency on hard floor and carpet, dustbin capacity, filtration/HEPA requirement, and maximum noise level)?",
+    "What charging and battery expectations apply (battery chemistry, max charge time, replaceable vs sealed battery, required certifications/markings for charger and product for EU—CE under which Directives/standards)?"
+  ],
+  "files": [],
+  "versions": [
+    {
+      "version": "v1",
+      "timestamp": "2026-07-14T10:53:30.565741+00:00",
+      "source": "generated",
+      "table": {
+        "title": "Requirements Specification",
+        "columns": [
+          {
+            "name": "Item / Component",
+            "data_type": "string",
+            "editable": true
+          },
+          {
+            "name": "Function / Requirement",
+            "data_type": "string",
+            "editable": true
+          },
+          {
+            "name": "Potential Failure Mode",
+            "data_type": "string",
+            "editable": true
+          },
+          {
+            "name": "Potential Effects of Failure",
+            "data_type": "string",
+            "editable": true
+          },
+          {
+            "name": "Severity (S)",
+            "data_type": "string",
+            "editable": true
+          },
+          {
+            "name": "Classification / Special Characteristic",
+            "data_type": "string",
+            "editable": true
+          },
+          {
+            "name": "Potential Causes / Mechanisms",
+            "data_type": "string",
+            "editable": true
+          },
+          {
+            "name": "Occurrence (O)",
+            "data_type": "string",
+            "editable": true
+          },
+          {
+            "name": "Prevention Controls",
+            "data_type": "string",
+            "editable": true
+          },
+          {
+            "name": "Detection Controls",
+            "data_type": "string",
+            "editable": true
+          },
+          {
+            "name": "Detection (D)",
+            "data_type": "string",
+            "editable": true
+          },
+          {
+            "name": "RPN",
+            "data_type": "string",
+            "editable": true
+          },
+          {
+            "name": "Recommended Action",
+            "data_type": "string",
+            "editable": true
+          },
+          {
+            "name": "Owner",
+            "data_type": "string",
+            "editable": true
+          },
+          {
+            "name": "Target Date",
+            "data_type": "string",
+            "editable": true
+          },
+          {
+            "name": "Action Result",
+            "data_type": "string",
+            "editable": true
+          }
+        ],
+        "rows": [
+          [
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "Systems",
+            "",
+            ""
+          ],
+          [
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "Software",
+            "",
+            ""
+          ],
+          [
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "Software",
+            "",
+            ""
+          ],
+          [
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "Security",
+            "",
+            ""
+          ],
+          [
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "UX",
+            "",
+            ""
+          ],
+          [
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "DevOps",
+            "",
+            ""
+          ]
+        ]
+      },
+      "analysis": "Stakeholders: end users (cleaning performance, ergonomics, runtime, noise, maintenance), buyers/retailers (price point, claims substantiation, packaging), regulatory/compliance (EU safety, EMC, batteries, chemicals, charger), service/support (replaceable parts, warranty, diagnostics), manufacturing/supply chain (battery cells, motor, plastics, charger, cost/availability), sustainability stakeholders (WEEE, battery take-back, recyclability). Current requirements specify runtime (>=20 min), mass (<1.5 kg), environment (indoor 10–40°C), EU markets, and charging base. Key requirement risks/ambiguities: runtime depends on mode/load and test method; weight definition (with/without accessories, empty vs full bin); which EU standards/Directives apply (LVD may or may not apply depending on voltage; Battery Regulation, EMC, RoHS, REACH, WEEE, Ecodesign/energy labeling not typical but check; charger safety). Missing product-level requirements: suction/airflow performance and pickup efficacy, dustbin capacity, filtration level (e.g., HEPA), noise limit, charging time and battery type/capacity, user interface indicators, durability (drop, cycles), maintainability (filter washing/replacement), safety features (thermal, overcharge, short-circuit), materials and flammability, IP/dust protection for indoor use, accessories/nozzles, storage/stand stability, and claim verification/testing protocols.",
+      "stakeholder_needs": "Battery-powered handheld vacuum cleaner for home use. Runtime >= 20 min, weight < 1.5 kg, EU safety standards."
+    }
+  ],
+  "active_version": 0,
+  "messages": [
+    {
+      "role": "user",
+      "content": "Battery-powered handheld vacuum cleaner for home use. Runtime >= 20 min, weight < 1.5 kg, EU safety standards."
+    },
+    {
+      "role": "assistant",
+      "content": "Stakeholders: end users (cleaning performance, ergonomics, runtime, noise, maintenance), buyers/retailers (price point, claims substantiation, packaging), regulatory/compliance (EU safety, EMC, batteries, chemicals, charger), service/support (replaceable parts, warranty, diagnostics), manufacturing/supply chain (battery cells, motor, plastics, charger, cost/availability), sustainability stakeholders (WEEE, battery take-back, recyclability). Current requirements specify runtime (>=20 min), mass (<1.5 kg), environment (indoor 10–40°C), EU markets, and charging base. Key requirement risks/ambiguities: runtime depends on mode/load and test method; weight definition (with/without accessories, empty vs full bin); which EU standards/Directives apply (LVD may or may not apply depending on voltage; Battery Regulation, EMC, RoHS, REACH, WEEE, Ecodesign/energy labeling not typical but check; charger safety). Missing product-level requirements: suction/airflow performance and pickup efficacy, dustbin capacity, filtration level (e.g., HEPA), noise limit, charging time and battery type/capacity, user interface indicators, durability (drop, cycles), maintainability (filter washing/replacement), safety features (thermal, overcharge, short-circuit), materials and flammability, IP/dust protection for indoor use, accessories/nozzles, storage/stand stability, and claim verification/testing protocols."
+    }
+  ]
+}

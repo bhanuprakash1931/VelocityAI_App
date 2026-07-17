@@ -1,0 +1,22 @@
+{
+  "id": "fb60c4b7-9a57-4276-b7ff-24021981f40e",
+  "title": "Generate requirements for a battery-powered handheld vacuum\n",
+  "stakeholder_needs": "Generate requirements for a battery-powered handheld vacuum\n    cleaner for home use. It should run for at least 20 minutes,\n    weigh under 1.5 kg, and meet EU safety standards.",
+  "analysis": "The requested system is analyzed from functional, performance, safety, reliability, usability, interface, manufacturing, and verification perspectives. Primary stakeholder intent: Generate requirements for a battery-powered handheld vacuum\n    cleaner for home use. It should run for at least 20 minutes,\n    weigh under 1.5 kg, and meet EU safety standards.. Ambiguous targets should be confirmed before release; every requirement must be measurable, traceable, and independently verifiable.",
+  "clarification_questions": [
+    "What operating and environmental conditions must be supported?"
+  ],
+  "files": [],
+  "versions": [],
+  "active_version": -1,
+  "messages": [
+    {
+      "role": "user",
+      "content": "Generate requirements for a battery-powered handheld vacuum\n    cleaner for home use. It should run for at least 20 minutes,\n    weigh under 1.5 kg, and meet EU safety standards."
+    },
+    {
+      "role": "assistant",
+      "content": "The requested system is analyzed from functional, performance, safety, reliability, usability, interface, manufacturing, and verification perspectives. Primary stakeholder intent: Generate requirements for a battery-powered handheld vacuum\n    cleaner for home use. It should run for at least 20 minutes,\n    weigh under 1.5 kg, and meet EU safety standards.. Ambiguous targets should be confirmed before release; every requirement must be measurable, traceable, and independently verifiable."
+    }
+  ]
+}

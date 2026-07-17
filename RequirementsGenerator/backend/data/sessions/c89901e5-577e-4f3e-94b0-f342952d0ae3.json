@@ -1,0 +1,221 @@
+{
+  "id": "c89901e5-577e-4f3e-94b0-f342952d0ae3",
+  "title": "Battery-powered handheld vacuum cleaner for home use. Runtim",
+  "stakeholder_needs": "Battery-powered handheld vacuum cleaner for home use. Runtime >= 20 min, weight < 1.5 kg, EU safety standards.",
+  "analysis": "Stakeholders include: end users (ergonomics, suction performance on common home debris, noise, ease of emptying/cleaning, charging convenience), purchasers/households (price/value, durability, warranty), regulators/certifiers (EU compliance), manufacturer/service (assemblability, reliability, maintainability, battery lifecycle), and retailers/logistics (packaging, transport safety for Li-ion). Core requirements already stated: >=20 min runtime, <1.5 kg mass, EU safety standards; plus operating environment: indoor, 10–40°C, up to 80% RH. Likely additional requirement areas to formalize: cleaning performance metrics (suction/airflow/pickup on hard floors vs carpets, crevice tool performance), battery/charging (charge time, replaceability, cycle life, battery safety/transport), usability (one-handed operation, center of mass, handle design, bin volume, filtration/HEPA needs, noise limits), reliability (drop resistance, clogging tolerance, filter life), and compliance scope (applicable directives/standards: Low Voltage Directive if applicable, EMC Directive, RoHS, REACH, WEEE, Battery Regulation, IEC/EN 60335 series for household appliances, IEC 62133/UN 38.3 for batteries, and potentially Ecodesign/energy-related requirements).",
+  "clarification_questions": [
+    "What cleaning performance targets are required (e.g., surfaces: hard floor only vs hard+carpet; typical debris; minimum suction/airflow or pickup efficiency; acceptable noise level)?",
+    "What charging and battery expectations apply (charge time, removable vs fixed battery, desired cycle life/retained runtime after N cycles, charging interface such as dock/USB-C, and whether the 20 min runtime is at max power or standard mode)?",
+    "What filtration and hygiene requirements are needed (HEPA grade or allergen capture level, bin capacity, washability of filters, and constraints on dust exposure during emptying)?"
+  ],
+  "files": [],
+  "versions": [
+    {
+      "version": "v1",
+      "timestamp": "2026-07-14T09:50:58.085551+00:00",
+      "source": "generated",
+      "table": {
+        "title": "Handheld Vacuum Cleaner (Battery-Powered) — System Requirements",
+        "columns": [
+          {
+            "name": "Req ID",
+            "data_type": "string",
+            "editable": true
+          },
+          {
+            "name": "Category",
+            "data_type": "string",
+            "editable": true
+          },
+          {
+            "name": "Requirement Statement",
+            "data_type": "string",
+            "editable": true
+          },
+          {
+            "name": "Acceptance Criteria",
+            "data_type": "string",
+            "editable": true
+          },
+          {
+            "name": "Verification Method",
+            "data_type": "string",
+            "editable": true
+          },
+          {
+            "name": "Status",
+            "data_type": "string",
+            "editable": true
+          }
+        ],
+        "rows": [
+          [
+            "REQ-001",
+            "Performance",
+            "The vacuum cleaner SHALL provide a minimum continuous runtime of 20 min on the standard (normal) power setting.",
+            "With a fully charged new battery at 23 ± 2 °C, device operates continuously for ≥ 20.0 min on normal mode until automatic cutoff.",
+            "Test",
+            "Draft"
+          ],
+          [
+            "REQ-002",
+            "Performance",
+            "The vacuum cleaner SHALL recharge from 0% to 100% state of charge within 4 h using the supplied charger.",
+            "From automatic low-voltage cutoff to charge termination, full charge time ≤ 4.0 h at 23 ± 2 °C.",
+            "Test",
+            "Draft"
+          ],
+          [
+            "REQ-003",
+            "Functional",
+            "The vacuum cleaner SHALL provide at least two user-selectable suction modes (Normal and Boost).",
+            "User can select Normal and Boost via dedicated control; mode selection is repeatable for 100 consecutive toggles without malfunction.",
+            "Demonstration",
+            "Draft"
+          ],
+          [
+            "REQ-004",
+            "Performance",
+            "The vacuum cleaner SHALL achieve a sealed suction of at least 10 kPa in Boost mode.",
+            "Measured sealed suction at nozzle interface ≥ 10.0 kPa in Boost mode with clean filter and empty bin.",
+            "Test",
+            "Draft"
+          ],
+          [
+            "REQ-005",
+            "Performance",
+            "The vacuum cleaner SHALL have an A-weighted sound power level of ≤ 80 dB(A) on Normal mode.",
+            "Sound power level LWA ≤ 80 dB(A) per ISO 3744 (or equivalent) at 23 ± 2 °C on Normal mode.",
+            "Test",
+            "Draft"
+          ],
+          [
+            "REQ-006",
+            "Usability",
+            "The handheld unit (including installed battery and dust bin) SHALL have a mass less than 1.5 kg.",
+            "Measured mass on calibrated scale < 1.50 kg.",
+            "Inspection",
+            "Draft"
+          ],
+          [
+            "REQ-007",
+            "Usability",
+            "The vacuum cleaner SHALL support one-handed operation for typical cleaning tasks.",
+            "All primary controls (power and mode) operable with one hand; user can lift, start, and stop device using one hand in ≥ 9/10 attempts across 10 representative users.",
+            "Demonstration",
+            "Draft"
+          ],
+          [
+            "REQ-008",
+            "Functional",
+            "The vacuum cleaner SHALL include a removable dust bin with a minimum capacity of 0.30 L.",
+            "Measured usable dust-bin volume ≥ 0.30 L when filled to manufacturer indicated max line.",
+            "Inspection",
+            "Draft"
+          ],
+          [
+            "REQ-009",
+            "Usability",
+            "The dust bin SHALL be emptyable without direct hand contact with collected debris.",
+            "When emptied per instructions, user does not need to touch debris; verified by task analysis and observation for 10/10 trials.",
+            "Demonstration",
+            "Draft"
+          ],
+          [
+            "REQ-010",
+            "Safety",
+            "The product SHALL comply with EN/IEC 60335-1 and EN/IEC 60335-2-2 safety requirements for household vacuum cleaners.",
+            "Valid CB report or EU test report demonstrating pass results to EN/IEC 60335-1 and EN/IEC 60335-2-2 with no nonconformities.",
+            "Inspection",
+            "Open"
+          ],
+          [
+            "REQ-011",
+            "Safety/Regulatory",
+            "The product SHALL meet EU EMC requirements under the EMC Directive (2014/30/EU).",
+            "Pass emissions and immunity tests to EN 55014-1 and EN 55014-2 (or applicable harmonized equivalents) with no unresolved deviations.",
+            "Test",
+            "Open"
+          ],
+          [
+            "REQ-012",
+            "Safety/Regulatory",
+            "The product SHALL comply with RoHS (2011/65/EU) substance restrictions.",
+            "Technical documentation and supplier declarations show all restricted substances below RoHS maximum concentration values (e.g., Pb < 0.1% w/w in homogeneous materials).",
+            "Inspection",
+            "Open"
+          ],
+          [
+            "REQ-013",
+            "Reliability",
+            "The vacuum cleaner SHALL withstand a drop from 1.0 m onto hardwood without loss of function.",
+            "After 3 drops (each on a different face) from 1.0 m onto 30 mm hardwood over concrete, device powers on and provides suction; no exposed live parts or battery damage.",
+            "Test",
+            "Draft"
+          ],
+          [
+            "REQ-014",
+            "Environmental",
+            "The vacuum cleaner SHALL meet indoor operating environmental limits of 10–40 °C and 20–80% RH (non-condensing).",
+            "Device meets functional performance (on/off, suction, and runtime ≥ 20 min on normal) at 10 °C/20% RH and 40 °C/80% RH, non-condensing.",
+            "Test",
+            "Draft"
+          ],
+          [
+            "REQ-015",
+            "Interface",
+            "The charger input SHALL support 220–240 VAC, 50 Hz mains power for EU households.",
+            "Charger label and test confirm operation over 220–240 VAC, 50 Hz with stable charging and no protective trips.",
+            "Test",
+            "Draft"
+          ],
+          [
+            "REQ-016",
+            "Safety/Regulatory",
+            "The lithium-ion battery pack SHALL comply with UN 38.3 transportation testing requirements.",
+            "UN 38.3 test summary provided showing pass for T.1–T.8 (as applicable to cell/pack configuration).",
+            "Inspection",
+            "Open"
+          ],
+          [
+            "REQ-017",
+            "Reliability",
+            "The battery SHALL retain at least 80% of initial capacity after 300 full charge-discharge cycles.",
+            "After 300 cycles (0–100% equivalent at 23 ± 2 °C), measured discharge capacity ≥ 80% of initial measured capacity.",
+            "Test",
+            "Draft"
+          ],
+          [
+            "REQ-018",
+            "Functional",
+            "The vacuum cleaner SHALL include a washable primary filter that can be removed and reinstalled without tools.",
+            "Filter removal and installation completed without tools in ≤ 60 s by a user following instructions; no damage after 10 wash/dry cycles.",
+            "Demonstration",
+            "Draft"
+          ]
+        ]
+      },
+      "analysis": "Stakeholders include: end users (ergonomics, suction performance on common home debris, noise, ease of emptying/cleaning, charging convenience), purchasers/households (price/value, durability, warranty), regulators/certifiers (EU compliance), manufacturer/service (assemblability, reliability, maintainability, battery lifecycle), and retailers/logistics (packaging, transport safety for Li-ion). Core requirements already stated: >=20 min runtime, <1.5 kg mass, EU safety standards; plus operating environment: indoor, 10–40°C, up to 80% RH. Likely additional requirement areas to formalize: cleaning performance metrics (suction/airflow/pickup on hard floors vs carpets, crevice tool performance), battery/charging (charge time, replaceability, cycle life, battery safety/transport), usability (one-handed operation, center of mass, handle design, bin volume, filtration/HEPA needs, noise limits), reliability (drop resistance, clogging tolerance, filter life), and compliance scope (applicable directives/standards: Low Voltage Directive if applicable, EMC Directive, RoHS, REACH, WEEE, Battery Regulation, IEC/EN 60335 series for household appliances, IEC 62133/UN 38.3 for batteries, and potentially Ecodesign/energy-related requirements).",
+      "stakeholder_needs": "Battery-powered handheld vacuum cleaner for home use. Runtime >= 20 min, weight < 1.5 kg, EU safety standards."
+    }
+  ],
+  "active_version": 0,
+  "messages": [
+    {
+      "role": "user",
+      "content": "Battery-powered handheld vacuum cleaner for home use. Runtime >= 20 min, weight < 1.5 kg, EU safety standards."
+    },
+    {
+      "role": "assistant",
+      "content": "Stakeholders include end-users (home consumers), purchasers (may prioritize price/brand), manufacturer/engineering (feasibility, cost, supply chain), compliance/regulators (EU conformity), service/returns (reliability, maintainability), and retailers (packaging, claims). Current requirements specify three high-level constraints: minimum runtime (>=20 min), maximum weight (<1.5 kg), and compliance with EU safety standards. Key ambiguities affecting engineering trade-offs are: how runtime is measured (power mode, battery age, floor/usage pattern), what is included in the weight (battery, nozzle/accessories), and which specific EU directives/standards apply (e.g., LVD, EMC, RoHS, REACH, Battery Regulation, Machinery/Radio Equipment if applicable). Missing user-critical performance requirements (suction/pickup, dust capacity, charging time, noise, ergonomics, filtration/allergen needs) and lifecycle constraints (battery replaceability, durability, warranty) will drive design choices and verification criteria."
+    },
+    {
+      "role": "user",
+      "content": "Battery-powered handheld vacuum cleaner for home use. Runtime >= 20 min, weight < 1.5 kg, EU safety standards."
+    },
+    {
+      "role": "assistant",
+      "content": "Stakeholders include: end users (ergonomics, suction performance on common home debris, noise, ease of emptying/cleaning, charging convenience), purchasers/households (price/value, durability, warranty), regulators/certifiers (EU compliance), manufacturer/service (assemblability, reliability, maintainability, battery lifecycle), and retailers/logistics (packaging, transport safety for Li-ion). Core requirements already stated: >=20 min runtime, <1.5 kg mass, EU safety standards; plus operating environment: indoor, 10–40°C, up to 80% RH. Likely additional requirement areas to formalize: cleaning performance metrics (suction/airflow/pickup on hard floors vs carpets, crevice tool performance), battery/charging (charge time, replaceability, cycle life, battery safety/transport), usability (one-handed operation, center of mass, handle design, bin volume, filtration/HEPA needs, noise limits), reliability (drop resistance, clogging tolerance, filter life), and compliance scope (applicable directives/standards: Low Voltage Directive if applicable, EMC Directive, RoHS, REACH, WEEE, Battery Regulation, IEC/EN 60335 series for household appliances, IEC 62133/UN 38.3 for batteries, and potentially Ecodesign/energy-related requirements)."
+    }
+  ]
+}

@@ -1,0 +1,394 @@
+{
+  "id": "9d459ef4-d34c-4cac-853c-f46486a420fb",
+  "title": "Generate requirements for a battery-powered handheld vacuum\n",
+  "stakeholder_needs": "Generate requirements for a battery-powered handheld vacuum\n    cleaner for home use. It should run for at least 20 minutes,\n    weigh under 1.5 kg, and meet EU safety standards.",
+  "analysis": "Stakeholders: (1) End users want lightweight, convenient cleaning with adequate runtime, strong suction, low noise, easy emptying, and reliable charging. (2) Safety/compliance stakeholders (EU regulators, notified bodies, retailers) need conformity to CE requirements: Low Voltage Directive (if applicable to charger), EMC, RoHS, REACH, Battery Regulation, and relevant harmonized standards (e.g., EN/IEC 60335-1 & -2-2 for household vacuum cleaners; EN 62233 for EMF; IEC 62133/UL-equivalent for Li-ion cell safety; UN 38.3 for transport; IEC 62368-1/60950-1 may apply to external power supplies; EcoDesign/Energy labeling not typical for handheld vacuums but check). (3) Manufacturer/operations need cost targets, manufacturability, durability, serviceability, supply chain stability, and testability. (4) Retailers/customer support want low return rates, clear instructions, spare parts/consumables availability, and robust packaging. Constraints already given: runtime >=20 min, mass <1.5 kg (clarify with/without accessories), EU safety compliance. Functional requirements should cover cleaning performance across common household debris, airflow/suction targets, bin volume, filtration, attachments, charging behavior, indicators, and maintenance. Non-functional requirements: reliability (cycle life), battery life degradation, noise, ergonomics, materials, drop/ingress protection, temperature limits, and compliance documentation. Verification should specify test conditions for runtime, weight, performance, and compliance testing.",
+  "clarification_questions": [
+    "What floor types and cleaning scenarios are in scope (e.g., hard floors only vs carpets, pet hair, car use), and are attachments (crevice tool/brush) required?",
+    "For the 20-minute runtime requirement, what operating mode and test conditions should be used (standard vs max power, with/without brush motor, full vs empty bin, new battery vs end-of-life)?",
+    "Is the <1.5 kg weight limit for the main unit only or including battery and standard accessories, and do you have target price/noise/charging method constraints (USB-C vs dock, replaceable battery vs fixed)?"
+  ],
+  "files": [
+    "C:\\Users\\korpraka\\Downloads\\velocity-requirements-web\\backend\\data\\uploads\\9d459ef4-d34c-4cac-853c-f46486a420fb_e0873798_DFMEA_Template.xlsx"
+  ],
+  "versions": [
+    {
+      "version": "v1",
+      "timestamp": "2026-07-14T10:50:23.474055+00:00",
+      "source": "generated",
+      "table": {
+        "title": "Requirements Specification",
+        "columns": [
+          {
+            "name": "Item / Component",
+            "data_type": "string",
+            "editable": true
+          },
+          {
+            "name": "Function / Requirement",
+            "data_type": "string",
+            "editable": true
+          },
+          {
+            "name": "Potential Failure Mode",
+            "data_type": "string",
+            "editable": true
+          },
+          {
+            "name": "Potential Effects of Failure",
+            "data_type": "string",
+            "editable": true
+          },
+          {
+            "name": "Severity (S)",
+            "data_type": "string",
+            "editable": true
+          },
+          {
+            "name": "Classification / Special Characteristic",
+            "data_type": "string",
+            "editable": true
+          },
+          {
+            "name": "Potential Causes / Mechanisms",
+            "data_type": "string",
+            "editable": true
+          },
+          {
+            "name": "Prevention Controls",
+            "data_type": "string",
+            "editable": true
+          },
+          {
+            "name": "Occurrence (O)",
+            "data_type": "string",
+            "editable": true
+          },
+          {
+            "name": "Detection Controls",
+            "data_type": "string",
+            "editable": true
+          },
+          {
+            "name": "Detection (D)",
+            "data_type": "string",
+            "editable": true
+          },
+          {
+            "name": "RPN = S×O×D",
+            "data_type": "string",
+            "editable": true
+          },
+          {
+            "name": "Action Priority",
+            "data_type": "string",
+            "editable": true
+          },
+          {
+            "name": "Recommended Actions",
+            "data_type": "string",
+            "editable": true
+          },
+          {
+            "name": "Responsibility",
+            "data_type": "string",
+            "editable": true
+          },
+          {
+            "name": "Target Completion Date",
+            "data_type": "string",
+            "editable": true
+          },
+          {
+            "name": "Action Status",
+            "data_type": "string",
+            "editable": true
+          },
+          {
+            "name": "Actions Taken / Evidence",
+            "data_type": "string",
+            "editable": true
+          },
+          {
+            "name": "Completion Date",
+            "data_type": "string",
+            "editable": true
+          },
+          {
+            "name": "Revised Severity",
+            "data_type": "string",
+            "editable": true
+          },
+          {
+            "name": "Revised Occurrence",
+            "data_type": "string",
+            "editable": true
+          },
+          {
+            "name": "Revised Detection",
+            "data_type": "string",
+            "editable": true
+          },
+          {
+            "name": "Revised RPN",
+            "data_type": "string",
+            "editable": true
+          },
+          {
+            "name": "Residual Risk Decision",
+            "data_type": "string",
+            "editable": true
+          },
+          {
+            "name": "Lessons Learned / Reuse Notes",
+            "data_type": "string",
+            "editable": true
+          },
+          {
+            "name": "Linked Requirement ID",
+            "data_type": "string",
+            "editable": true
+          },
+          {
+            "name": "Drawing / CAD Ref.",
+            "data_type": "string",
+            "editable": true
+          },
+          {
+            "name": "Test / Validation Ref.",
+            "data_type": "string",
+            "editable": true
+          },
+          {
+            "name": "Change Request / ECO Ref.",
+            "data_type": "string",
+            "editable": true
+          },
+          {
+            "name": "Supplier / Interface",
+            "data_type": "string",
+            "editable": true
+          },
+          {
+            "name": "Remarks",
+            "data_type": "string",
+            "editable": true
+          }
+        ],
+        "rows": [
+          [
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            ""
+          ],
+          [
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            ""
+          ],
+          [
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            ""
+          ],
+          [
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            ""
+          ],
+          [
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            ""
+          ],
+          [
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            ""
+          ]
+        ]
+      },
+      "analysis": "Stakeholders: (1) End users want lightweight, convenient cleaning with adequate runtime, strong suction, low noise, easy emptying, and reliable charging. (2) Safety/compliance stakeholders (EU regulators, notified bodies, retailers) need conformity to CE requirements: Low Voltage Directive (if applicable to charger), EMC, RoHS, REACH, Battery Regulation, and relevant harmonized standards (e.g., EN/IEC 60335-1 & -2-2 for household vacuum cleaners; EN 62233 for EMF; IEC 62133/UL-equivalent for Li-ion cell safety; UN 38.3 for transport; IEC 62368-1/60950-1 may apply to external power supplies; EcoDesign/Energy labeling not typical for handheld vacuums but check). (3) Manufacturer/operations need cost targets, manufacturability, durability, serviceability, supply chain stability, and testability. (4) Retailers/customer support want low return rates, clear instructions, spare parts/consumables availability, and robust packaging. Constraints already given: runtime >=20 min, mass <1.5 kg (clarify with/without accessories), EU safety compliance. Functional requirements should cover cleaning performance across common household debris, airflow/suction targets, bin volume, filtration, attachments, charging behavior, indicators, and maintenance. Non-functional requirements: reliability (cycle life), battery life degradation, noise, ergonomics, materials, drop/ingress protection, temperature limits, and compliance documentation. Verification should specify test conditions for runtime, weight, performance, and compliance testing.",
+      "stakeholder_needs": "Generate requirements for a battery-powered handheld vacuum\n    cleaner for home use. It should run for at least 20 minutes,\n    weigh under 1.5 kg, and meet EU safety standards."
+    }
+  ],
+  "active_version": 0,
+  "messages": [
+    {
+      "role": "user",
+      "content": "Generate requirements for a battery-powered handheld vacuum\n    cleaner for home use. It should run for at least 20 minutes,\n    weigh under 1.5 kg, and meet EU safety standards."
+    },
+    {
+      "role": "assistant",
+      "content": "Stakeholders: (1) End users want lightweight, convenient cleaning with adequate runtime, strong suction, low noise, easy emptying, and reliable charging. (2) Safety/compliance stakeholders (EU regulators, notified bodies, retailers) need conformity to CE requirements: Low Voltage Directive (if applicable to charger), EMC, RoHS, REACH, Battery Regulation, and relevant harmonized standards (e.g., EN/IEC 60335-1 & -2-2 for household vacuum cleaners; EN 62233 for EMF; IEC 62133/UL-equivalent for Li-ion cell safety; UN 38.3 for transport; IEC 62368-1/60950-1 may apply to external power supplies; EcoDesign/Energy labeling not typical for handheld vacuums but check). (3) Manufacturer/operations need cost targets, manufacturability, durability, serviceability, supply chain stability, and testability. (4) Retailers/customer support want low return rates, clear instructions, spare parts/consumables availability, and robust packaging. Constraints already given: runtime >=20 min, mass <1.5 kg (clarify with/without accessories), EU safety compliance. Functional requirements should cover cleaning performance across common household debris, airflow/suction targets, bin volume, filtration, attachments, charging behavior, indicators, and maintenance. Non-functional requirements: reliability (cycle life), battery life degradation, noise, ergonomics, materials, drop/ingress protection, temperature limits, and compliance documentation. Verification should specify test conditions for runtime, weight, performance, and compliance testing."
+    }
+  ]
+}

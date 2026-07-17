@@ -1,0 +1,361 @@
+{
+  "id": "1bd4280b-0979-4576-a52d-d7ae30b56d28",
+  "title": "Generate requirements for a battery-powered handheld vacuum\n",
+  "stakeholder_needs": "Generate requirements for a battery-powered handheld vacuum\n    cleaner for home use. It should run for at least 20 minutes,\n    weigh under 1.5 kg, and meet EU safety standards.",
+  "analysis": "Stakeholders: (1) End users/homeowners want convenient quick-clean, low fatigue (<=1.5 kg), adequate suction, simple maintenance, low noise, and clear battery/runtime expectations (>=20 min) with reliable performance over battery life. (2) Safety/regulatory stakeholders require EU compliance: CE marking under applicable directives/regulations (e.g., Low Voltage Directive if applicable, EMC Directive, RoHS, REACH, Battery Regulation, WEEE), plus harmonized standards (e.g., EN/IEC 60335 series for household appliances, EN 62233 EMF, EN 55014 EMC). (3) Manufacturing/QA need testable, measurable requirements (runtime test conditions, weight definition incl. battery/accessories, dust capacity, durability, drop/ingress, charging safety). (4) Service/support and sustainability stakeholders care about battery replacement/repair, recyclability, documentation, and warranty. Initial requirements should be measurable and verifiable, but some critical parameters are missing (runtime conditions, suction performance targets, charging method, and exact regulatory scope).",
+  "clarification_questions": [
+    "Define the runtime test conditions for the 20-minute requirement (power mode, surface type, with/without brush head, new vs. aged battery, ambient temperature).",
+    "What suction/performance target is required (e.g., air watts/kPa/CFM, debris pickup on hard floor vs. carpet, dust bin capacity)?",
+    "What charging and battery expectations apply (USB-C vs. dock, charge time, removable vs. sealed battery, battery chemistry, and any constraints on noise level)?"
+  ],
+  "files": [
+    "C:\\Users\\korpraka\\Downloads\\velocity-requirements-web\\backend\\data\\uploads\\1bd4280b-0979-4576-a52d-d7ae30b56d28_ca251e10_DFMEA_Template.xlsx"
+  ],
+  "versions": [
+    {
+      "version": "v1",
+      "timestamp": "2026-07-14T11:18:23.124020+00:00",
+      "source": "generated",
+      "table": {
+        "title": "DFMEA — Generate requirements for a battery-powered handheld vacuum\n",
+        "columns": [
+          {
+            "name": "Item / Component",
+            "data_type": "string",
+            "editable": true
+          },
+          {
+            "name": "Function / Requirement",
+            "data_type": "string",
+            "editable": true
+          },
+          {
+            "name": "Potential Failure Mode",
+            "data_type": "string",
+            "editable": true
+          },
+          {
+            "name": "Potential Effects of Failure",
+            "data_type": "string",
+            "editable": true
+          },
+          {
+            "name": "Severity (S)",
+            "data_type": "string",
+            "editable": true
+          },
+          {
+            "name": "Classification / Special Characteristic",
+            "data_type": "string",
+            "editable": true
+          },
+          {
+            "name": "Potential Causes / Mechanisms",
+            "data_type": "string",
+            "editable": true
+          },
+          {
+            "name": "Prevention Controls",
+            "data_type": "string",
+            "editable": true
+          },
+          {
+            "name": "Occurrence (O)",
+            "data_type": "string",
+            "editable": true
+          },
+          {
+            "name": "Detection Controls",
+            "data_type": "string",
+            "editable": true
+          },
+          {
+            "name": "Detection (D)",
+            "data_type": "string",
+            "editable": true
+          },
+          {
+            "name": "RPN = S×O×D",
+            "data_type": "string",
+            "editable": true
+          },
+          {
+            "name": "Action Priority",
+            "data_type": "string",
+            "editable": true
+          },
+          {
+            "name": "Recommended Actions",
+            "data_type": "string",
+            "editable": true
+          },
+          {
+            "name": "Responsibility",
+            "data_type": "string",
+            "editable": true
+          },
+          {
+            "name": "Target Completion Date",
+            "data_type": "string",
+            "editable": true
+          },
+          {
+            "name": "Action Status",
+            "data_type": "string",
+            "editable": true
+          },
+          {
+            "name": "Actions Taken / Evidence",
+            "data_type": "string",
+            "editable": true
+          },
+          {
+            "name": "Completion Date",
+            "data_type": "string",
+            "editable": true
+          },
+          {
+            "name": "Revised Severity",
+            "data_type": "string",
+            "editable": true
+          },
+          {
+            "name": "Revised Occurrence",
+            "data_type": "string",
+            "editable": true
+          },
+          {
+            "name": "Revised Detection",
+            "data_type": "string",
+            "editable": true
+          },
+          {
+            "name": "Revised RPN",
+            "data_type": "string",
+            "editable": true
+          },
+          {
+            "name": "Residual Risk Decision",
+            "data_type": "string",
+            "editable": true
+          },
+          {
+            "name": "Lessons Learned / Reuse Notes",
+            "data_type": "string",
+            "editable": true
+          },
+          {
+            "name": "Linked Requirement ID",
+            "data_type": "string",
+            "editable": true
+          },
+          {
+            "name": "Drawing / CAD Ref.",
+            "data_type": "string",
+            "editable": true
+          },
+          {
+            "name": "Test / Validation Ref.",
+            "data_type": "string",
+            "editable": true
+          },
+          {
+            "name": "Change Request / ECO Ref.",
+            "data_type": "string",
+            "editable": true
+          },
+          {
+            "name": "Supplier / Interface",
+            "data_type": "string",
+            "editable": true
+          },
+          {
+            "name": "Remarks",
+            "data_type": "string",
+            "editable": true
+          }
+        ],
+        "rows": [
+          [
+            "Battery pack",
+            "Battery pack SHALL prevent thermal runaway",
+            "Cell overcharge / BMS failure",
+            "Fire, injury, product recall",
+            "9",
+            "Safety Critical",
+            "BMS IC failure; welded FET",
+            "Dual-threshold protection; BMS firmware validation",
+            "3",
+            "EOL charge/discharge cycle test",
+            "3",
+            "TBD",
+            "TBD",
+            "TBD",
+            "TBD",
+            "TBD",
+            "TBD",
+            "TBD",
+            "TBD",
+            "TBD",
+            "TBD",
+            "TBD",
+            "TBD",
+            "TBD",
+            "TBD",
+            "TBD",
+            "TBD",
+            "TBD",
+            "TBD",
+            "TBD",
+            "TBD"
+          ],
+          [
+            "Motor / Fan assembly",
+            "Motor SHALL maintain suction under nominal debris load",
+            "Motor stall due to blockage",
+            "Loss of suction; motor overheating; shutdown",
+            "7",
+            "Performance Critical",
+            "Debris bypass inlet grille; filter saturated",
+            "Inlet grille mesh 4 mm max; filter capacity analysis",
+            "4",
+            "Stall detection in firmware; EOL suction test",
+            "4",
+            "TBD",
+            "TBD",
+            "TBD",
+            "TBD",
+            "TBD",
+            "TBD",
+            "TBD",
+            "TBD",
+            "TBD",
+            "TBD",
+            "TBD",
+            "TBD",
+            "TBD",
+            "TBD",
+            "TBD",
+            "TBD",
+            "TBD",
+            "TBD",
+            "TBD",
+            "TBD"
+          ],
+          [
+            "Filter assembly",
+            "Filter SHALL trap >= 99% of particles >= 0.3 µm",
+            "Filter bypass / seal failure",
+            "Dust emission; user exposure; EU standard non-compliance",
+            "7",
+            "Regulatory",
+            "Incorrect filter installation; seal deformation",
+            "Keyed filter housing; seal torque specification",
+            "3",
+            "Filtration efficiency test per EN 60312",
+            "3",
+            "TBD",
+            "TBD",
+            "TBD",
+            "TBD",
+            "TBD",
+            "TBD",
+            "TBD",
+            "TBD",
+            "TBD",
+            "TBD",
+            "TBD",
+            "TBD",
+            "TBD",
+            "TBD",
+            "TBD",
+            "TBD",
+            "TBD",
+            "TBD",
+            "TBD",
+            "TBD"
+          ],
+          [
+            "Charging base / interface",
+            "Charging system SHALL restore full charge within 4 h",
+            "Overcharge / wrong charge profile",
+            "Battery damage; safety event; reduced battery life",
+            "8",
+            "Safety Critical",
+            "Charger IC failure; firmware bug",
+            "Certified charger IC; charge profile validation",
+            "2",
+            "EOL charge current / voltage measurement",
+            "3",
+            "TBD",
+            "TBD",
+            "TBD",
+            "TBD",
+            "TBD",
+            "TBD",
+            "TBD",
+            "TBD",
+            "TBD",
+            "TBD",
+            "TBD",
+            "TBD",
+            "TBD",
+            "TBD",
+            "TBD",
+            "TBD",
+            "TBD",
+            "TBD",
+            "TBD",
+            "TBD"
+          ],
+          [
+            "Housing / structural shell",
+            "Housing SHALL withstand 1 m drop onto hard floor without cracking",
+            "Housing crack on drop",
+            "Loss of structural integrity; user injury; ingress of debris",
+            "6",
+            "Reliability",
+            "Wall thickness insufficient; material brittleness",
+            "FEA drop simulation; material selection review",
+            "3",
+            "1 m drop test on all faces (6 faces)",
+            "3",
+            "TBD",
+            "TBD",
+            "TBD",
+            "TBD",
+            "TBD",
+            "TBD",
+            "TBD",
+            "TBD",
+            "TBD",
+            "TBD",
+            "TBD",
+            "TBD",
+            "TBD",
+            "TBD",
+            "TBD",
+            "TBD",
+            "TBD",
+            "TBD",
+            "TBD",
+            "TBD"
+          ]
+        ]
+      },
+      "analysis": "Stakeholders: (1) End users/homeowners want convenient quick-clean, low fatigue (<=1.5 kg), adequate suction, simple maintenance, low noise, and clear battery/runtime expectations (>=20 min) with reliable performance over battery life. (2) Safety/regulatory stakeholders require EU compliance: CE marking under applicable directives/regulations (e.g., Low Voltage Directive if applicable, EMC Directive, RoHS, REACH, Battery Regulation, WEEE), plus harmonized standards (e.g., EN/IEC 60335 series for household appliances, EN 62233 EMF, EN 55014 EMC). (3) Manufacturing/QA need testable, measurable requirements (runtime test conditions, weight definition incl. battery/accessories, dust capacity, durability, drop/ingress, charging safety). (4) Service/support and sustainability stakeholders care about battery replacement/repair, recyclability, documentation, and warranty. Initial requirements should be measurable and verifiable, but some critical parameters are missing (runtime conditions, suction performance targets, charging method, and exact regulatory scope).",
+      "stakeholder_needs": "Generate requirements for a battery-powered handheld vacuum\n    cleaner for home use. It should run for at least 20 minutes,\n    weigh under 1.5 kg, and meet EU safety standards."
+    }
+  ],
+  "active_version": 0,
+  "messages": [
+    {
+      "role": "user",
+      "content": "Generate requirements for a battery-powered handheld vacuum\n    cleaner for home use. It should run for at least 20 minutes,\n    weigh under 1.5 kg, and meet EU safety standards."
+    },
+    {
+      "role": "assistant",
+      "content": "Stakeholders: (1) End users/homeowners want convenient quick-clean, low fatigue (<=1.5 kg), adequate suction, simple maintenance, low noise, and clear battery/runtime expectations (>=20 min) with reliable performance over battery life. (2) Safety/regulatory stakeholders require EU compliance: CE marking under applicable directives/regulations (e.g., Low Voltage Directive if applicable, EMC Directive, RoHS, REACH, Battery Regulation, WEEE), plus harmonized standards (e.g., EN/IEC 60335 series for household appliances, EN 62233 EMF, EN 55014 EMC). (3) Manufacturing/QA need testable, measurable requirements (runtime test conditions, weight definition incl. battery/accessories, dust capacity, durability, drop/ingress, charging safety). (4) Service/support and sustainability stakeholders care about battery replacement/repair, recyclability, documentation, and warranty. Initial requirements should be measurable and verifiable, but some critical parameters are missing (runtime conditions, suction performance targets, charging method, and exact regulatory scope)."
+    }
+  ]
+}

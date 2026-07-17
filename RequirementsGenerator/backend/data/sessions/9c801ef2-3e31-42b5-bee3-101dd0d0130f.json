@@ -1,0 +1,227 @@
+{
+  "id": "9c801ef2-3e31-42b5-bee3-101dd0d0130f",
+  "title": "Battery-powered handheld vacuum cleaner for home use. Runtim",
+  "stakeholder_needs": "Battery-powered handheld vacuum cleaner for home use. Runtime >= 20 min, weight < 1.5 kg, EU safety standards.",
+  "analysis": "Stakeholders include end users (homeowners/tenants) prioritizing portability (<1.5 kg), adequate runtime (>=20 min), effective cleaning performance, low noise, easy maintenance, and convenient charging via a base. Secondary users may include people with limited strength requiring ergonomic handling and balanced center of gravity. Market/regulatory stakeholders require compliance with applicable EU safety and product requirements (e.g., electrical safety, EMC, battery safety, chemicals/material restrictions, labeling/documentation). Retailers/distributors care about durability, returns, packaging, and clear claims substantiation (runtime, weight). Service/operations stakeholders care about battery life cycle, filter replacement availability, cleaning/emptying process, and charging safety. Engineering/manufacturing stakeholders need clear targets for suction/airflow, dust capacity, battery chemistry/capacity, charge time, noise, reliability, and cost constraints, plus environmental conditions (indoor 10–40°C) and use cases (quick pickups vs whole-room).",
+  "clarification_questions": [
+    "What cleaning performance targets should be met (e.g., intended debris types/surfaces, minimum suction power/airflow, and dustbin capacity)?",
+    "What are the charging and battery requirements beyond a plug-in base (e.g., max full charge time, replaceable vs non-replaceable battery, expected cycle life, and runtime definition—normal vs max mode)?",
+    "What constraints apply for noise, price/cost target, and key EU compliance scope (e.g., specific directives/standards you want explicitly covered such as CE, RoHS/REACH, WEEE, EMC, battery transport/safety)?"
+  ],
+  "files": [],
+  "versions": [
+    {
+      "version": "v1",
+      "timestamp": "2026-07-14T11:03:06.884226+00:00",
+      "source": "generated",
+      "table": {
+        "title": "Requirements Specification",
+        "columns": [
+          {
+            "name": "Item / Component",
+            "data_type": "string",
+            "editable": true
+          },
+          {
+            "name": "Function / Requirement",
+            "data_type": "string",
+            "editable": true
+          },
+          {
+            "name": "Potential Failure Mode",
+            "data_type": "string",
+            "editable": true
+          },
+          {
+            "name": "Potential Effects of Failure",
+            "data_type": "string",
+            "editable": true
+          },
+          {
+            "name": "Severity (S)",
+            "data_type": "string",
+            "editable": true
+          },
+          {
+            "name": "Classification / Special Characteristic",
+            "data_type": "string",
+            "editable": true
+          },
+          {
+            "name": "Potential Causes / Mechanisms",
+            "data_type": "string",
+            "editable": true
+          },
+          {
+            "name": "Occurrence (O)",
+            "data_type": "string",
+            "editable": true
+          },
+          {
+            "name": "Prevention Controls",
+            "data_type": "string",
+            "editable": true
+          },
+          {
+            "name": "Detection Controls",
+            "data_type": "string",
+            "editable": true
+          },
+          {
+            "name": "Detection (D)",
+            "data_type": "string",
+            "editable": true
+          },
+          {
+            "name": "RPN",
+            "data_type": "string",
+            "editable": true
+          },
+          {
+            "name": "Recommended Action",
+            "data_type": "string",
+            "editable": true
+          },
+          {
+            "name": "Owner",
+            "data_type": "string",
+            "editable": true
+          },
+          {
+            "name": "Target Date",
+            "data_type": "string",
+            "editable": true
+          },
+          {
+            "name": "Action Result",
+            "data_type": "string",
+            "editable": true
+          }
+        ],
+        "rows": [
+          [
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "Systems",
+            "",
+            ""
+          ],
+          [
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "Software",
+            "",
+            ""
+          ],
+          [
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "Software",
+            "",
+            ""
+          ],
+          [
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "Security",
+            "",
+            ""
+          ],
+          [
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "UX",
+            "",
+            ""
+          ],
+          [
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "DevOps",
+            "",
+            ""
+          ]
+        ]
+      },
+      "analysis": "Stakeholders include end users (homeowners/tenants) prioritizing portability (<1.5 kg), adequate runtime (>=20 min), effective cleaning performance, low noise, easy maintenance, and convenient charging via a base. Secondary users may include people with limited strength requiring ergonomic handling and balanced center of gravity. Market/regulatory stakeholders require compliance with applicable EU safety and product requirements (e.g., electrical safety, EMC, battery safety, chemicals/material restrictions, labeling/documentation). Retailers/distributors care about durability, returns, packaging, and clear claims substantiation (runtime, weight). Service/operations stakeholders care about battery life cycle, filter replacement availability, cleaning/emptying process, and charging safety. Engineering/manufacturing stakeholders need clear targets for suction/airflow, dust capacity, battery chemistry/capacity, charge time, noise, reliability, and cost constraints, plus environmental conditions (indoor 10–40°C) and use cases (quick pickups vs whole-room).",
+      "stakeholder_needs": "Battery-powered handheld vacuum cleaner for home use. Runtime >= 20 min, weight < 1.5 kg, EU safety standards."
+    }
+  ],
+  "active_version": 0,
+  "messages": [
+    {
+      "role": "user",
+      "content": "Battery-powered handheld vacuum cleaner for home use. Runtime >= 20 min, weight < 1.5 kg, EU safety standards."
+    },
+    {
+      "role": "assistant",
+      "content": "Stakeholders include end users (homeowners/tenants) prioritizing portability (<1.5 kg), adequate runtime (>=20 min), effective cleaning performance, low noise, easy maintenance, and convenient charging via a base. Secondary users may include people with limited strength requiring ergonomic handling and balanced center of gravity. Market/regulatory stakeholders require compliance with applicable EU safety and product requirements (e.g., electrical safety, EMC, battery safety, chemicals/material restrictions, labeling/documentation). Retailers/distributors care about durability, returns, packaging, and clear claims substantiation (runtime, weight). Service/operations stakeholders care about battery life cycle, filter replacement availability, cleaning/emptying process, and charging safety. Engineering/manufacturing stakeholders need clear targets for suction/airflow, dust capacity, battery chemistry/capacity, charge time, noise, reliability, and cost constraints, plus environmental conditions (indoor 10–40°C) and use cases (quick pickups vs whole-room)."
+    }
+  ]
+}
