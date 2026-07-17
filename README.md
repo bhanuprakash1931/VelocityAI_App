@@ -19,7 +19,7 @@ uvicorn app.main:app --reload --port 8000
 cd frontend
 npm install
 cp .env.example .env
-npm run dev
+npm run dev -- --host 0.0.0.0 
 ```
 Open http://localhost:5173. API docs: http://localhost:8000/docs.
 
