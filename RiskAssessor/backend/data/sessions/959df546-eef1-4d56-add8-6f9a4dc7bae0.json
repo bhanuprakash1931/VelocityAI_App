@@ -1,0 +1,327 @@
+{
+  "id": "959df546-eef1-4d56-add8-6f9a4dc7bae0",
+  "title": "Product/System: Cordless Stick Vacuum Cleaner for Household ",
+  "stakeholder_needs": "Product/System: Cordless Stick Vacuum Cleaner for Household Use\n \nWe are developing a cordless stick vacuum cleaner for residential cleaning applications. The product is intended to clean hard floors, low-pile carpets, high-pile carpets, stairs, sofas, curtains, corners/edges, and car interiors. The product should support both stick mode and handheld mode with interchangeable attachments such as a motorized floor brush, crevice tool, dusting brush, and upholstery tool.\n \nKey operating targets:\n- Runtime: at least 45 minutes in eco/standard mode and at least 15 minutes in turbo mode.\n- Charging time: full charge within 4 hours.\n- Suction: at least 18 kPa in standard mode and at least 25 kPa in turbo mode.\n- Dust bin capacity: at least 0.6 L.\n- Noise: no more than 70 dBA in standard mode and no more than 78 dBA in turbo mode measured at 1 meter.\n- Weight: full stick assembly no more than 3.0 kg; handheld unit no more than 1.5 kg.\n- Filtration: capture at least 99.5% of particles down to 0.3 microns.\n- Dust emptying: user should empty the dust bin in no more than 3 steps and within 30 seconds without directly touching debris.\n \nRisk assessment scope:\nPlease perform a DFMEA for the major subsystems and user-facing functions, including suction/airflow path, battery and charging system, dust bin and sealing, filtration system, motor/thermal management, handle and attachment interfaces, user controls, and emptying/maintenance operations.\n \nThe DFMEA should identify potential failure modes, effects, causes, severity, occurrence, detection, current design controls, RPN, and recommended actions. Prioritize safety, reliability, user experience, manufacturability, and serviceability risks.",
+  "analysis": "Risk analysis for: Product/System: Cordless Stick Vacuum Cleaner for Household Use\n \nWe are developing a cordless stick vacuum cleaner for residential cleaning applications. The product is intended to clean hard floors, low-pile carpets, high-pile carpets, stairs, sofas, curtains, corners/edges, and car interiors. The product should support both stick mode and handheld mode with interchangeable attachments such as a motorized floor brush, crevice tool, dusting brush, and upholstery tool.\n \nKey operating targets:\n- Runtime: at least 45 minutes in eco/standard mode and at least 15 minutes in turbo mode.\n- Charging time: full charge within 4 hours.\n- Suction: at least 18 kPa in standard mode and at least 25 kPa in turbo mode.\n- Dust bin capacity: at least 0.6 L.\n- Noise: no more than 70 dBA in standard mode and no more than 78 dBA in turbo mode measured at 1 meter.\n- Weight: full stick assembly no more than 3.0 kg; handheld unit no more than 1.5 kg.\n- Filtration: capture at least 99.5% of particles down to 0.3 microns.\n- Dust emptying: user should empty the dust bin in no more than 3 steps and within 30 seconds without directly touching debris.\n \nRisk assessment scope:\nPlease perform a DFMEA for the major subsystems and user-facing functions, including suction/airflow path, battery and charging system, dust bin and sealing, filtration system, motor/thermal management, handle and attachment interfaces, user controls, and emptying/maintenance operations.\n \nThe DFMEA should identify potential failure modes, effects, causes, severity, occurrence, detection, current design controls, RPN, and recommended actions. Prioritize safety, reliability, user experience, manufacturability, and serviceability risks..\n\n**Summary**: The described context has been assessed for strategic, operational, financial, compliance, safety, security, technology, supplier, schedule, quality, and reputational risk exposure.\n\n**Key Risk Themes**:\n- Unclear performance targets and thresholds create measurement risk.\n- Missing regulatory, safety, and standards context creates compliance risk.\n- Undefined operating environment creates operational and reliability risk.\n- Unspecified owner/accountability creates governance risk.\n\n**Note**: Provide measurable targets, applicable standards, operating conditions, and risk appetite to improve the quality of this assessment.",
+  "clarification_questions": [
+    "What operating and environmental conditions must be supported?",
+    "Who are the risk owners and accountable stakeholders?"
+  ],
+  "files": [
+    "C:\\Users\\korpraka\\Downloads\\velocity-requirements-web\\RiskAssessor\\backend\\data\\uploads\\959df546-eef1-4d56-add8-6f9a4dc7bae0_19b38d38_DFMEA_Template.xlsx"
+  ],
+  "versions": [
+    {
+      "version": "v1",
+      "timestamp": "2026-07-18T14:54:47.830830+00:00",
+      "source": "generated",
+      "table": {
+        "title": "DFMEA / Risk Register — Product/System: Cordless Stick Vacuum Cleaner for Household ",
+        "columns": [
+          {
+            "name": "Item / Component",
+            "data_type": "string",
+            "editable": true
+          },
+          {
+            "name": "Function / Requirement",
+            "data_type": "string",
+            "editable": true
+          },
+          {
+            "name": "Potential Failure Mode",
+            "data_type": "string",
+            "editable": true
+          },
+          {
+            "name": "Potential Effects of Failure",
+            "data_type": "string",
+            "editable": true
+          },
+          {
+            "name": "Severity (S)",
+            "data_type": "string",
+            "editable": true
+          },
+          {
+            "name": "Classification / Special Characteristic",
+            "data_type": "string",
+            "editable": true
+          },
+          {
+            "name": "Potential Causes / Mechanisms",
+            "data_type": "string",
+            "editable": true
+          },
+          {
+            "name": "Prevention Controls",
+            "data_type": "string",
+            "editable": true
+          },
+          {
+            "name": "Occurrence (O)",
+            "data_type": "string",
+            "editable": true
+          },
+          {
+            "name": "Detection Controls",
+            "data_type": "string",
+            "editable": true
+          },
+          {
+            "name": "Detection (D)",
+            "data_type": "string",
+            "editable": true
+          },
+          {
+            "name": "RPN = S×O×D",
+            "data_type": "string",
+            "editable": true
+          },
+          {
+            "name": "Action Priority",
+            "data_type": "string",
+            "editable": true
+          },
+          {
+            "name": "Recommended Actions",
+            "data_type": "string",
+            "editable": true
+          },
+          {
+            "name": "Responsibility",
+            "data_type": "string",
+            "editable": true
+          },
+          {
+            "name": "Target Completion Date",
+            "data_type": "string",
+            "editable": true
+          },
+          {
+            "name": "Action Status",
+            "data_type": "string",
+            "editable": true
+          },
+          {
+            "name": "Actions Taken / Evidence",
+            "data_type": "string",
+            "editable": true
+          },
+          {
+            "name": "Completion Date",
+            "data_type": "string",
+            "editable": true
+          },
+          {
+            "name": "Revised Severity",
+            "data_type": "string",
+            "editable": true
+          },
+          {
+            "name": "Revised Occurrence",
+            "data_type": "string",
+            "editable": true
+          },
+          {
+            "name": "Revised Detection",
+            "data_type": "string",
+            "editable": true
+          },
+          {
+            "name": "Revised RPN",
+            "data_type": "string",
+            "editable": true
+          },
+          {
+            "name": "Residual Risk Decision",
+            "data_type": "string",
+            "editable": true
+          },
+          {
+            "name": "Lessons Learned / Reuse Notes",
+            "data_type": "string",
+            "editable": true
+          },
+          {
+            "name": "Linked Requirement ID",
+            "data_type": "string",
+            "editable": true
+          },
+          {
+            "name": "Drawing / CAD Ref.",
+            "data_type": "string",
+            "editable": true
+          },
+          {
+            "name": "Test / Validation Ref.",
+            "data_type": "string",
+            "editable": true
+          },
+          {
+            "name": "Change Request / ECO Ref.",
+            "data_type": "string",
+            "editable": true
+          },
+          {
+            "name": "Supplier / Interface",
+            "data_type": "string",
+            "editable": true
+          },
+          {
+            "name": "Remarks",
+            "data_type": "string",
+            "editable": true
+          }
+        ],
+        "rows": [
+          [
+            "Battery pack",
+            "TBD",
+            "Cell overcharge / BMS failure",
+            "Fire, injury, product recall",
+            "9",
+            "TBD",
+            "BMS IC failure; welded FET",
+            "Dual-threshold BMS protection; firmware validation",
+            "3",
+            "EOL charge cycle test",
+            "3",
+            "TBD",
+            "TBD",
+            "Add independent hardware cutoff; increase BMS coverage",
+            "TBD",
+            "TBD",
+            "Open",
+            "TBD",
+            "TBD",
+            "TBD",
+            "TBD",
+            "TBD",
+            "TBD",
+            "TBD",
+            "TBD",
+            "TBD",
+            "TBD",
+            "TBD",
+            "TBD",
+            "TBD",
+            "TBD"
+          ],
+          [
+            "Motor assembly",
+            "TBD",
+            "Motor stall due to blockage",
+            "Loss of performance; overheating; shutdown",
+            "7",
+            "TBD",
+            "Debris bypass inlet; filter saturation",
+            "Inlet mesh 4mm; thermal cutoff",
+            "4",
+            "Stall detection; EOL test",
+            "4",
+            "TBD",
+            "TBD",
+            "Reduce inlet aperture; add thermal cutoff",
+            "TBD",
+            "TBD",
+            "Open",
+            "TBD",
+            "TBD",
+            "TBD",
+            "TBD",
+            "TBD",
+            "TBD",
+            "TBD",
+            "TBD",
+            "TBD",
+            "TBD",
+            "TBD",
+            "TBD",
+            "TBD",
+            "TBD"
+          ],
+          [
+            "Filter assembly",
+            "TBD",
+            "Filter bypass / seal failure",
+            "Dust emission; user exposure; non-compliance",
+            "7",
+            "TBD",
+            "Incorrect installation; seal deformation",
+            "Keyed housing; seal torque spec",
+            "3",
+            "Filtration efficiency test",
+            "3",
+            "TBD",
+            "TBD",
+            "Redesign filter latch; add installation indicator",
+            "TBD",
+            "TBD",
+            "Open",
+            "TBD",
+            "TBD",
+            "TBD",
+            "TBD",
+            "TBD",
+            "TBD",
+            "TBD",
+            "TBD",
+            "TBD",
+            "TBD",
+            "TBD",
+            "TBD",
+            "TBD",
+            "TBD"
+          ],
+          [
+            "Housing",
+            "TBD",
+            "Housing crack on drop",
+            "Loss of structural integrity; user injury",
+            "6",
+            "TBD",
+            "Wall thickness insufficient; material brittleness",
+            "FEA drop simulation; material review",
+            "3",
+            "1m drop test on all faces",
+            "3",
+            "TBD",
+            "TBD",
+            "Increase wall thickness; add rib structure",
+            "TBD",
+            "TBD",
+            "Open",
+            "TBD",
+            "TBD",
+            "TBD",
+            "TBD",
+            "TBD",
+            "TBD",
+            "TBD",
+            "TBD",
+            "TBD",
+            "TBD",
+            "TBD",
+            "TBD",
+            "TBD",
+            "TBD"
+          ]
+        ]
+      },
+      "analysis": "Risk analysis for: Product/System: Cordless Stick Vacuum Cleaner for Household Use\n \nWe are developing a cordless stick vacuum cleaner for residential cleaning applications. The product is intended to clean hard floors, low-pile carpets, high-pile carpets, stairs, sofas, curtains, corners/edges, and car interiors. The product should support both stick mode and handheld mode with interchangeable attachments such as a motorized floor brush, crevice tool, dusting brush, and upholstery tool.\n \nKey operating targets:\n- Runtime: at least 45 minutes in eco/standard mode and at least 15 minutes in turbo mode.\n- Charging time: full charge within 4 hours.\n- Suction: at least 18 kPa in standard mode and at least 25 kPa in turbo mode.\n- Dust bin capacity: at least 0.6 L.\n- Noise: no more than 70 dBA in standard mode and no more than 78 dBA in turbo mode measured at 1 meter.\n- Weight: full stick assembly no more than 3.0 kg; handheld unit no more than 1.5 kg.\n- Filtration: capture at least 99.5% of particles down to 0.3 microns.\n- Dust emptying: user should empty the dust bin in no more than 3 steps and within 30 seconds without directly touching debris.\n \nRisk assessment scope:\nPlease perform a DFMEA for the major subsystems and user-facing functions, including suction/airflow path, battery and charging system, dust bin and sealing, filtration system, motor/thermal management, handle and attachment interfaces, user controls, and emptying/maintenance operations.\n \nThe DFMEA should identify potential failure modes, effects, causes, severity, occurrence, detection, current design controls, RPN, and recommended actions. Prioritize safety, reliability, user experience, manufacturability, and serviceability risks..\n\n**Summary**: The described context has been assessed for strategic, operational, financial, compliance, safety, security, technology, supplier, schedule, quality, and reputational risk exposure.\n\n**Key Risk Themes**:\n- Unclear performance targets and thresholds create measurement risk.\n- Missing regulatory, safety, and standards context creates compliance risk.\n- Undefined operating environment creates operational and reliability risk.\n- Unspecified owner/accountability creates governance risk.\n\n**Note**: Provide measurable targets, applicable standards, operating conditions, and risk appetite to improve the quality of this assessment.",
+      "stakeholder_needs": "Product/System: Cordless Stick Vacuum Cleaner for Household Use\n \nWe are developing a cordless stick vacuum cleaner for residential cleaning applications. The product is intended to clean hard floors, low-pile carpets, high-pile carpets, stairs, sofas, curtains, corners/edges, and car interiors. The product should support both stick mode and handheld mode with interchangeable attachments such as a motorized floor brush, crevice tool, dusting brush, and upholstery tool.\n \nKey operating targets:\n- Runtime: at least 45 minutes in eco/standard mode and at least 15 minutes in turbo mode.\n- Charging time: full charge within 4 hours.\n- Suction: at least 18 kPa in standard mode and at least 25 kPa in turbo mode.\n- Dust bin capacity: at least 0.6 L.\n- Noise: no more than 70 dBA in standard mode and no more than 78 dBA in turbo mode measured at 1 meter.\n- Weight: full stick assembly no more than 3.0 kg; handheld unit no more than 1.5 kg.\n- Filtration: capture at least 99.5% of particles down to 0.3 microns.\n- Dust emptying: user should empty the dust bin in no more than 3 steps and within 30 seconds without directly touching debris.\n \nRisk assessment scope:\nPlease perform a DFMEA for the major subsystems and user-facing functions, including suction/airflow path, battery and charging system, dust bin and sealing, filtration system, motor/thermal management, handle and attachment interfaces, user controls, and emptying/maintenance operations.\n \nThe DFMEA should identify potential failure modes, effects, causes, severity, occurrence, detection, current design controls, RPN, and recommended actions. Prioritize safety, reliability, user experience, manufacturability, and serviceability risks."
+    }
+  ],
+  "active_version": 0,
+  "messages": [
+    {
+      "role": "user",
+      "content": "Product/System: Cordless Stick Vacuum Cleaner for Household Use\n \nWe are developing a cordless stick vacuum cleaner for residential cleaning applications. The product is intended to clean hard floors, low-pile carpets, high-pile carpets, stairs, sofas, curtains, corners/edges, and car interiors. The product should support both stick mode and handheld mode with interchangeable attachments such as a motorized floor brush, crevice tool, dusting brush, and upholstery tool.\n \nKey operating targets:\n- Runtime: at least 45 minutes in eco/standard mode and at least 15 minutes in turbo mode.\n- Charging time: full charge within 4 hours.\n- Suction: at least 18 kPa in standard mode and at least 25 kPa in turbo mode.\n- Dust bin capacity: at least 0.6 L.\n- Noise: no more than 70 dBA in standard mode and no more than 78 dBA in turbo mode measured at 1 meter.\n- Weight: full stick assembly no more than 3.0 kg; handheld unit no more than 1.5 kg.\n- Filtration: capture at least 99.5% of particles down to 0.3 microns.\n- Dust emptying: user should empty the dust bin in no more than 3 steps and within 30 seconds without directly touching debris.\n \nRisk assessment scope:\nPlease perform a DFMEA for the major subsystems and user-facing functions, including suction/airflow path, battery and charging system, dust bin and sealing, filtration system, motor/thermal management, handle and attachment interfaces, user controls, and emptying/maintenance operations.\n \nThe DFMEA should identify potential failure modes, effects, causes, severity, occurrence, detection, current design controls, RPN, and recommended actions. Prioritize safety, reliability, user experience, manufacturability, and serviceability risks.\n "
+    },
+    {
+      "role": "assistant",
+      "content": "Risk analysis for: Product/System: Cordless Stick Vacuum Cleaner for Household Use\n \nWe are developing a cordless stick vacuum cleaner for residential cleaning applications. The product is intended to clean hard floors, low-pile carpets, high-pile carpets, stairs, sofas, curtains, corners/edges, and car interiors. The product should support both stick mode and handheld mode with interchangeable attachments such as a motorized floor brush, crevice tool, dusting brush, and upholstery tool.\n \nKey operating targets:\n- Runtime: at least 45 minutes in eco/standard mode and at least 15 minutes in turbo mode.\n- Charging time: full charge within 4 hours.\n- Suction: at least 18 kPa in standard mode and at least 25 kPa in turbo mode.\n- Dust bin capacity: at least 0.6 L.\n- Noise: no more than 70 dBA in standard mode and no more than 78 dBA in turbo mode measured at 1 meter.\n- Weight: full stick assembly no more than 3.0 kg; handheld unit no more than 1.5 kg.\n- Filtration: capture at least 99.5% of particles down to 0.3 microns.\n- Dust emptying: user should empty the dust bin in no more than 3 steps and within 30 seconds without directly touching debris.\n \nRisk assessment scope:\nPlease perform a DFMEA for the major subsystems and user-facing functions, including suction/airflow path, battery and charging system, dust bin and sealing, filtration system, motor/thermal management, handle and attachment interfaces, user controls, and emptying/maintenance operations.\n \nThe DFMEA should identify potential failure modes, effects, causes, severity, occurrence, detection, current design controls, RPN, and recommended actions. Prioritize safety, reliability, user experience, manufacturability, and serviceability risks..\n\n**Summary**: The described context has been assessed for strategic, operational, financial, compliance, safety, security, technology, supplier, schedule, quality, and reputational risk exposure.\n\n**Key Risk Themes**:\n- Unclear performance targets and thresholds create measurement risk.\n- Missing regulatory, safety, and standards context creates compliance risk.\n- Undefined operating environment creates operational and reliability risk.\n- Unspecified owner/accountability creates governance risk.\n\n**Note**: Provide measurable targets, applicable standards, operating conditions, and risk appetite to improve the quality of this assessment."
+    }
+  ]
+}
