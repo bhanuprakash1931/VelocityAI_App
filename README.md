@@ -1,41 +1,184 @@
-# Velocity Requirements Generator Web
+# Velocity AI Platform
 
-React + FastAPI conversion of the desktop Requirements Generator. It preserves the core web-appropriate workflows: requirements analysis, clarification, document/template upload, requirements generation, editable tables, versions, diagrams, query/review/update, session persistence, theme selection, metrics, and XLSX export.
+A suite of AI-powered engineering tools built with React + FastAPI, accessible from a unified platform landing page or individually as standalone applications.
 
-## Quick start
+## Applications
 
-### Backend
-```bash
-cd backend
-python -m venv .venv
-source .venv/bin/activate      # Windows: .venv\Scripts\activate
+| App                              | Description                                           | Frontend | Backend |
+| -------------------------------- | ----------------------------------------------------- | -------- | ------- |
+| **Platform**               | Landing page — launch apps, manage shared LLM config | :5170    | :7000   |
+| **Requirements Generator** | AI requirements engineering, DFMEA, Excel templates   | :5173    | :8000   |
+| **Risk Assessor**          | AI risk register, heatmap, FMEA, XLSX export          | :5174    | :8001   |
+
+---
+
+## Quick start — Full platform (all apps)
+
+```powershell
+# Windows PowerShell — starts all 6 processes in separate windows
+.\start-all.ps1
+```
+
+Then open **http://localhost:5170** for the platform landing page.
+
+---
+
+## Quick start — Platform only
+
+```powershell
+.\start-platform.ps1
+```
+
+---
+
+## Quick start — Individual apps (standalone)
+
+### Requirements Generator
+
+```powershell
+# Backend
+cd RequirementsGenerator/backend
+venv\Scripts\activate
+uvicorn app.main:app --reload --host 0.0.0.0 --port 8000
+
+# Frontend (separate terminal)
+cd RequirementsGenerator/frontend
+npm run dev
+# Opens at http://localhost:5173
+```
+
+### Risk Assessor
+
+```powershell
+# Backend
+cd RiskAssessor/backend
+venv\Scripts\activate
+uvicorn app.main:app --reload --host 0.0.0.0 --port 8000
+
+# Frontend (separate terminal)
+cd RiskAssessor/frontend
+npm run dev
+# Opens at http://localhost:5173
+```
+
+> When running standalone, each app uses its own backend on port 8000. When running under the platform, the RiskAssessor backend moves to port 8001 to avoid conflict.
+
+---
+
+## Environment / configuration
+
+### Option A — Platform-level shared config (recommended)
+
+Create `platform/backend/.env`:
+
+```
+OPENAI_API_KEY=sk-your-key
+OPENAI_BASE_URL=https://api.openai.com/v1
+OPENAI_MODEL=gpt-4.1-mini
+```
+
+Then use **Push config to all apps** in the platform settings panel (⚙) to sync the key to all running app backends in one click.
+
+### Option B — Per-app config
+
+Create `.env` in each app's backend directory:
+
+```
+# RequirementsGenerator/backend/.env
+OPENAI_API_KEY=sk-your-key
+OPENAI_BASE_URL=https://api.openai.com/v1
+OPENAI_MODEL=gpt-4.1-mini
+```
+
+```
+# RiskAssessor/backend/.env
+OPENAI_API_KEY=sk-your-key
+OPENAI_BASE_URL=https://api.openai.com/v1
+OPENAI_MODEL=gpt-4.1-mini
+```
+
+### Priority (highest → lowest)
+
+```
+Runtime override via settings panel  ←  highest
+    ↓
+App/Platform backend .env file
+    ↓
+Code defaults (demo mode)            ←  lowest
+```
+
+Without any API key the apps run in **demo mode** — all outputs are deterministic fallbacks, no LLM calls are made.
+
+---
+
+## First-time setup
+
+### Platform backend
+
+```powershell
+cd platform/backend
+python -m venv venv
+venv\Scripts\activate
 pip install -r requirements.txt
-cp .env.example .env
-uvicorn app.main:app --reload --port 8000
 ```
 
-### Frontend
-```bash
-cd frontend
+### Platform frontend
+
+```powershell
+cd platform/frontend
 npm install
-cp .env.example .env
-npm run dev -- --host 0.0.0.0 
-```
-Open http://localhost:5173. API docs: http://localhost:8000/docs.
-
-### Docker
-```bash
-docker compose up --build
 ```
 
-## Configuration
-Set `OPENAI_API_KEY`, `OPENAI_BASE_URL`, and `OPENAI_MODEL` in `backend/.env`. If no key is configured, the project runs in deterministic demo mode, so the full UI remains testable without external services.
+### Requirements Generator backend
 
-## Notes on migration
-- Qt signals/controllers are REST endpoints and React state/hooks.
-- Qt output tabs are React tabs for analysis, table, diagram, and versions.
-- Desktop attachment handling is multipart upload with server-side safe storage.
-- In-memory desktop version state is persisted per session as JSON under `backend/data/sessions`.
-- Mermaid is rendered in the browser.
-- XLSX generation remains server-side using openpyxl.
-- Credentials are environment variables only; no secrets are embedded.
+```powershell
+cd RequirementsGenerator/backend
+python -m venv venv
+venv\Scripts\activate
+pip install -r requirements.txt
+```
+
+### Requirements Generator frontend
+
+```powershell
+cd RequirementsGenerator/frontend
+npm install
+```
+
+### Risk Assessor backend
+
+```powershell
+cd RiskAssessor/backend
+python -m venv venv
+venv\Scripts\activate
+pip install -r requirements.txt
+```
+
+### Risk Assessor frontend
+
+```powershell
+cd RiskAssessor/frontend
+npm install
+```
+
+---
+
+## Adding a new application
+
+1. Build your app in a new top-level directory (e.g. `MyApp/backend`, `MyApp/frontend`).
+2. Add it to `platform/backend/app/registry.py` — see `platform/README.md` for instructions.
+3. Add its URL settings to `platform/backend/app/config.py`.
+4. Restart the platform backend. No frontend changes needed.
+
+---
+
+## Port reference
+
+| Service                          | Port | URL                   |
+| -------------------------------- | ---- | --------------------- |
+| Platform backend                 | 7000 | http://localhost:7000 |
+| Platform frontend                | 5170 | http://localhost:5170 |
+| RequirementsGenerator backend    | 8000 | http://localhost:8000 |
+| RequirementsGenerator frontend   | 5173 | http://localhost:5173 |
+| RiskAssessor backend (platform)  | 8001 | http://localhost:8001 |
+| RiskAssessor frontend (platform) | 5174 | http://localhost:5174 |

@@ -46,8 +46,8 @@ async def put_config(req: LlmConfigRequest):
                     headers={'Authorization':f'Bearer {key}','Content-Type':'application/json'},
                     json={'model':get_model(),'temperature':0,'max_tokens':1,'messages':[{'role':'user','content':'hi'}]}
                 )
-                llm_mode='configured' if r.status_code in (200,400) else 'error'
-                if r.status_code not in (200,400): llm_error=f'HTTP {r.status_code}'
+                llm_mode='configured' if r.status_code in (200,400,422,500,503) else 'error'
+                if r.status_code not in (200,400,422,500,503): llm_error=f'HTTP {r.status_code}'
         except _httpx.ConnectError as e: llm_mode='unreachable'; llm_error=f'Cannot reach {get_base_url()}: {e}'
         except _httpx.TimeoutException: llm_mode='unreachable'; llm_error='Connection timed out'
         except Exception as e: llm_mode='error'; llm_error=str(e)
@@ -57,21 +57,22 @@ async def put_config(req: LlmConfigRequest):
 async def health():
     llm_mode='demo'
     llm_error=None
-    if settings.openai_api_key:
+    key=get_api_key()
+    if key:
         import httpx as _httpx
         try:
             async with _httpx.AsyncClient(timeout=8) as c:
                 r=await c.post(
-                    settings.openai_base_url.rstrip('/')+'/chat/completions',
-                    headers={'Authorization':f'Bearer {settings.openai_api_key}','Content-Type':'application/json'},
-                    json={'model':settings.openai_model,'temperature':0,'max_tokens':1,'messages':[{'role':'user','content':'hi'}]}
+                    get_base_url().rstrip('/')+'/chat/completions',
+                    headers={'Authorization':f'Bearer {key}','Content-Type':'application/json'},
+                    json={'model':get_model(),'temperature':0,'max_tokens':1,'messages':[{'role':'user','content':'hi'}]}
                 )
-                if r.status_code in (200,400): llm_mode='configured'
+                if r.status_code in (200,400,422,500,503): llm_mode='configured'
                 else: llm_mode='error'; llm_error=f'HTTP {r.status_code}'
         except _httpx.ConnectError as e: llm_mode='unreachable'; llm_error=f'DNS/connect error: {e}'
         except _httpx.TimeoutException: llm_mode='unreachable'; llm_error='Connection timed out'
         except Exception as e: llm_mode='error'; llm_error=str(e)
-    return {'status':'healthy','llm_mode':llm_mode,'llm_url':settings.openai_base_url,'llm_model':settings.openai_model,'llm_error':llm_error}
+    return {'status':'healthy','llm_mode':llm_mode,'llm_url':get_base_url(),'llm_model':get_model(),'llm_error':llm_error}
 @app.get('/api/sessions')
 def sessions(): return store.list_all()
 @app.post('/api/sessions')

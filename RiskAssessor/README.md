@@ -72,7 +72,7 @@ Swagger UI at http://localhost:8000/docs
 ```bash
 cd RiskAssessor/frontend
 npm install
-npm run dev -- --host 0.0.0.0 
+npm run dev -- --host 0.0.0.0
 ```
 
 UI available at http://localhost:5173

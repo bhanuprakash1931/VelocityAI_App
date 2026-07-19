@@ -65,8 +65,9 @@ async def put_config(req: LlmConfigRequest):
                     json={"model": get_model(), "temperature": 0, "max_tokens": 1,
                           "messages": [{"role": "user", "content": "hi"}]},
                 )
-                llm_mode = "configured" if r.status_code in (200, 400) else "error"
-                if r.status_code not in (200, 400):
+                _reachable = r.status_code in (200, 400, 422, 500, 503)
+                llm_mode = "configured" if _reachable else "error"
+                if not _reachable:
                     llm_error = f"HTTP {r.status_code}"
         except _httpx.ConnectError as e:
             llm_mode = "unreachable"
@@ -84,18 +85,19 @@ async def put_config(req: LlmConfigRequest):
 async def health():
     llm_mode = "demo"
     llm_error = None
-    if settings.openai_api_key:
+    key = get_api_key()
+    if key:
         import httpx as _httpx
         try:
             async with _httpx.AsyncClient(timeout=8) as c:
                 r = await c.post(
-                    settings.openai_base_url.rstrip("/") + "/chat/completions",
-                    headers={"Authorization": f"Bearer {settings.openai_api_key}",
+                    get_base_url().rstrip("/") + "/chat/completions",
+                    headers={"Authorization": f"Bearer {key}",
                              "Content-Type": "application/json"},
-                    json={"model": settings.openai_model, "temperature": 0, "max_tokens": 1,
+                    json={"model": get_model(), "temperature": 0, "max_tokens": 1,
                           "messages": [{"role": "user", "content": "hi"}]},
                 )
-                if r.status_code in (200, 400):
+                if r.status_code in (200, 400, 422, 500, 503):
                     llm_mode = "configured"
                 else:
                     llm_mode = "error"
@@ -112,8 +114,8 @@ async def health():
     return {
         "status": "healthy",
         "llm_mode": llm_mode,
-        "llm_url": settings.openai_base_url,
-        "llm_model": settings.openai_model,
+        "llm_url": get_base_url(),
+        "llm_model": get_model(),
         "llm_error": llm_error,
     }
 

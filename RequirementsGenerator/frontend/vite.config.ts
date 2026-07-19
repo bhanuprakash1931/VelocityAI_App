@@ -3,7 +3,7 @@ import react from '@vitejs/plugin-react'
 
 // https://vite.dev/config/
 export default defineConfig({
-  publicDir: 'assets',
+  publicDir: '../../assets',
   plugins: [react()],
   server: {
     // When running with --host 0.0.0.0 the browser may hit any IP/hostname.
