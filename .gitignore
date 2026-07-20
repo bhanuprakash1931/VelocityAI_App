@@ -7,5 +7,4 @@ dist/
 .env.example
 /data
 
-*.txt
 *.yml
