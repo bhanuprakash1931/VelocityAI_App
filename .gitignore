@@ -5,7 +5,11 @@ node_modules/
 dist/
 .env
 .env.example
-/data
+RiskAssessor/backend/data/sessions/
+RiskAssessor/backend/data/uploads/
+RequirementsGenerator/backend/data/sessions/
+RequirementsGenerator/backend/data/uploads/
+
 
 *.txt
 *.yml

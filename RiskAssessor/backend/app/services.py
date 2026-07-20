@@ -29,10 +29,31 @@ RISK_CATEGORIES = [
 # ---------------------------------------------------------------------------
 
 def _json(text: str):
+    import logging
+    _log = logging.getLogger("services")
     text = re.sub(r"^```(?:json)?|```$", "", text.strip(), flags=re.M).strip()
+    _log.debug("_json raw response (first 500): %s", text[:500])
+
+    # Try JSON object {}
     a = text.find("{")
     b = text.rfind("}")
-    return json.loads(text[a : b + 1])
+    if a != -1 and b != -1 and b > a:
+        try:
+            return json.loads(text[a : b + 1])
+        except json.JSONDecodeError as exc:
+            _log.warning("_json failed to parse object slice: %s", exc)
+
+    # Try JSON array []
+    a2 = text.find("[")
+    b2 = text.rfind("]")
+    if a2 != -1 and b2 != -1 and b2 > a2:
+        try:
+            return json.loads(text[a2 : b2 + 1])
+        except json.JSONDecodeError as exc:
+            _log.warning("_json failed to parse array slice: %s", exc)
+
+    _log.warning("_json: no JSON object or array found in response. Raw text (first 500): %s", text[:500])
+    return None
 
 
 async def llm_json(system: str, user: str, timeout: int = 120) -> dict | None:
@@ -59,7 +80,14 @@ async def llm_json(system: str, user: str, timeout: int = 120) -> dict | None:
                 json=payload,
             )
             r.raise_for_status()
-            return _json(r.json()["choices"][0]["message"]["content"])
+            content = r.json()["choices"][0]["message"]["content"]
+            result = _json(content)
+            if result is None:
+                import logging
+                logging.getLogger("services").warning(
+                    "llm_json: _json returned None. Raw content (first 500): %s", content[:500]
+                )
+            return result
     except httpx.ConnectError:
         return None
     except httpx.TimeoutException:
