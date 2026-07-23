@@ -1,0 +1,97 @@
+{
+  "id": "0a643771-32d7-4357-b0ca-643cdbfb58c1",
+  "title": "Review: DEMO-DWG-001",
+  "created_at": "2026-07-23T11:29:19.372717",
+  "drawing_paths": [
+    "C:\\Users\\raviksin\\OneDrive - Capgemini\\Desktop\\VelocityAI_React_App\\VelocityAI_App\\DrawingReviewer\\backend\\data\\uploads\\0a643771-32d7-4357-b0ca-643cdbfb58c1\\1.pdf"
+  ],
+  "template_path": null,
+  "analysis_done": true,
+  "report_done": true,
+  "extracted_data": {
+    "title_block": {
+      "drawing_number": "DEMO-DWG-001",
+      "title": "Demo Engineering Drawing",
+      "revision": "A",
+      "material": "Not extracted (demo mode)",
+      "scale": "1:1",
+      "units": "mm"
+    },
+    "revision_block": [
+      {
+        "rev": "A",
+        "description": "Initial release",
+        "date": "TBD"
+      }
+    ],
+    "views": [
+      "Front view",
+      "Section A-A"
+    ],
+    "dimensions": [
+      {
+        "value": "100",
+        "unit": "mm"
+      },
+      {
+        "value": "50",
+        "unit": "mm"
+      }
+    ],
+    "tolerances": [
+      "±0.1 mm general"
+    ],
+    "annotations": [],
+    "gdt": [],
+    "general_notes": [
+      "All dimensions in mm unless otherwise stated."
+    ],
+    "missing_fields": [
+      "Vision analysis unavailable — no API key or vision model not configured."
+    ],
+    "uncertain_fields": [],
+    "analysis_error": "Demo mode — configure an OpenAI-compatible API key and a vision model (e.g. gpt-4o) to enable real drawing analysis."
+  },
+  "check_results": {
+    "overall_score": 0,
+    "summary": "Demo mode — configure API key for real analysis.",
+    "findings": [
+      {
+        "id": "F1",
+        "severity": "info",
+        "category": "General",
+        "text": "Drawing analysis is running in demo mode. No API key is configured.",
+        "recommendation": "Configure an OpenAI-compatible API key via the ⚙ settings panel.",
+        "checked": false
+      }
+    ]
+  },
+  "report_sections": {
+    "summary": "Drawing review completed in demo mode. Configure an API key for AI-powered analysis.",
+    "key_findings": [
+      "Demo mode active — real findings require a configured LLM."
+    ],
+    "recommendations": [
+      "Configure an API key via the ⚙ settings panel and re-run the review."
+    ],
+    "engineering_review_notes": [
+      "AI-generated findings are review assistance only and do not replace engineering approval."
+    ]
+  },
+  "report_checklist": [
+    {
+      "id": "F1",
+      "severity": "info",
+      "category": "General",
+      "text": "Drawing analysis is running in demo mode. No API key is configured.",
+      "recommendation": "Configure an OpenAI-compatible API key via the ⚙ settings panel.",
+      "checked": false
+    }
+  ],
+  "report_preview_html": "\n    <div style=\"font-family: Aptos, Arial, sans-serif; font-size: 13px; line-height: 1.45; padding: 14px;\">\n      <h1 style=\"margin: 0 0 6px 0;\">Drawing Review Report</h1>\n      <p><b>Reviewed drawing file(s):</b> 1.pdf</p>\n      <h2>Drawing Overview</h2>\n      <table border=\"1\" cellspacing=\"0\" cellpadding=\"6\" style=\"border-collapse: collapse; width: 100%;\"><tbody><tr><td><b>Document Title</b></td><td>Demo Engineering Drawing</td></tr><tr><td><b>Drawing Number</b></td><td>DEMO-DWG-001</td></tr><tr><td><b>Part Number</b></td><td>Not extracted</td></tr><tr><td><b>Revision</b></td><td>A</td></tr><tr><td><b>Material</b></td><td>Not extracted (demo mode)</td></tr><tr><td><b>Scale</b></td><td>1:1</td></tr><tr><td><b>Units</b></td><td>mm</td></tr><tr><td><b>Review Method</b></td><td>Automated AI-assisted analysis</td></tr></tbody></table>\n      <h2>Review Summary</h2>\n      <p>Drawing review completed in demo mode. Configure an API key for AI-powered analysis.</p>\n      <h2>Key Findings</h2>\n      <table border=\"1\" cellspacing=\"0\" cellpadding=\"6\" style=\"border-collapse: collapse; width: 100%;\">\n        <thead><tr style=\"background: #1F4E78; color: white;\"><th>ID</th><th>Severity</th><th>Category</th><th>Finding</th><th>Recommendation</th></tr></thead>\n        <tbody><tr><td>F1</td><td><b style='color:#1565C0'>info</b></td><td>General</td><td>Drawing analysis is running in demo mode. No API key is configured.</td><td>Configure an OpenAI-compatible API key via the ⚙ settings panel.</td></tr></tbody>\n      </table>\n      <h2>Engineering Review Notes</h2>\n      <ul><li>AI-generated findings are review assistance only and do not replace engineering approval.</li></ul>\n      <h2>Analysis Limitation</h2><p>Demo mode — configure an OpenAI-compatible API key and a vision model (e.g. gpt-4o) to enable real drawing analysis.</p>\n      <p><b>Human engineering review required before release or manufacturing use.</b></p>\n    </div>\n    ",
+  "report_docx_path": "data\\generated_reports\\1_review_report_20260723_170520.docx",
+  "report_pdf_path": "data\\generated_reports\\1_review_report_20260723_170521.pdf",
+  "filled_checklist_path": "",
+  "filled_checklist_preview_html": "",
+  "messages": []
+}
