@@ -1,0 +1,306 @@
+{
+  "id": "4e5a2270-b827-418f-806b-7ff07552c8ad",
+  "title": "Generate requirements for a cordless electric kettle for hom",
+  "created_at": "2026-07-24T07:02:51.297424+00:00",
+  "files": [],
+  "messages": [
+    {
+      "role": "user",
+      "content": "Generate requirements for a cordless electric kettle for home use. It should boil 1.5 liters of water in under 5 minutes, include automatic shut-off and boil-dry protection, and meet EU electrical safety standards"
+    },
+    {
+      "role": "assistant",
+      "content": "Key stakeholders include: end-users (fast boil, ease of use, safety, cleaning), households with varied kitchen setups (cordless base, compact footprint), compliance/regulators (EU electrical safety, CE/RED not applicable unless wireless), manufacturer/QA (testability of 1.5L<5 min, durability), and retailers/support (clear labeling, warranty, instructions). Requirements must be measurable (time-to-boil under defined conditions, shut-off timing, boil-dry trigger thresholds), cover safety and materials in contact with water, and define applicable EU directives/standards (LVD 2014/35/EU, EMC 2014/30/EU, RoHS 2011/65/EU, REACH; EN 60335-1 and EN 60335-2-15; possibly EN 62233). Also consider usability (fill level markings, lid operation), performance variability (mains voltage 220–240V, ambient temp, starting water temp), and validation methods (type tests, routine tests)."
+    }
+  ],
+  "stakeholder_needs": "Generate requirements for a cordless electric kettle for home use. It should boil 1.5 liters of water in under 5 minutes, include automatic shut-off and boil-dry protection, and meet EU electrical safety standards",
+  "analysis": "Key stakeholders include: end-users (fast boil, ease of use, safety, cleaning), households with varied kitchen setups (cordless base, compact footprint), compliance/regulators (EU electrical safety, CE/RED not applicable unless wireless), manufacturer/QA (testability of 1.5L<5 min, durability), and retailers/support (clear labeling, warranty, instructions). Requirements must be measurable (time-to-boil under defined conditions, shut-off timing, boil-dry trigger thresholds), cover safety and materials in contact with water, and define applicable EU directives/standards (LVD 2014/35/EU, EMC 2014/30/EU, RoHS 2011/65/EU, REACH; EN 60335-1 and EN 60335-2-15; possibly EN 62233). Also consider usability (fill level markings, lid operation), performance variability (mains voltage 220–240V, ambient temp, starting water temp), and validation methods (type tests, routine tests).",
+  "clarification_questions": [
+    "What mains supply range should be supported (e.g., 220–240 V, 50/60 Hz) and what starting water/ambient conditions define the “1.5 L in under 5 minutes” requirement (e.g., 15°C water at 20°C room temp)?",
+    "Do you have preferences for materials/features that affect requirements (e.g., stainless steel vs plastic, concealed element, removable limescale filter, temperature control/keep-warm, water window)?",
+    "Which EU markets/languages and compliance scope should be assumed (e.g., CE under LVD+EMC+RoHS only, specific EN standards, warranty/expected lifetime)?"
+  ],
+  "versions": [
+    {
+      "version": "v1",
+      "timestamp": "2026-07-24T07:04:45.770819+00:00",
+      "source": "generated",
+      "table": {
+        "title": "Cordless Electric Kettle (Home Use) Requirements",
+        "columns": [
+          {
+            "name": "Req ID",
+            "data_type": "string",
+            "editable": true
+          },
+          {
+            "name": "Category",
+            "data_type": "string",
+            "editable": true
+          },
+          {
+            "name": "Requirement Statement",
+            "data_type": "string",
+            "editable": true
+          },
+          {
+            "name": "Rationale / Source",
+            "data_type": "string",
+            "editable": true
+          },
+          {
+            "name": "Acceptance Criteria",
+            "data_type": "string",
+            "editable": true
+          },
+          {
+            "name": "Verification Method",
+            "data_type": "string",
+            "editable": true
+          },
+          {
+            "name": "Owner",
+            "data_type": "string",
+            "editable": true
+          },
+          {
+            "name": "Priority",
+            "data_type": "string",
+            "editable": true
+          },
+          {
+            "name": "Status",
+            "data_type": "string",
+            "editable": true
+          },
+          {
+            "name": "Comments",
+            "data_type": "string",
+            "editable": true
+          }
+        ],
+        "rows": [
+          [
+            "REQ-001",
+            "Performance",
+            "The kettle SHALL bring 1.50 L ±0.03 L of water from 20 °C ±2 °C to 100 °C (at 101.3 kPa ±5 kPa) in ≤300 s when supplied at 230 VAC ±10%, 50 Hz.",
+            "Stakeholder need: fast boil",
+            "Measured time-to-boil ≤300 s under stated conditions (ambient 20 °C ±2 °C).",
+            "Test",
+            "Systems",
+            "Critical",
+            "Draft",
+            "Define altitude correction if testing not at sea-level pressure."
+          ],
+          [
+            "REQ-002",
+            "Performance",
+            "The kettle SHALL draw a rated power of 2.0 kW to 3.0 kW at 230 VAC ±10%, 50 Hz during heating.",
+            "Derived: meet boil-time target",
+            "Measured input power during steady heating within 2.0–3.0 kW (average over 10 s) at 230 VAC.",
+            "Test",
+            "Hardware",
+            "High",
+            "Draft",
+            "Confirm market-specific power limits."
+          ],
+          [
+            "REQ-003",
+            "Functional",
+            "The kettle SHALL automatically switch off within 10 s after reaching a rolling boil at maximum fill (1.5 L).",
+            "Stakeholder need: automatic shut-off",
+            "At 1.50 L, shut-off occurs 0–10 s after boil onset (defined as continuous bubbling for ≥5 s).",
+            "Test",
+            "Hardware",
+            "Critical",
+            "Draft",
+            "Define boil detection method (steam thermostat vs sensor)."
+          ],
+          [
+            "REQ-004",
+            "Safety",
+            "The kettle SHALL provide boil-dry protection that disconnects the heater within ≤5 s when the water volume is ≤0.05 L and heating is initiated.",
+            "Stakeholder need: boil-dry protection",
+            "With ≤0.05 L initial water, heater power reduces to ≤5 W within 5 s of energizing and remains ≤5 W until user reset (if applicable).",
+            "Test",
+            "Hardware",
+            "Critical",
+            "Draft",
+            "Confirm reset behavior allowed by EN 60335-2-15."
+          ],
+          [
+            "REQ-005",
+            "Safety",
+            "The kettle SHALL prevent re-energization of the heater after a boil-dry trip until the water temperature inside the vessel is ≤60 °C.",
+            "Derived: user safety and component protection",
+            "After boil-dry trip, heater cannot be turned on (power ≤5 W) until measured internal water/contact surface temperature ≤60 °C.",
+            "Test",
+            "Hardware",
+            "High",
+            "Draft",
+            "May be implemented via thermal cut-out hysteresis."
+          ],
+          [
+            "REQ-006",
+            "Safety",
+            "The kettle SHALL comply with EN 60335-1 and EN 60335-2-15 safety requirements for household heating appliances for 220–240 VAC operation.",
+            "Regulatory: EU harmonized standards",
+            "Type test report shows pass for all applicable clauses (0 nonconformities).",
+            "Analysis",
+            "Compliance",
+            "Critical",
+            "Draft",
+            "Include clause mapping in verification report."
+          ],
+          [
+            "REQ-007",
+            "Safety",
+            "The kettle SHALL meet the EU Low Voltage Directive 2014/35/EU for electrical safety and bear CE marking with a completed EU Declaration of Conformity.",
+            "Regulatory compliance",
+            "DoC references 2014/35/EU and harmonized standards; CE marking height ≥5 mm on product label.",
+            "Inspection",
+            "Compliance",
+            "Critical",
+            "Draft",
+            "Ensure technical file retention period per directive."
+          ],
+          [
+            "REQ-008",
+            "EMC",
+            "The kettle SHALL comply with EMC Directive 2014/30/EU and applicable EN EMC standards such that radiated/conducted emissions and immunity pass all limits.",
+            "Regulatory compliance",
+            "Accredited lab report shows pass margins ≥0 dB (no limit exceedance) for all applicable tests.",
+            "Test",
+            "Compliance",
+            "High",
+            "Draft",
+            "Select specific EN standard set during design freeze."
+          ],
+          [
+            "REQ-009",
+            "Materials/Compliance",
+            "The kettle SHALL comply with RoHS Directive 2011/65/EU including (EU) 2015/863 phthalate restrictions, with each restricted substance <0.1% w/w (Cd <0.01% w/w) in any homogeneous material.",
+            "Regulatory compliance",
+            "Supplier declarations and/or lab results demonstrate concentrations below stated limits in all homogeneous materials.",
+            "Analysis",
+            "Compliance",
+            "High",
+            "Draft",
+            "Define sampling plan for verification."
+          ],
+          [
+            "REQ-010",
+            "Safety",
+            "The kettle SHALL limit accessible surface temperatures during boiling such that any user-grip handle surface does not exceed 55 °C at 20 °C ±2 °C ambient.",
+            "Stakeholder need: safe handling",
+            "During steady boil at 1.5 L, measured max handle surface temperature ≤55 °C (thermocouple, 1 mm contact, after 10 min).",
+            "Test",
+            "Hardware",
+            "High",
+            "Draft",
+            "Confirm measurement points and stabilization time."
+          ],
+          [
+            "REQ-011",
+            "Functional",
+            "The cordless base SHALL provide 360° placement and allow kettle lift-off without releasing a latch, requiring ≤20 N vertical force to separate.",
+            "Stakeholder need: ease of use",
+            "Kettle can be placed and powered at any rotational angle; separation force measured 5 times is ≤20 N each.",
+            "Test",
+            "Mechanical",
+            "Medium",
+            "Draft",
+            "Coordinate with connector supplier specs."
+          ],
+          [
+            "REQ-012",
+            "Functional",
+            "The kettle SHALL include a water level indicator with graduations at 0.5 L, 1.0 L, and 1.5 L, with indication error ≤±0.10 L at each mark.",
+            "Stakeholder need: fill accuracy",
+            "At each graduation, actual volume differs by ≤0.10 L when filled to the line at 20 °C.",
+            "Test",
+            "Mechanical",
+            "Medium",
+            "Draft",
+            "Single- or double-sided window TBD."
+          ],
+          [
+            "REQ-013",
+            "Safety",
+            "The lid locking mechanism SHALL withstand an internal steam pressure of 5 kPa without opening unintentionally during boiling.",
+            "Derived: scald prevention",
+            "During boil, measured internal pressure up to 5 kPa does not cause lid opening; no release event in 3 trials.",
+            "Test",
+            "Mechanical",
+            "High",
+            "Draft",
+            "Confirm safe pressure test setup."
+          ],
+          [
+            "REQ-014",
+            "Reliability",
+            "The kettle and base assembly SHALL complete ≥3000 boil cycles of 1.0 L from 20 °C to auto shut-off with no loss of safety functions and with boil time increase ≤15% from initial.",
+            "Stakeholder need: durability; manufacturer QA",
+            "After 3000 cycles, auto shut-off and boil-dry protection still pass; time-to-boil at 1.0 L increases by ≤15% vs cycle 0.",
+            "Test",
+            "QA",
+            "Medium",
+            "Draft",
+            "Define cycle rate and cool-down conditions."
+          ],
+          [
+            "REQ-015",
+            "Safety",
+            "The kettle SHALL provide protection against electric shock such that leakage current is ≤0.75 mA during operation at 230 VAC.",
+            "EN 60335 derived safety metric",
+            "Measured leakage current ≤0.75 mA in normal operation per applicable test method.",
+            "Test",
+            "Hardware",
+            "Critical",
+            "Draft",
+            "Align method with EN 60335 measurement setup."
+          ],
+          [
+            "REQ-016",
+            "Usability",
+            "The on/off control SHALL provide a visible power indicator light with luminous intensity ≥2 cd when heating and ≤0.2 cd when off.",
+            "Stakeholder need: clear status",
+            "Measured indicator intensity meets ≥2 cd ON and ≤0.2 cd OFF in ambient 300 lx.",
+            "Test",
+            "Software",
+            "Low",
+            "Draft",
+            "Applies to LED indicator; color TBD."
+          ],
+          [
+            "REQ-017",
+            "Performance",
+            "The kettle SHALL have a minimum fill volume of ≤0.30 L at which it can reach auto shut-off without triggering boil-dry protection.",
+            "Stakeholder need: small-volume use",
+            "With 0.30 L ±0.02 L starting at 20 °C ±2 °C, kettle reaches boil and shuts off normally; no boil-dry trip occurs.",
+            "Test",
+            "Systems",
+            "Medium",
+            "Draft",
+            "Confirm min-fill marking and instructions."
+          ],
+          [
+            "REQ-018",
+            "Documentation/Labeling",
+            "The product SHALL include safety labeling and instructions in at least English, French, and German, and SHALL state rated voltage (V), power (W), and capacity (L) on the rating plate with character height ≥2.0 mm.",
+            "Retail/support and regulatory usability",
+            "Inspection confirms included languages; rating plate shows V/W/L with ≥2.0 mm character height and is legible at 300 lx.",
+            "Inspection",
+            "Documentation",
+            "High",
+            "Draft",
+            "Confirm additional EU languages per target markets."
+          ]
+        ]
+      },
+      "analysis": "Key stakeholders include: end-users (fast boil, ease of use, safety, cleaning), households with varied kitchen setups (cordless base, compact footprint), compliance/regulators (EU electrical safety, CE/RED not applicable unless wireless), manufacturer/QA (testability of 1.5L<5 min, durability), and retailers/support (clear labeling, warranty, instructions). Requirements must be measurable (time-to-boil under defined conditions, shut-off timing, boil-dry trigger thresholds), cover safety and materials in contact with water, and define applicable EU directives/standards (LVD 2014/35/EU, EMC 2014/30/EU, RoHS 2011/65/EU, REACH; EN 60335-1 and EN 60335-2-15; possibly EN 62233). Also consider usability (fill level markings, lid operation), performance variability (mains voltage 220–240V, ambient temp, starting water temp), and validation methods (type tests, routine tests).",
+      "stakeholder_needs": "Generate requirements for a cordless electric kettle for home use. It should boil 1.5 liters of water in under 5 minutes, include automatic shut-off and boil-dry protection, and meet EU electrical safety standards"
+    }
+  ],
+  "active_version": 0
+}

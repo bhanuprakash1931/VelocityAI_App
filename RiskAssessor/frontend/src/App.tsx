@@ -1,5 +1,7 @@
 import { useEffect, useRef, useState, useMemo } from 'react';
 import { api, BASE } from './api';
+import SettingsPanel, { LlmConfig } from '../../../common/frontend/SettingsPanel';
+import { useLlmConfig } from '../../../common/frontend/useLlmConfig';
 
 const HREF_BASE = BASE || `${window.location.protocol}//${window.location.hostname}:8000`;
 

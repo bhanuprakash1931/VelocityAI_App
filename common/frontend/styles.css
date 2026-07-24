@@ -1,0 +1,415 @@
+/**
+ * common/frontend/styles.css
+ * ─────────────────────────────
+ * Shared base stylesheet for all Velocity AI frontend applications.
+ *
+ * Usage in any app's src/styles.css:
+ *
+ *   @import '../../../common/frontend/styles.css';
+ *
+ *   /* App-specific overrides below * /
+ *   .my-custom-component { ... }
+ *
+ * What is included here
+ * ─────────────────────
+ * - CSS custom properties (design tokens)
+ * - Reset + body defaults
+ * - Header (brand bar)
+ * - LLM badge + settings button
+ * - Settings overlay panel
+ * - Main layout grid (sidebar + workspace)
+ * - Form controls (textarea, button, .primary, .upload)
+ * - Clarification section
+ * - Workspace nav tabs
+ * - Article / prose / pre
+ * - Toolbar
+ * - Table wrapper + table + sticky header
+ * - Hint / small text
+ * - Empty state
+ * - Responsive breakpoint (≤ 900 px)
+ *
+ * App-specific additions (e.g. heatmap, badges, filter bar, report preview)
+ * live in each app's own styles.css which @imports this file first.
+ */
+
+/* ── Design tokens ──────────────────────────────────────────────────────── */
+:root {
+  font-family: Inter, 'Segoe UI', sans-serif;
+  color: #18212b;
+  background: #eef3f7;
+
+  --brand:  #0070ad;
+  --accent: #0070ad;
+  --panel:  #fff;
+  --line:   #d7e0e8;
+  --error:  #c00;
+}
+
+/* ── Reset ──────────────────────────────────────────────────────────────── */
+* { box-sizing: border-box; }
+body { margin: 0; }
+.app { min-height: 100vh; display: flex; flex-direction: column; }
+
+/* ── Header ─────────────────────────────────────────────────────────────── */
+header {
+  height: 64px;
+  background: #071e2c;
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 24px;
+  flex-shrink: 0;
+}
+.header-brand { display: flex; align-items: center; gap: 14px; }
+.brand-logo   { height: 36px; width: auto; display: block; filter: brightness(0) invert(1); }
+header b      { font-size: 20px; color: #48c7f2; }
+header span   { margin-left: 8px; }
+.header-right { display: flex; align-items: center; gap: 12px; }
+.status {
+  font-size: 13px;
+  color: #cce9f6;
+  max-width: 300px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+/* ── LLM badge ──────────────────────────────────────────────────────────── */
+.llm-badge {
+  font-size: 12px;
+  padding: 4px 10px;
+  border-radius: 20px;
+  font-weight: 600;
+  white-space: nowrap;
+}
+.llm-on  { color: #4cef9a; background: rgba(76,239,154,.15); border: 1px solid rgba(76,239,154,.3); }
+.llm-off { color: #aaa;    background: rgba(255,255,255,.08); border: 1px solid rgba(255,255,255,.15); }
+
+/* ── Settings button ────────────────────────────────────────────────────── */
+.settings-btn {
+  background: transparent;
+  border: 1px solid rgba(255,255,255,.25);
+  color: white;
+  border-radius: 7px;
+  padding: 6px 10px;
+  cursor: pointer;
+  font-size: 16px;
+  line-height: 1;
+}
+.settings-btn:hover { background: rgba(255,255,255,.1); }
+
+/* ── Settings overlay ───────────────────────────────────────────────────── */
+.settings-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0,0,0,.45);
+  z-index: 1000;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.settings-panel {
+  background: white;
+  border-radius: 14px;
+  padding: 28px;
+  width: 480px;
+  max-width: 95vw;
+  box-shadow: 0 8px 40px rgba(0,0,0,.25);
+}
+.settings-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 20px;
+}
+.settings-header h2 { margin: 0; font-size: 18px; }
+.settings-header button {
+  background: none;
+  border: none;
+  font-size: 20px;
+  cursor: pointer;
+  color: #60717e;
+  padding: 4px 8px;
+  width: auto;
+  margin-top: 0;
+}
+.settings-panel label {
+  display: block;
+  font-size: 13px;
+  font-weight: 600;
+  color: #18212b;
+  margin-bottom: 14px;
+}
+.settings-panel label input {
+  display: block;
+  width: 100%;
+  margin-top: 5px;
+  border: 1px solid var(--line);
+  border-radius: 7px;
+  padding: 9px 12px;
+  font-size: 14px;
+}
+.settings-panel label input:focus { outline: none; border-color: var(--brand); }
+.key-row            { display: flex; gap: 8px; }
+.key-row input      { flex: 1; }
+.key-row button {
+  flex-shrink: 0;
+  padding: 9px 14px;
+  border: 1px solid var(--line);
+  border-radius: 7px;
+  background: white;
+  cursor: pointer;
+  font-size: 13px;
+  width: auto;
+  margin-top: 0;
+}
+.settings-status {
+  font-size: 13px;
+  color: #60717e;
+  margin-bottom: 18px;
+  padding: 10px 14px;
+  background: #f3f9fc;
+  border-radius: 8px;
+}
+.settings-footer                { display: flex; justify-content: flex-end; gap: 10px; margin-top: 24px; }
+.settings-footer button         { padding: 10px 20px; width: auto; }
+
+/* ── Layout ─────────────────────────────────────────────────────────────── */
+main {
+  display: grid;
+  grid-template-columns: 340px 1fr;
+  flex: 1;
+  overflow: hidden;
+}
+aside {
+  background: var(--panel);
+  border-right: 1px solid var(--line);
+  padding: 22px;
+  overflow-y: auto;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+h1, h2, h3 { margin-top: 0; }
+
+/* ── Form controls ──────────────────────────────────────────────────────── */
+textarea {
+  width: 100%;
+  min-height: 140px;
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  padding: 12px;
+  resize: vertical;
+  font-family: inherit;
+  font-size: 14px;
+}
+textarea:focus { outline: none; border-color: var(--brand); }
+
+button, .button, .upload, .upload-btn {
+  border: 1px solid var(--line);
+  border-radius: 7px;
+  background: white;
+  padding: 10px 14px;
+  cursor: pointer;
+  text-decoration: none;
+  color: inherit;
+  display: inline-block;
+  font-size: 13px;
+  font-family: inherit;
+}
+.full-btn  { width: 100%; text-align: center; }
+.primary   { background: var(--brand); color: white; border-color: var(--brand); }
+button:disabled { opacity: .5; cursor: not-allowed; }
+
+/* Upload label-as-button */
+.upload, .upload-btn {
+  margin: 4px 0;
+  width: 100%;
+  text-align: center;
+  display: block;
+}
+.upload input, .upload-btn input { display: none; }
+
+/* Aside primary action buttons */
+aside > button {
+  width: 100%;
+  margin-top: 10px;
+}
+
+/* ── Clarification section ──────────────────────────────────────────────── */
+.clarify {
+  margin-top: 20px;
+  padding: 14px;
+  background: #f3f9fc;
+  border-radius: 8px;
+}
+.clarify textarea  { min-height: 90px; }
+.clarify h3        { color: var(--brand); font-size: 14px; margin-bottom: 10px; }
+
+/* ── Hint / small ───────────────────────────────────────────────────────── */
+.hint, small {
+  color: #60717e;
+  font-size: 12px;
+  line-height: 1.5;
+  display: block;
+  margin-top: 4px;
+}
+
+/* ── Step label (DrawingReviewer sidebar) ───────────────────────────────── */
+.step-label {
+  font-size: 11px;
+  font-weight: 700;
+  color: #0070ad;
+  text-transform: uppercase;
+  letter-spacing: .06em;
+  margin-bottom: 2px;
+}
+.divider { border: 0; border-top: 1px solid var(--line); margin: 4px 0; }
+
+/* ── Attached files list ────────────────────────────────────────────────── */
+.attached-files {
+  background: #f3f9fc;
+  border-radius: 8px;
+  padding: 10px 14px;
+}
+.attached-files h4 {
+  margin: 0 0 8px;
+  font-size: 12px;
+  color: #60717e;
+  text-transform: uppercase;
+  letter-spacing: .05em;
+}
+.file-item {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 4px 0;
+  font-size: 12px;
+  border-bottom: 1px solid var(--line);
+}
+.file-item:last-child { border-bottom: 0; }
+.file-item .fname {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  flex: 1;
+  color: #18212b;
+}
+.file-item .fremove {
+  background: none;
+  border: none;
+  color: #c00;
+  cursor: pointer;
+  font-size: 14px;
+  padding: 0 4px;
+  flex-shrink: 0;
+}
+
+/* ── Workspace ──────────────────────────────────────────────────────────── */
+.workspace {
+  min-width: 0;
+  overflow: auto;
+  display: flex;
+  flex-direction: column;
+}
+.workspace nav {
+  background: white;
+  border-bottom: 1px solid var(--line);
+  padding: 10px 20px;
+  position: sticky;
+  top: 0;
+  z-index: 10;
+  display: flex;
+  gap: 6px;
+}
+.workspace nav button {
+  border: 0;
+  text-transform: capitalize;
+  margin-right: 0;
+  padding: 7px 14px;
+  border-radius: 6px;
+  width: auto;
+  margin-top: 0;
+}
+.workspace nav .active { background: #dff3fc; color: #005d87; font-weight: 600; }
+article { padding: 26px; flex: 1; overflow: auto; }
+
+/* ── Prose / code blocks ────────────────────────────────────────────────── */
+.prose, pre {
+  white-space: pre-wrap;
+  background: white;
+  border: 1px solid var(--line);
+  border-radius: 10px;
+  padding: 20px;
+  line-height: 1.6;
+  font-size: 14px;
+}
+pre { font-family: ui-monospace, monospace; font-size: 12px; }
+
+/* ── Toolbar ────────────────────────────────────────────────────────────── */
+.toolbar {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 16px;
+  flex-wrap: wrap;
+}
+.toolbar h1 { margin: 0 auto 0 0; font-size: 20px; }
+
+/* ── Table wrapper + table ──────────────────────────────────────────────── */
+.tablewrap {
+  overflow: auto;
+  background: white;
+  border: 1px solid var(--line);
+  border-radius: 10px;
+}
+table  { border-collapse: collapse; min-width: 1200px; width: 100%; }
+th {
+  background: #0d3b55;
+  color: white;
+  text-align: left;
+  padding: 10px 12px;
+  position: sticky;
+  top: 0;
+  font-size: 13px;
+  white-space: nowrap;
+}
+td {
+  border-bottom: 1px solid var(--line);
+  border-right: 1px solid var(--line);
+  padding: 0;
+  vertical-align: middle;
+}
+td input {
+  border: 0;
+  padding: 8px 10px;
+  width: 100%;
+  min-width: 120px;
+  background: transparent;
+  font-size: 13px;
+  font-family: inherit;
+}
+td input:focus { outline: 2px solid var(--brand); outline-offset: -2px; }
+tr:hover td    { filter: brightness(0.97); }
+
+/* ── Empty state ────────────────────────────────────────────────────────── */
+.empty-state {
+  text-align: center;
+  padding: 60px 20px;
+  color: #60717e;
+}
+.empty-state .icon { font-size: 48px; margin-bottom: 16px; }
+.empty-state h2    { color: #18212b; margin-bottom: 8px; }
+
+/* ── Responsive ─────────────────────────────────────────────────────────── */
+@media (max-width: 900px) {
+  main {
+    grid-template-columns: 1fr;
+    height: auto;
+  }
+  aside {
+    border-right: 0;
+    border-bottom: 1px solid var(--line);
+  }
+}

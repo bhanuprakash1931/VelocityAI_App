@@ -1,52 +1,36 @@
-:root{font-family:Inter,Segoe UI,sans-serif;color:#18212b;background:#eef3f7;--brand:#0070ad;--panel:#fff;--line:#d7e0e8}
-*{box-sizing:border-box}body{margin:0}.app{min-height:100vh}
-header{height:64px;background:#071e2c;color:white;display:flex;align-items:center;justify-content:space-between;padding:0 24px}
-.header-brand{display:flex;align-items:center;gap:14px}.brand-logo{height:36px;width:auto;display:block;filter:brightness(0) invert(1)}
-header b{font-size:20px;color:#48c7f2}
-header span{margin-left:8px}
-.header-right{display:flex;align-items:center;gap:12px}
-.status{font-size:13px;color:#cce9f6}
-.llm-badge{font-size:12px;padding:4px 10px;border-radius:20px;font-weight:600;white-space:nowrap}
-.llm-on{color:#4cef9a;background:rgba(76,239,154,.15);border:1px solid rgba(76,239,154,.3)}
-.llm-off{color:#aaa;background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.15)}
-.settings-btn{background:transparent;border:1px solid rgba(255,255,255,.25);color:white;border-radius:7px;padding:6px 10px;cursor:pointer;font-size:16px;line-height:1}
-.settings-btn:hover{background:rgba(255,255,255,.1)}
-.settings-overlay{position:fixed;inset:0;background:rgba(0,0,0,.45);z-index:1000;display:flex;align-items:center;justify-content:center}
-.settings-panel{background:white;border-radius:14px;padding:28px;width:480px;max-width:95vw;box-shadow:0 8px 40px rgba(0,0,0,.25)}
-.settings-header{display:flex;align-items:center;justify-content:space-between;margin-bottom:20px}
-.settings-header h2{margin:0;font-size:18px}
-.settings-header button{background:none;border:none;font-size:20px;cursor:pointer;color:#60717e;padding:4px 8px}
-.settings-panel label{display:block;font-size:13px;font-weight:600;color:#18212b;margin-bottom:14px}
-.settings-panel label input{display:block;width:100%;margin-top:5px;border:1px solid var(--line);border-radius:7px;padding:9px 12px;font-size:14px}
-.settings-panel label input:focus{outline:none;border-color:var(--brand)}
-.key-row{display:flex;gap:8px}.key-row input{flex:1}
-.key-row button{flex-shrink:0;padding:9px 14px;border:1px solid var(--line);border-radius:7px;background:white;cursor:pointer;font-size:13px}
-.settings-status{font-size:13px;color:#60717e;margin-bottom:18px;padding:10px 14px;background:#f3f9fc;border-radius:8px}
-.settings-footer{display:flex;justify-content:flex-end;gap:10px;margin-top:24px}
-.settings-footer button{padding:10px 20px}
-main{display:grid;grid-template-columns:350px 1fr;height:calc(100vh - 64px)}
-aside{background:var(--panel);border-right:1px solid var(--line);padding:22px;overflow:auto}
-h1,h2,h3{margin-top:0}
-textarea{width:100%;min-height:150px;border:1px solid var(--line);border-radius:8px;padding:12px;resize:vertical}
-button,.button,.upload{border:1px solid var(--line);border-radius:7px;background:white;padding:10px 14px;cursor:pointer;text-decoration:none;color:inherit;display:inline-block}
-.primary,aside>button{width:100%;margin-top:10px}
-.primary{background:var(--brand);color:white;border-color:var(--brand)}
-button:disabled{opacity:.5;cursor:not-allowed}
-.upload{margin:12px 0;width:100%;text-align:center}
-.upload input{display:none}
-.clarify{margin-top:20px;padding:14px;background:#f3f9fc;border-radius:8px}
-.clarify textarea{min-height:90px}.hint,small{color:#60717e;font-size:12px}
-.workspace{min-width:0;overflow:auto}
-.workspace nav{background:white;border-bottom:1px solid var(--line);padding:10px 20px;position:sticky;top:0}
-.workspace nav button{border:0;text-transform:capitalize;margin-right:6px}
-.workspace nav .active{background:#dff3fc;color:#005d87}article{padding:26px}
-.prose,pre{white-space:pre-wrap;background:white;border:1px solid var(--line);border-radius:10px;padding:20px;line-height:1.55}
-.toolbar{display:flex;align-items:center;gap:10px}
-.toolbar h1{margin-right:auto}
-.tablewrap{overflow:auto;background:white;border:1px solid var(--line);border-radius:10px}
-table{border-collapse:collapse;min-width:1400px;width:100%}
-th{background:#0d3b55;color:white;text-align:left;padding:10px;position:sticky;top:0}
-td{border-bottom:1px solid var(--line);border-right:1px solid var(--line);padding:0}
-td input{border:0;padding:10px;width:100%;min-width:130px;background:transparent}
-pre{font-family:ui-monospace,monospace}@media(max-width:900px)
-{main{grid-template-columns:1fr;height:auto}aside{border-right:0;border-bottom:1px solid var(--line)}}
+/* RequirementsGenerator/frontend/src/styles.css */
+@import '../../../common/frontend/styles.css';
+
+/* ── App-specific additions ─────────────────────────────────────────────── */
+
+/* Aside primary buttons (full width) */
+aside > button {
+  width: 100%;
+  margin-top: 10px;
+}
+
+/* Upload label */
+.upload {
+  margin: 12px 0;
+  width: 100%;
+  text-align: center;
+  display: block;
+}
+.upload input { display: none; }
+
+/* Clarification panel */
+.clarify {
+  margin-top: 20px;
+  padding: 14px;
+  background: #f3f9fc;
+  border-radius: 8px;
+}
+.clarify textarea { min-height: 90px; }
+.clarify h3 { color: var(--brand); font-size: 14px; margin-bottom: 10px; }
+
+/* Table */
+table { min-width: 1400px; }
+td input { min-width: 130px; }
+
+/* Main layout height */
+main { height: calc(100vh - 64px); }

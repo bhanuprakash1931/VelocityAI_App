@@ -1,11 +1,13 @@
+﻿"""
+RiskAssessor/backend/app/models.py
+───────────────────────────────────
+App-specific Pydantic models.
+Shared base models (Column, LlmConfigRequest, ApiResult, BaseSession)
+are imported from common.backend.models.
+"""
+from typing import Any
 from pydantic import BaseModel, Field
-from typing import Any, Literal
-
-
-class Column(BaseModel):
-    name: str
-    data_type: str = "string"
-    editable: bool = True
+from common.backend.models import Column, LlmConfigRequest, ApiResult, BaseSession  # noqa: F401
 
 
 class RiskTable(BaseModel):
@@ -23,16 +25,13 @@ class Version(BaseModel):
     stakeholder_needs: str = ""
 
 
-class Session(BaseModel):
-    id: str
+class Session(BaseSession):
     title: str = "Untitled risk session"
     stakeholder_needs: str = ""
     analysis: str = ""
     clarification_questions: list[str] = Field(default_factory=list)
-    files: list[str] = Field(default_factory=list)
     versions: list[Version] = Field(default_factory=list)
     active_version: int = -1
-    messages: list[dict[str, str]] = Field(default_factory=list)
 
 
 class AnalyzeRequest(BaseModel):
@@ -55,16 +54,3 @@ class TableRequest(BaseModel):
 
 class ActionRequest(BaseModel):
     text: str
-
-
-class LlmConfigRequest(BaseModel):
-    openai_api_key: str
-    openai_base_url: str = "https://api.openai.com/v1"
-    openai_model: str = "gpt-4.1-mini"
-
-
-class ApiResult(BaseModel):
-    success: bool = True
-    stage: str = "complete"
-    data: dict[str, Any] = Field(default_factory=dict)
-    error: str | None = None

@@ -1,4 +1,9 @@
-"""Services for Drawing Reviewer — same httpx pattern as RequirementsGenerator."""
+"""
+DrawingReviewer/backend/app/services.py
+────────────────────────────────────────
+Business logic for the Drawing Reviewer.
+LLM calls are delegated to common.backend.llm_service.
+"""
 from __future__ import annotations
 
 import base64
@@ -9,19 +14,18 @@ import sys
 from pathlib import Path
 from typing import Any
 
-import httpx
-
+from common.backend.llm_service import llm_json as _llm_json, llm_vision_json as _llm_vision_json
 from .config import get_api_key, get_base_url, get_model
 
 _log = logging.getLogger('drawing_reviewer.services')
 
 # ── Resolve VelocityAI_Platform path ──────────────────────────────────────
-APP_DIR = Path(__file__).resolve().parent
-BACKEND_DIR = APP_DIR.parent
-DRAWING_REVIEWER_DIR = BACKEND_DIR.parent
-VELOCITY_AI_APP_DIR = DRAWING_REVIEWER_DIR.parent
-ROOT_DIR = VELOCITY_AI_APP_DIR.parent
-DESKTOP_DIR = ROOT_DIR.parent
+APP_DIR          = Path(__file__).resolve().parent
+BACKEND_DIR      = APP_DIR.parent
+DRAWING_DIR      = BACKEND_DIR.parent
+VELOCITY_APP_DIR = DRAWING_DIR.parent
+ROOT_DIR         = VELOCITY_APP_DIR.parent
+DESKTOP_DIR      = ROOT_DIR.parent
 
 
 def _find_platform() -> Path:
@@ -41,94 +45,32 @@ if str(PLATFORM_DIR) not in sys.path:
     sys.path.insert(0, str(PLATFORM_DIR))
 
 
-# ── LLM helpers (same pattern as RequirementsGenerator services.py) ────────
+# ---------------------------------------------------------------------------
+# Convenience wrappers — inject this app's config callables
+# ---------------------------------------------------------------------------
 
-def _parse_json(text: str) -> dict | None:
-    """Strip markdown fences and parse first JSON object found."""
-    text = re.sub(r'^```(?:json)?|```$', '', text.strip(), flags=re.M).strip()
-    a = text.find('{')
-    b = text.rfind('}')
-    if a == -1 or b == -1:
-        return None
-    try:
-        return json.loads(text[a:b + 1])
-    except Exception:
-        return None
+async def llm_json(system: str, user: str, timeout: int = 120) -> dict | None:
+    return await _llm_json(
+        system=system, user=user,
+        get_api_key=get_api_key, get_base_url=get_base_url, get_model=get_model,
+        timeout=timeout,
+    )
 
 
-async def _llm_json(system: str, user: str, timeout: int = 120) -> dict | None:
-    """Call the LLM and return parsed JSON — returns None on any failure."""
-    
-    api_key = get_api_key()
-    if not api_key:
-        return None
-    headers = {'Authorization': f'Bearer {api_key}', 'Content-Type': 'application/json'}
-    payload = {
-        'model': get_model(),
-        'temperature': 0.2,
-        'messages': [{'role': 'system', 'content': system}, {'role': 'user', 'content': user}],
-    }
-    try:
-        async with httpx.AsyncClient(timeout=timeout) as c:
-            r = await c.post(get_base_url().rstrip('/') + '/chat/completions', headers=headers, json=payload)
-            r.raise_for_status()
-            return _parse_json(r.json()['choices'][0]['message']['content'])
-    except httpx.ConnectError:
-        _log.warning('_llm_json: cannot connect to %s', get_base_url())
-        return None
-    except httpx.TimeoutException:
-        _log.warning('_llm_json: timed out after %ds', timeout)
-        return None
-    except httpx.HTTPStatusError as e:
-        _log.warning('_llm_json: HTTP %s — %s', e.response.status_code, e.response.text[:200])
-        return None
-    except Exception:
-        _log.exception('_llm_json: unexpected error')
-        return None
+async def llm_vision_json(prompt: str, images_b64: list[dict], timeout: int = 180) -> dict | None:
+    return await _llm_vision_json(
+        prompt=prompt, images_b64=images_b64,
+        get_api_key=get_api_key, get_base_url=get_base_url, get_model=get_model,
+        timeout=timeout,
+    )
 
 
-async def _llm_vision_json(prompt: str, images_b64: list[dict], timeout: int = 180) -> dict | None:
-    """Call the LLM with vision (multimodal) content and return parsed JSON."""
-    api_key = get_api_key()
-    if not api_key:
-        return None
-    content: list[dict] = [{'type': 'text', 'text': prompt}]
-    for img in images_b64:
-        b64 = img.get('b64', '')
-        mime = img.get('mime_type', 'image/jpeg')
-        if not b64:
-            continue
-        url = b64 if b64.startswith('data:image') else f'data:{mime};base64,{b64}'
-        content.append({'type': 'image_url', 'image_url': {'url': url}})
-    payload = {
-        'model': get_model(),
-        'max_tokens': 8192,
-        'messages': [{'role': 'user', 'content': content}],
-    }
-    headers = {'Authorization': f'Bearer {api_key}', 'Content-Type': 'application/json'}
-    try:
-        async with httpx.AsyncClient(timeout=timeout) as c:
-            r = await c.post(get_base_url().rstrip('/') + '/chat/completions', headers=headers, json=payload)
-            r.raise_for_status()
-            return _parse_json(r.json()['choices'][0]['message']['content'])
-    except httpx.ConnectError:
-        _log.warning('_llm_vision_json: cannot connect to %s', get_base_url())
-        return None
-    except httpx.TimeoutException:
-        _log.warning('_llm_vision_json: timed out after %ds', timeout)
-        return None
-    except httpx.HTTPStatusError as e:
-        _log.warning('_llm_vision_json: HTTP %s — %s', e.response.status_code, e.response.text[:200])
-        return None
-    except Exception:
-        _log.exception('_llm_vision_json: unexpected error')
-        return None
-
-
-# ── PDF → images ────────────────────────────────────────────────────────────
+# ---------------------------------------------------------------------------
+# PDF → images
+# ---------------------------------------------------------------------------
 
 def _pdf_to_images(pdf_path: str, max_pages: int = 20) -> list[dict]:
-    """Convert PDF pages to base64 images. Uses pdf2image if available, else pypdf fallback."""
+    """Convert PDF pages to base64 images."""
     images: list[dict] = []
     try:
         from pdf2image import convert_from_path  # type: ignore
@@ -146,7 +88,6 @@ def _pdf_to_images(pdf_path: str, max_pages: int = 20) -> list[dict]:
     except Exception as e:
         _log.warning('pdf2image failed: %s', e)
 
-    # pypdf fallback — extracts embedded images from each page
     try:
         from pypdf import PdfReader
         reader = PdfReader(pdf_path)
@@ -155,7 +96,7 @@ def _pdf_to_images(pdf_path: str, max_pages: int = 20) -> list[dict]:
                 try:
                     b64 = base64.b64encode(img_obj.data).decode()
                     images.append({'page': i, 'b64': b64, 'mime_type': 'image/jpeg'})
-                    break  # one image per page is enough
+                    break
                 except Exception:
                     pass
         _log.info('pypdf fallback: extracted %d images from %s', len(images), pdf_path)
@@ -165,7 +106,9 @@ def _pdf_to_images(pdf_path: str, max_pages: int = 20) -> list[dict]:
     return images
 
 
-# ── Demo / fallback payloads ─────────────────────────────────────────────────
+# ---------------------------------------------------------------------------
+# Demo / fallback payloads
+# ---------------------------------------------------------------------------
 
 def _demo_extracted() -> dict:
     return {
@@ -186,7 +129,7 @@ def _demo_extracted() -> dict:
         'general_notes': ['All dimensions in mm unless otherwise stated.'],
         'missing_fields': ['Vision analysis unavailable — no API key or vision model not configured.'],
         'uncertain_fields': [],
-        'analysis_error': 'Demo mode — configure an OpenAI-compatible API key and a vision model (e.g. gpt-4o) to enable real drawing analysis.',
+        'analysis_error': 'Demo mode — configure an OpenAI-compatible API key and a vision model to enable real drawing analysis.',
     }
 
 
@@ -197,7 +140,7 @@ def _demo_check(extracted: dict) -> dict:
         'findings': [
             {'id': 'F1', 'severity': 'info', 'category': 'General',
              'text': 'Drawing analysis is running in demo mode. No API key is configured.',
-             'recommendation': 'Configure an OpenAI-compatible API key via the ⚙ settings panel.',
+             'recommendation': 'Configure an OpenAI-compatible API key via the settings panel.',
              'checked': False},
         ],
     }
@@ -207,12 +150,14 @@ def _demo_report_sections(check: dict) -> dict:
     return {
         'summary': 'Drawing review completed in demo mode. Configure an API key for AI-powered analysis.',
         'key_findings': ['Demo mode active — real findings require a configured LLM.'],
-        'recommendations': ['Configure an API key via the ⚙ settings panel and re-run the review.'],
+        'recommendations': ['Configure an API key via the settings panel and re-run the review.'],
         'engineering_review_notes': ['AI-generated findings are review assistance only and do not replace engineering approval.'],
     }
 
 
-# ── Extraction prompts ────────────────────────────────────────────────────────
+# ---------------------------------------------------------------------------
+# Prompts
+# ---------------------------------------------------------------------------
 
 EXTRACTION_PROMPT = """You are reviewing engineering drawing pages. Extract all visible structured data.
 Return ONLY valid JSON with these keys:
@@ -251,24 +196,23 @@ Each value is a string (for summary) or array of strings (for the rest).
 State clearly that AI findings are review assistance and do not replace engineering approval."""
 
 
-# ── Core service functions ────────────────────────────────────────────────────
+# ---------------------------------------------------------------------------
+# Core service functions
+# ---------------------------------------------------------------------------
 
 async def run_analyze(drawing_paths: list[str], best_practices: str) -> dict[str, Any]:
     """Extract drawing data and run best-practice check."""
-    # 1. Convert PDFs to images
     all_images: list[dict] = []
     for path in drawing_paths:
         all_images.extend(_pdf_to_images(path, max_pages=20))
     page_count = len(all_images)
     _log.info('run_analyze: %d pages from %d PDFs', page_count, len(drawing_paths))
 
-    # 2. Vision extraction
     extracted: dict[str, Any] = {}
     if all_images:
-        result = await _llm_vision_json(EXTRACTION_PROMPT, all_images[:20], timeout=180)
+        result = await llm_vision_json(EXTRACTION_PROMPT, all_images[:20], timeout=180)
         if result:
             extracted = result
-            _log.info('run_analyze: extraction OK — title_block keys: %s', list(extracted.get('title_block', {}).keys()))
         else:
             _log.warning('run_analyze: vision extraction returned None, using demo')
             extracted = _demo_extracted()
@@ -276,7 +220,6 @@ async def run_analyze(drawing_paths: list[str], best_practices: str) -> dict[str
         _log.warning('run_analyze: no images extracted, using demo')
         extracted = _demo_extracted()
 
-    # Normalise extracted fields
     if not isinstance(extracted.get('title_block'), dict):
         extracted['title_block'] = {}
     for key in ('revision_block', 'views', 'dimensions', 'tolerances', 'annotations',
@@ -284,10 +227,9 @@ async def run_analyze(drawing_paths: list[str], best_practices: str) -> dict[str
         if not isinstance(extracted.get(key), list):
             extracted[key] = []
 
-    # 3. Best-practice check
     bp = best_practices.strip() if best_practices else _default_best_practices()
     check_user = json.dumps({'best_practices': bp[:4000], 'extracted_data': extracted}, ensure_ascii=False)[:16000]
-    check_result = await _llm_json(CHECK_PROMPT, check_user, timeout=120)
+    check_result = await llm_json(CHECK_PROMPT, check_user, timeout=120)
     if not check_result:
         _log.warning('run_analyze: check returned None, using demo check')
         check_result = _demo_check(extracted)
@@ -309,24 +251,21 @@ async def run_report(
     best_practices: str,
 ) -> dict[str, Any]:
     """Generate Word/PDF report and filled checklist."""
-    # 1. Generate report sections via LLM
     report_user = json.dumps({
         'extracted_data': extracted_data,
         'check_results': check_results,
     }, ensure_ascii=False)[:16000]
-    sections = await _llm_json(REPORT_PROMPT, report_user, timeout=120)
+    sections = await llm_json(REPORT_PROMPT, report_user, timeout=120)
     if not sections:
         _log.warning('run_report: report LLM returned None, using demo sections')
         sections = _demo_report_sections(check_results)
 
-    # Normalise sections
     for key in ('key_findings', 'recommendations', 'engineering_review_notes'):
         if isinstance(sections.get(key), str):
             sections[key] = [l.strip(' -*•') for l in sections[key].splitlines() if l.strip(' -*•')]
         elif not isinstance(sections.get(key), list):
             sections[key] = []
 
-    # 2. Build checklist from findings
     checklist = []
     for i, f in enumerate(check_results.get('findings', []), 1):
         if not isinstance(f, dict):
@@ -343,7 +282,6 @@ async def run_report(
             'checked': bool(f.get('checked', False)),
         })
 
-    # 3. Build report artifacts using local report_builder
     preview_html = ''
     docx_path = ''
     pdf_path = ''
@@ -370,12 +308,10 @@ async def run_report(
             checklist=checklist, report_sections=sections,
             drawing_files=drawing_paths,
         )
-        _log.info('run_report: docx=%s pdf=%s', docx_path, pdf_path)
     except Exception as e:
         _log.exception('run_report: artifact generation failed: %s', e)
         preview_html = _fallback_preview_html(extracted_data, check_results, sections)
 
-    # 4. Fill checklist template if provided
     if template_path and Path(template_path).exists():
         try:
             from .excel_checklist_writer import (
@@ -387,7 +323,6 @@ async def run_report(
                 report_docx_path=docx_path,
             )
             filled_preview = build_filled_checklist_preview_html(filled_path)
-            _log.info('run_report: filled checklist=%s', filled_path)
         except Exception as e:
             _log.exception('run_report: checklist fill failed: %s', e)
 
@@ -416,6 +351,7 @@ async def run_chat(
             'No drawing analysis is available yet. '
             'Upload a drawing PDF and click Analyze Drawing first.'
         )
+    from common.backend.llm_service import llm_chat_completion
     system = (
         'You are an expert mechanical design engineer and engineering drawing reviewer. '
         'Answer questions grounded only in the extracted drawing data, check results, '
@@ -430,30 +366,17 @@ async def run_chat(
         f'# Report sections\n{json.dumps(report_sections, ensure_ascii=False)[:4000]}\n\n'
         f'# Checklist findings\n{json.dumps(report_checklist, ensure_ascii=False)[:3000]}'
     )
-    api_key = get_api_key()
-    if not api_key:
-        return 'Chat requires an API key. Configure one via the ⚙ settings panel.'
-    try:
-        async with httpx.AsyncClient(timeout=60) as c:
-            r = await c.post(
-                get_base_url().rstrip('/') + '/chat/completions',
-                headers={'Authorization': f'Bearer {api_key}', 'Content-Type': 'application/json'},
-                json={'model': get_model(), 'max_tokens': 1024,
-                      'messages': [{'role': 'system', 'content': system}, {'role': 'user', 'content': user}]},
-            )
-            r.raise_for_status()
-            return r.json()['choices'][0]['message']['content']
-    except httpx.ConnectError:
-        return f'Cannot connect to LLM at {get_base_url()}. Check your API base URL.'
-    except httpx.TimeoutException:
-        return 'LLM request timed out. Try again or reduce the drawing complexity.'
-    except httpx.HTTPStatusError as e:
-        return f'LLM returned HTTP {e.response.status_code}. Check API key and endpoint configuration.'
-    except Exception as e:
-        return f'Chat error: {e}'
+    return await llm_chat_completion(
+        system=system, user=user,
+        get_api_key=get_api_key, get_base_url=get_base_url, get_model=get_model,
+        timeout=60, max_tokens=1024,
+        no_key_message='Chat requires an API key. Configure one via the settings panel.',
+    )
 
 
-# ── Helpers ────────────────────────────────────────────────────────────────
+# ---------------------------------------------------------------------------
+# Helpers
+# ---------------------------------------------------------------------------
 
 def _default_best_practices() -> str:
     bp_path = PLATFORM_DIR / 'apps' / 'drawing_reviewer' / 'config' / 'default_best_practices.md'
@@ -472,16 +395,16 @@ def _default_best_practices() -> str:
 
 
 def _fallback_preview_html(extracted: dict, checks: dict, sections: dict) -> str:
-    """Minimal HTML preview when the platform report_builder is unavailable."""
     import html
     summary = str(sections.get('summary', 'Drawing review completed.'))
     findings_rows = ''.join(
-        f"<tr><td>{html.escape(str(f.get('id', '')))}</td>"
-        f"<td><b style='color:#b26a00'>{html.escape(str(f.get('severity', '')))}</b></td>"
-        f"<td>{html.escape(str(f.get('category', '')))}</td>"
-        f"<td>{html.escape(str(f.get('text', '')))}</td>"
-        f"<td>{html.escape(str(f.get('recommendation', '')))}</td></tr>"
-        for f in checks.get('findings', [])[:50]
+        f'<tr><td>{html.escape(str(f.get('id'', '')))}'
+        f'</td><td><b>{html.escape(str(f.get('severity'', '')))}'
+        f'</b></td><td>{html.escape(str(f.get('category'', '')))}'
+        f'</td><td>{html.escape(str(f.get('text'', '')))}'
+        f'</td><td>{html.escape(str(f.get('recommendation'', '')))}'
+        f'</td></tr>'
+        for f in checks.get('findings'', [])[:50]
     )
     return (
         '<div style="font-family:Inter,Arial,sans-serif;font-size:13px;padding:14px;">'
@@ -489,7 +412,9 @@ def _fallback_preview_html(extracted: dict, checks: dict, sections: dict) -> str
         f'<h2>Review Summary</h2><p>{html.escape(summary)}</p>'
         '<h2>Key Findings</h2>'
         '<table border="1" cellspacing="0" cellpadding="6" style="border-collapse:collapse;width:100%;">'
-        '<thead><tr style="background:#1F4E78;color:white;"><th>ID</th><th>Severity</th><th>Category</th><th>Finding</th><th>Recommendation</th></tr></thead>'
+        '<thead><tr style="background:#1F4E78;color:white;">'
+        '<th>ID</th><th>Severity</th><th>Category</th><th>Finding</th><th>Recommendation</th>'
+        '</tr></thead>'
         f'<tbody>{findings_rows}</tbody></table>'
         '<p><b>Human engineering review required before release or manufacturing use.</b></p>'
         '</div>'
